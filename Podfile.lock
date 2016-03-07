@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (3.2.1)
+  - BTNavigationDropdownMenu (0.2.1)
+  - Hue (1.0.1)
+  - NVActivityIndicatorView (2.3)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - BTNavigationDropdownMenu
+  - Hue
+  - NVActivityIndicatorView
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
+  BTNavigationDropdownMenu: 9cf4060162c96510ee27c388412e28678320cdc0
+  Hue: 0a53589bb58317e74068863b701ef1e5eee89ac1
+  NVActivityIndicatorView: c7ef25ef527ab5e51b00322cb1ddd58681bcf2a3
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+PODFILE CHECKSUM: e0eff21e587dc7a1d7498069c46b93bd5125521f
+
+COCOAPODS: 1.0.0.beta.3
