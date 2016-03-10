@@ -8,6 +8,7 @@
     <customFonts key="customFonts">
         <mutableArray key="ProximaNova-Semibold.otf">
             <string>ProximaNova-Semibold</string>
+            <string>ProximaNova-Semibold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -19,7 +20,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZMs-ee-tJZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.00033178763676840054" green="0.096821564885176306" blue="0.58648989898989901" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.19215686274509802" green="0.31372549019607843" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -67,10 +68,19 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 500m " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMG-YS-lrp">
+                                                    <rect key="frame" x="541" y="126" width="51" height="16"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.47120460304054052" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="wMG-YS-lrp" firstAttribute="trailing" secondItem="RzV-6u-mg2" secondAttribute="trailingMargin" id="3Q9-YW-zpm"/>
                                                 <constraint firstItem="lVj-gR-pF4" firstAttribute="top" secondItem="RzV-6u-mg2" secondAttribute="topMargin" constant="-8" id="DEE-3M-dRu"/>
                                                 <constraint firstItem="lVj-gR-pF4" firstAttribute="bottom" secondItem="RzV-6u-mg2" secondAttribute="bottomMargin" constant="8" id="M0G-Sn-g7H"/>
+                                                <constraint firstItem="wMG-YS-lrp" firstAttribute="bottom" secondItem="RzV-6u-mg2" secondAttribute="bottomMargin" id="NdR-8T-fPA"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="lVj-gR-pF4" secondAttribute="trailing" constant="-8" id="SDM-2a-BUu"/>
                                                 <constraint firstItem="vDx-Pw-Hdh" firstAttribute="centerY" secondItem="RzV-6u-mg2" secondAttribute="centerY" id="b7G-Iu-0Q6"/>
                                                 <constraint firstItem="lVj-gR-pF4" firstAttribute="leading" secondItem="RzV-6u-mg2" secondAttribute="leadingMargin" constant="-8" id="ecK-P1-bzi"/>
@@ -79,6 +89,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="backgroundImage" destination="lVj-gR-pF4" id="zDF-9b-Ah1"/>
+                                            <outlet property="distanceLabel" destination="wMG-YS-lrp" id="giP-UP-qbk"/>
                                             <outlet property="shopTitle" destination="vDx-Pw-Hdh" id="Ory-CV-E5i"/>
                                             <segue destination="giU-Lw-31I" kind="show" identifier="ShowShopDetail" id="GiL-dO-GuF"/>
                                         </connections>
@@ -145,7 +156,7 @@
             </objects>
             <point key="canvasLocation" x="1312" y="710"/>
         </scene>
-        <!--Title-->
+        <!--Stumptown Coffee-->
         <scene sceneID="t0B-f6-0o1">
             <objects>
                 <viewController id="giU-Lw-31I" customClass="ShopDetailVC" customModule="Coffee" customModuleProvider="target" sceneMemberID="viewController">
@@ -158,26 +169,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stumptown.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pl7-nl-CfO">
-                                <rect key="frame" x="0.0" y="64" width="600" height="836"/>
+                                <rect key="frame" x="0.0" y="243" width="600" height="657"/>
                             </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PKP-oN-Q4M">
+                                <rect key="frame" x="0.0" y="64" width="600" height="179"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="179" id="bIq-C5-GPT"/>
+                                </constraints>
+                            </mapView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lam-nC-EIm">
-                                <rect key="frame" x="0.0" y="64" width="600" height="836"/>
+                                <rect key="frame" x="0.0" y="243" width="600" height="657"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-qn-hJl" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="496"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="317"/>
                                         <subviews>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PKP-oN-Q4M">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="179"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="179" id="bIq-C5-GPT"/>
-                                                </constraints>
-                                            </mapView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YE0-eI-Qba" userLabel="Top Stack View Overlay">
-                                                <rect key="frame" x="12" y="193" width="575" height="269"/>
+                                                <rect key="frame" x="10" y="12.5" width="580" height="272"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75124049831081086" colorSpace="calibratedRGB"/>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wtt-jw-12O" userLabel="Top Stack View">
-                                                <rect key="frame" x="20" y="199" width="560" height="257"/>
+                                                <rect key="frame" x="20" y="20" width="560" height="257"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stumptown Coffee Ace Hotel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jc-Y5-Kay">
                                                         <rect key="frame" x="0.0" y="0.0" width="560" height="24"/>
@@ -221,14 +232,14 @@ Know every bean on a personal level. Adjust times and temperatures throughout th
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73990709459459458" colorSpace="calibratedRGB"/>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCI-4m-9Pb" userLabel="Bottom Stack View Overlay">
-                                                <rect key="frame" x="12" y="470" width="575" height="32"/>
+                                                <rect key="frame" x="10" y="289" width="580" height="35"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69927153716216217" colorSpace="calibratedRGB"/>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mb4-C6-DjM" userLabel="Bottom Stack View">
-                                                <rect key="frame" x="20" y="476" width="560" height="20.5"/>
+                                                <rect key="frame" x="20" y="297" width="560" height="21"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8r-4Z-TWb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -239,23 +250,20 @@ Know every bean on a personal level. Adjust times and temperatures throughout th
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="Wtt-jw-12O" firstAttribute="leading" secondItem="bYw-qn-hJl" secondAttribute="leading" constant="20" id="4tS-oR-HTb"/>
-                                            <constraint firstItem="xCI-4m-9Pb" firstAttribute="height" secondItem="Mb4-C6-DjM" secondAttribute="height" constant="12" id="4uZ-cb-M47"/>
-                                            <constraint firstItem="YE0-eI-Qba" firstAttribute="height" secondItem="Wtt-jw-12O" secondAttribute="height" constant="12" id="9Eb-dI-ue4"/>
+                                            <constraint firstItem="xCI-4m-9Pb" firstAttribute="height" secondItem="Mb4-C6-DjM" secondAttribute="height" constant="15" id="4uZ-cb-M47"/>
+                                            <constraint firstItem="YE0-eI-Qba" firstAttribute="height" secondItem="Wtt-jw-12O" secondAttribute="height" constant="15" id="9Eb-dI-ue4"/>
                                             <constraint firstAttribute="bottom" secondItem="Mb4-C6-DjM" secondAttribute="bottom" id="FWv-kZ-Hp6"/>
-                                            <constraint firstAttribute="trailing" secondItem="PKP-oN-Q4M" secondAttribute="trailing" id="G6b-MV-W6Y"/>
                                             <constraint firstItem="xCI-4m-9Pb" firstAttribute="centerY" secondItem="Mb4-C6-DjM" secondAttribute="centerY" id="GEP-6p-ARM"/>
+                                            <constraint firstItem="Wtt-jw-12O" firstAttribute="top" secondItem="bYw-qn-hJl" secondAttribute="top" constant="20" id="Ieb-gs-D6H"/>
                                             <constraint firstItem="YE0-eI-Qba" firstAttribute="centerX" secondItem="Wtt-jw-12O" secondAttribute="centerX" id="MM6-K0-vCZ"/>
                                             <constraint firstItem="Mb4-C6-DjM" firstAttribute="centerX" secondItem="Wtt-jw-12O" secondAttribute="centerX" id="QiJ-cr-kuy"/>
-                                            <constraint firstItem="Wtt-jw-12O" firstAttribute="top" secondItem="PKP-oN-Q4M" secondAttribute="bottom" constant="20" id="UCE-tB-vCV"/>
                                             <constraint firstItem="Mb4-C6-DjM" firstAttribute="top" secondItem="Wtt-jw-12O" secondAttribute="bottom" constant="20" id="VTd-9e-Dcl"/>
                                             <constraint firstAttribute="trailing" secondItem="Wtt-jw-12O" secondAttribute="trailing" constant="20" id="Yze-Zj-ntJ"/>
-                                            <constraint firstItem="xCI-4m-9Pb" firstAttribute="width" secondItem="Mb4-C6-DjM" secondAttribute="width" constant="15" id="cj9-Zk-OjO"/>
+                                            <constraint firstItem="xCI-4m-9Pb" firstAttribute="width" secondItem="Mb4-C6-DjM" secondAttribute="width" constant="20" id="cj9-Zk-OjO"/>
                                             <constraint firstItem="xCI-4m-9Pb" firstAttribute="centerX" secondItem="Mb4-C6-DjM" secondAttribute="centerX" id="fjD-2a-ncD"/>
-                                            <constraint firstItem="PKP-oN-Q4M" firstAttribute="leading" secondItem="bYw-qn-hJl" secondAttribute="leading" id="hdp-ZA-uLb"/>
                                             <constraint firstItem="Mb4-C6-DjM" firstAttribute="width" secondItem="Wtt-jw-12O" secondAttribute="width" id="lY2-Fo-z8t"/>
-                                            <constraint firstItem="YE0-eI-Qba" firstAttribute="width" secondItem="Wtt-jw-12O" secondAttribute="width" constant="15" id="mMR-v3-T7u"/>
+                                            <constraint firstItem="YE0-eI-Qba" firstAttribute="width" secondItem="Wtt-jw-12O" secondAttribute="width" constant="20" id="mMR-v3-T7u"/>
                                             <constraint firstItem="YE0-eI-Qba" firstAttribute="centerY" secondItem="Wtt-jw-12O" secondAttribute="centerY" id="ttO-zM-92O"/>
-                                            <constraint firstItem="PKP-oN-Q4M" firstAttribute="top" secondItem="bYw-qn-hJl" secondAttribute="top" id="vRg-os-YHe"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -272,15 +280,24 @@ Know every bean on a personal level. Adjust times and temperatures throughout th
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="pl7-nl-CfO" secondAttribute="trailing" id="1Vr-TE-jY4"/>
                             <constraint firstItem="Lam-nC-EIm" firstAttribute="leading" secondItem="Kjn-dD-EJs" secondAttribute="leading" id="2bd-Qj-lk7"/>
+                            <constraint firstItem="PKP-oN-Q4M" firstAttribute="top" secondItem="oXG-Ye-hGc" secondAttribute="bottom" id="5i9-ot-R3V"/>
                             <constraint firstItem="rVM-D0-T9x" firstAttribute="top" secondItem="pl7-nl-CfO" secondAttribute="bottom" id="FdV-MQ-kpM"/>
                             <constraint firstItem="Lam-nC-EIm" firstAttribute="top" secondItem="oXG-Ye-hGc" secondAttribute="bottom" id="Ksr-pe-td4"/>
-                            <constraint firstItem="pl7-nl-CfO" firstAttribute="top" secondItem="oXG-Ye-hGc" secondAttribute="bottom" id="MkU-ix-l4t"/>
+                            <constraint firstItem="pl7-nl-CfO" firstAttribute="top" secondItem="oXG-Ye-hGc" secondAttribute="bottom" constant="179" id="MkU-ix-l4t"/>
                             <constraint firstAttribute="trailing" secondItem="Lam-nC-EIm" secondAttribute="trailing" id="Mms-8t-hgB"/>
                             <constraint firstItem="rVM-D0-T9x" firstAttribute="top" secondItem="Lam-nC-EIm" secondAttribute="bottom" id="QPi-1S-Y2V"/>
+                            <constraint firstItem="PKP-oN-Q4M" firstAttribute="leading" secondItem="Kjn-dD-EJs" secondAttribute="leading" id="TB8-Wl-3rh"/>
                             <constraint firstItem="pl7-nl-CfO" firstAttribute="leading" secondItem="Kjn-dD-EJs" secondAttribute="leading" id="aXH-3n-lhu"/>
+                            <constraint firstItem="Lam-nC-EIm" firstAttribute="top" secondItem="PKP-oN-Q4M" secondAttribute="bottom" id="t5c-6U-mzC"/>
+                            <constraint firstAttribute="trailing" secondItem="PKP-oN-Q4M" secondAttribute="trailing" id="vOt-rL-Oa4"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ksr-pe-td4"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="pRX-s2-V9o">
+                    <navigationItem key="navigationItem" title="Stumptown Coffee" id="pRX-s2-V9o">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="2yp-LP-sya">
                             <connections>
                                 <action selector="share:" destination="giU-Lw-31I" id="M7U-UE-nPy"/>
@@ -291,9 +308,10 @@ Know every bean on a personal level. Adjust times and temperatures throughout th
                     <size key="freeformSize" width="600" height="900"/>
                     <connections>
                         <outlet property="addressLabel" destination="Uld-ns-LEx" id="6T7-AZ-aky"/>
+                        <outlet property="backgroundImage" destination="pl7-nl-CfO" id="SJT-ex-Gk9"/>
                         <outlet property="descriptionLabel" destination="SFD-oa-pxb" id="5df-d3-AJg"/>
                         <outlet property="mapView" destination="PKP-oN-Q4M" id="31m-vb-bpl"/>
-                        <outlet property="shopTitleLabel" destination="Uld-ns-LEx" id="F3Y-Hj-2RJ"/>
+                        <outlet property="shopTitleLabel" destination="0Jc-Y5-Kay" id="BD6-fp-2YS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UeE-0W-kni" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -304,23 +322,6 @@ Know every bean on a personal level. Adjust times and temperatures throughout th
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2014" y="710"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="QZO-b3-tNt">
-            <objects>
-                <viewController id="cyu-aO-mZW" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Y14-C5-3F9"/>
-                        <viewControllerLayoutGuide type="bottom" id="FAK-wc-mXB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lEB-dd-YeR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yF0-8r-GH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

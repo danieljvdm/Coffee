@@ -10,23 +10,34 @@ import UIKit
 import BTNavigationDropdownMenu
 import Hue
 import NVActivityIndicatorView
+import CoreLocation
 
 class HomeVC: UIViewController {
     
     @IBOutlet weak var activityView: NVActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
-    let shops = Shop.getFakeData()
-    let cities = City.getFakeData()
+    var shops = [Shop]()
     var clearTable = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ios-linen.jpg")!)
         self.tableView.backgroundColor = UIColor.clearColor()
 
         self.activityView.type = .BallScaleRippleMultiple
+        
+        self.activityView.startAnimation()
+        Shop.getNearestShops(){ (shops: [Shop]) in
+
+            self.shops = shops.sort(Shop.sortByLoc)
+            dispatch_async(dispatch_get_main_queue()){
+                self.activityView.stopAnimation()
+                self.tableView.reloadData()
+            }
+        }
         setupNavBar()
     }
     
@@ -44,10 +55,10 @@ class HomeVC: UIViewController {
 //Navigation Drop Down
 extension HomeVC {
     func setupNavBar() {
-        self.navigationController?.navigationBar.barTintColor = UIColor.coffeeBlue()
-        let menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: "Near me", items: cities.map{$0.name})
+        self.navigationController?.navigationBar.barTintColor = UIColor.coffeeBlueNav()
+        let menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: "Near Me", items: ["Near Me", "New York"])
         menuView.cellBackgroundColor = UIColor.coffeeBlue()
-        menuView.cellTextLabelFont = UIFont(name: "ProximaNova-Bold", size: 20.0)
+        menuView.cellTextLabelFont = UIFont(name: "ProximaNova-Bold", size: 18.0)
         menuView.cellTextLabelAlignment = .Center
         self.navigationItem.titleView = menuView
         

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,12 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UINavigationBar.appearance().titleTextAttributes = [
-            NSFontAttributeName: UIFont(name: "ProximaNova-Bold", size: 20)!,
+            NSFontAttributeName: UIFont(name: "ProximaNova-Bold", size: 18.0)!,
             NSForegroundColorAttributeName: UIColor.whiteColor()
         ]
         
-        
+        UINavigationBar.appearance().backgroundColor = UIColor.coffeeBlue()
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        
+        let _ = LocationService.sharedInstance
+        
         return true
     }
 

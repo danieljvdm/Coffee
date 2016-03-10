@@ -20,6 +20,10 @@ extension UIColor {
     }
     
     static func coffeeBlue() -> UIColor {
+        return self.hex("31507f")
+    }
+    
+    static func coffeeBlueNav() -> UIColor {
         return self.hex("20457C")
     }
     

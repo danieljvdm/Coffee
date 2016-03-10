@@ -12,6 +12,7 @@ import CoreLocation
 
 class ShopDetailVC: UIViewController {
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var shopTitleLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -29,13 +30,11 @@ class ShopDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        descriptionLabel.updateAttributedText(shop.description)
-        addressLabel.addAttributes([NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue])
-        
-        locationManager.delegate = self
+        backgroundImage.image = shop.image
+        updateText()
         
         mapView.delegate = self
-        let location = CLLocation(latitude: 40.745414, longitude: -73.988334)
+        let location = shop.location
         centerMapOnLocation(location)
         let point = MKPointAnnotation()
         point.coordinate = location.coordinate
@@ -47,28 +46,17 @@ class ShopDetailVC: UIViewController {
     }
     
     
-    func styleText() {
-//        let fontAttr = [NSFontAttributeName: UIFont(name: "ProximaNova-Regular", size: 16)!]
-//        
-//        let addressAttrString =  NSMutableAttributedString(string: addressLabel.text!)
-//        addressAttrString.addAttribute(NSUnderlineStyleAttributeName, value: 1, range: NSMakeRange(0, addressAttrString.length))
-//        addressAttrString.addAttributes(fontAttr, range: NSMakeRange(0, addressAttrString.length))
-//        addressLabel.attributedText = addressAttrString
-//        
-//        let paragraphStyle = NSMutableParagraphStyle()
-//        paragraphStyle.lineSpacing = 3.0
-//        paragraphStyle.paragraphSpacing = 10.0
-//        
-//        let descriptionAttString = NSMutableAttributedString(string: shop.description)
-//        descriptionAttString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, descriptionAttString.length))
-//        
-//        descriptionLabel.attributedText = descriptionAttString
-
-        
+    func updateText() {
+        addressLabel.updateAttributedText(shop.address)
+        addressLabel.addAttributes([NSFontAttributeName: UIFont(name: "ProximaNova-Regular", size: 16)!, NSForegroundColorAttributeName: UIColor.hex("007AFF")])
+        shopTitleLabel.updateAttributedText(shop.name)
+        shopTitleLabel.addAttributes([NSFontAttributeName: UIFont(name: "ProximaNova-Semibold", size: 22)!])
+        descriptionLabel.updateAttributedText(shop.description)
+        descriptionLabel.addAttributes([NSFontAttributeName: UIFont(name: "ProximaNova-Regular", size: 16)!])
     }
     
     @IBAction func addressTapped(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?ll=\(shop.coordinates.latitude),\(shop.coordinates.longitude)")!)
+        UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?ll=\(shop.location.coordinate.latitude),\(shop.location.coordinate.longitude)")!)
     }
     
     @IBAction func share(sender: AnyObject) {
@@ -88,7 +76,21 @@ class ShopDetailVC: UIViewController {
 
 }
 
+extension UIView {
+    func findAllSubviews() -> [UIView] {
+        let subviews = self.subviews
+        if subviews.isEmpty { return [] }
+        var views = subviews
+        for view in subviews {
+            views += view.findAllSubviews()
+        }
+        
+        return views
+    }
+}
+
 extension UILabel {
+    
     func updateAttributedText(text: String) {
         guard let labelText = self.attributedText else {
             return
@@ -114,15 +116,6 @@ extension Dictionary {
         for (k, v) in dict {
             self.updateValue(v as! Value, forKey: k as! Key)
         }
-    }
-}
-
-extension ShopDetailVC: CLLocationManagerDelegate {
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0]
-        let long = userLocation.coordinate.longitude;
-        let lat = userLocation.coordinate.latitude;
-        print(long + lat)
     }
 }
 

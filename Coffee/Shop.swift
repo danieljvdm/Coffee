@@ -7,32 +7,69 @@
 //
 
 import Foundation
-
+import CloudKit
+import UIKit
+    
 class Shop {
     var name = ""
-    var location: City?
-    var backgroundImage = ""
-    var address = "18 W 29th St, New York, NY 10001"
-
-    let coordinates = (latitude: 40.745414, longitude: -73.988334)
-    var description = "Stumptown Ace Hotel combines captivating ambiance with delectable coffee. The shop is easily accessible from the street, but customers are more than welcome to sit down in the decadent Ace Hotel lobby to enjoy their brew. \n" + "This particular location features an awesome nitros cold brew that comes out looking like a Guinness from one of Dublin's finest pubs."
+    var city = City()
+    var image = UIImage()
+    var address = ""
+    var neighborhood = ""
+    var location = CLLocation()
+    var description = ""
     
-    convenience init(name: String, backgroundImage: String){
+//    convenience init(name: String, backgroundImage: String, address: String, coordinates: (latitude: Double, longitude: Double)){
+//        self.init()
+//        self.name = name
+//        self.backgroundImage = backgroundImage
+//        self.coordinates = coordinates
+//        self.address = address
+//    }
+    
+    convenience init(record: CKRecord) {
         self.init()
-        self.name = name
-        self.backgroundImage = backgroundImage
+        self.name = record.objectForKey("Name") as! String
+        self.location = record.objectForKey("Location") as! CLLocation
+        self.address = record.objectForKey("Address") as! String
+        self.description = (record.objectForKey("Description") as! String).componentsSeparatedByString("\\n").joinWithSeparator("\n")
+        let file = record.objectForKey("Image") as! CKAsset
+        if let data = NSData(contentsOfURL: file.fileURL), image = UIImage(data: data) {
+            self.image = image
+        }
+        
     }
     
-    static func getFakeData() -> [Shop]{
-        let NYshops = [
-            Shop(name: "Stumptown Coffee", backgroundImage: "stumptown.jpg"),
-            Shop(name: "Blue Bottle",  backgroundImage: "bluebottle.jpg"),
-            Shop(name: "Brooklyn Roasting Company", backgroundImage: "brooklyn.jpg"),
-            Shop(name: "Intelligentsia", backgroundImage: "intelligentsia.jpg"),
-            Shop(name: "Laughing Man Coffee", backgroundImage: "laughingman.jpg"),
-            Shop(name: "Toby's Estate", backgroundImage: "tobysestate.jpg")
-        ]
-        
-        return NYshops
+    static func getAllShops(completion: (result: [Shop]) -> Void) {
+        CloudKitService.getShops(){ result in
+            completion(result: result)
+        }
     }
+    
+    static func getNearestShops(completion: (result: [Shop]) -> Void) {
+        CloudKitService.getNearestShops(){ result in
+            completion(result: result)
+        }
+    }
+    
+    static func sortByLoc(shop1: Shop, shop2: Shop) -> Bool{
+        if let lastKnownLoc = LocationService.sharedInstance.lastKnownLoc {
+            return shop2.location.distanceFromLocation(lastKnownLoc) > shop1.location.distanceFromLocation(lastKnownLoc)
+        }
+        
+        return false
+    }
+    
+//    static func getFakeData() -> [Shop]{
+//        let NYshops = [
+//            Shop(name: "Stumptown Coffee Ace Hotel", backgroundImage: "stumptown.jpg", address: "18 W 29th St (at Broadway)", coordinates: (40.7457214, -73.98820790000002)),
+//            Shop(name: "Blue Bottle Chelsea",  backgroundImage: "bluebottle.jpg", address: "450 W 15th St (btwn 9th & 10th Ave)", coordinates:  (40.7454906, -74.00576690000003)),
+//            Shop(name: "Brooklyn Roasting Company", backgroundImage: "brooklyn.jpg", address: "25 Jay St (btwn Plymouth & John St)", coordinates:  (40.7042686, -73.9863092)),
+//            Shop(name: "Intelligentsia", backgroundImage: "intelligentsia.jpg", address: "180 10th Ave (at W 20th & W 21st St)", coordinates:  (40.7459766,-74.00466310000002)),
+//            Shop(name: "Laughing Man Coffee", backgroundImage: "laughingman.jpg", address: "184 Duane St (btwn Greenwich & Hudson St.)", coordinates:  (40.7173152, -74.010179)),
+//            Shop(name: "Toby's Estate", backgroundImage: "tobysestate.jpg", address: "160 5th Ave (btwn E 20th & E 21st St)", coordinates:  (40.7402786, -73.99108380000001))
+//        ]
+//        
+//        return NYshops
+//    }
 }
