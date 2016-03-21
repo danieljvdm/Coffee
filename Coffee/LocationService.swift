@@ -36,7 +36,6 @@ extension LocationService: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let lastLoc = locations.last {
             lastKnownLoc = lastLoc
-            print(lastKnownLoc)
         }
     }
 }

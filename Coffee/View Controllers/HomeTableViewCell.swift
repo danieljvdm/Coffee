@@ -11,12 +11,12 @@ import UIKit
 class HomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var shopTitle: UILabel!
-    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var distanceLabel: UILabel!
     var coffeeShop = Shop() {
         didSet {
-            shopTitle.text = " \(coffeeShop.name) "
-            backgroundImage.image = coffeeShop.image
+            shopTitle.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 40
+            shopTitle.text = coffeeShop.name
+            self.backgroundColor = UIColor(patternImage: coffeeShop.image)
             if let lastKnownLoc = LocationService.sharedInstance.lastKnownLoc {
                 let distance = coffeeShop.location.distanceFromLocation(lastKnownLoc)
                 distanceLabel.text = prettyDistance(distance)

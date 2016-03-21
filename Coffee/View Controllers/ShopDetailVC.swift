@@ -76,41 +76,6 @@ class ShopDetailVC: UIViewController {
 
 }
 
-extension UIView {
-    func findAllSubviews() -> [UIView] {
-        let subviews = self.subviews
-        if subviews.isEmpty { return [] }
-        var views = subviews
-        for view in subviews {
-            views += view.findAllSubviews()
-        }
-        
-        return views
-    }
-}
-
-extension UILabel {
-    
-    func updateAttributedText(text: String) {
-        guard let labelText = self.attributedText else {
-            return
-        }
-        
-        let existingAttributes = labelText.attributesAtIndex(0, effectiveRange: nil)
-        self.attributedText = NSAttributedString(string: text, attributes: existingAttributes)
-    }
-    
-    func addAttributes(attributes: [String: AnyObject]){
-        guard let labelText = self.attributedText else {
-            return
-        }
-        
-        var existingAttributes = labelText.attributesAtIndex(0, effectiveRange: nil)
-        existingAttributes.merge(attributes)
-        self.attributedText = NSAttributedString(string: labelText.string, attributes: existingAttributes)
-    }
-}
-
 extension Dictionary {
     mutating func merge<K, V>(dict: [K: V]){
         for (k, v) in dict {

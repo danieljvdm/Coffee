@@ -24,6 +24,8 @@ class HomeVC: UIViewController {
 
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.estimatedRowHeight = 60.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ios-linen.jpg")!)
         self.tableView.backgroundColor = UIColor.clearColor()
 
@@ -39,6 +41,10 @@ class HomeVC: UIViewController {
             }
         }
         setupNavBar()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -106,7 +112,4 @@ extension HomeVC: UITableViewDelegate {
         return 0
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 150
-    }
 }
