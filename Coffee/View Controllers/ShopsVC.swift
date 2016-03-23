@@ -16,9 +16,11 @@ class ShopsVC: UIViewController {
     @IBOutlet weak var activityView: NVActivityIndicatorView!
     var clearTable = false
     var shops = [Shop]()
+    let animator = AnimationService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.delegate = self
         
         view.backgroundColor = UIColor(patternImage: UIImage(named: "ios-linen.jpg")!)
         collectionView.backgroundColor = UIColor.clearColor()
@@ -112,5 +114,14 @@ extension ShopsVC {
             //self.selectedCellLabel.text = "Coffee \(cities[indexPath])"
         }
         
+    }
+}
+
+extension ShopsVC: UINavigationControllerDelegate {
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == .Push {
+            return self.animator
+        }
+        return nil
     }
 }
