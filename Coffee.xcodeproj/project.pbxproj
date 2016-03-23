@@ -16,6 +16,8 @@
 		650596161C84C44E00B81AA0 /* tobysestate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 650596111C84C44E00B81AA0 /* tobysestate.jpg */; };
 		650596191C84DCE700B81AA0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650596181C84DCE700B81AA0 /* Configuration.swift */; };
 		6505961C1C84DE0200B81AA0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505961B1C84DE0200B81AA0 /* Extensions.swift */; };
+		651787481CA1E0EE0059E6E2 /* ShopsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651787471CA1E0EE0059E6E2 /* ShopsCVC.swift */; };
+		6517874A1CA1F8370059E6E2 /* ShopsDetailCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651787491CA1F8370059E6E2 /* ShopsDetailCVC.swift */; };
 		655437021C8616B400FD9AA8 /* ShopDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655437011C8616B400FD9AA8 /* ShopDetailVC.swift */; };
 		655437081C86258300FD9AA8 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 655437041C86258300FD9AA8 /* ProximaNova-Bold.otf */; };
 		655437091C86258300FD9AA8 /* ProximaNova-Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 655437051C86258300FD9AA8 /* ProximaNova-Extrabold.otf */; };
@@ -24,7 +26,9 @@
 		6554370D1C862A9700FD9AA8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6554370C1C862A9700FD9AA8 /* MapKit.framework */; };
 		6554370F1C86510200FD9AA8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6554370E1C86510200FD9AA8 /* CoreLocation.framework */; };
 		6563D08D1C91D97C001529A3 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563D08C1C91D97C001529A3 /* LocationService.swift */; };
+		65744B011CA22F9100D8B8B7 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65744B001CA22F9100D8B8B7 /* TransitionManager.swift */; };
 		657D44561C88DCA600AA7013 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657D44551C88DCA600AA7013 /* CloudKitService.swift */; };
+		6586D4941CA2153200073E8D /* ShopDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586D4931CA2153200073E8D /* ShopDetailCell.swift */; };
 		65A17CEA1CA055BC006D65A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A17CE91CA055BC006D65A3 /* Main.storyboard */; };
 		65B738B31C9B464C00C93661 /* ShopsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B738B21C9B464C00C93661 /* ShopsVC.swift */; };
 		65B738B51C9B484800C93661 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B738B41C9B484800C93661 /* ShopCell.swift */; };
@@ -72,6 +76,8 @@
 		650596111C84C44E00B81AA0 /* tobysestate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tobysestate.jpg; path = Images/tobysestate.jpg; sourceTree = "<group>"; };
 		650596181C84DCE700B81AA0 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		6505961B1C84DE0200B81AA0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		651787471CA1E0EE0059E6E2 /* ShopsCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopsCVC.swift; path = "View Controllers/ShopsCVC.swift"; sourceTree = "<group>"; };
+		651787491CA1F8370059E6E2 /* ShopsDetailCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopsDetailCVC.swift; path = "View Controllers/ShopsDetailCVC.swift"; sourceTree = "<group>"; };
 		655437011C8616B400FD9AA8 /* ShopDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopDetailVC.swift; path = "View Controllers/ShopDetailVC.swift"; sourceTree = "<group>"; };
 		655437041C86258300FD9AA8 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Bold.otf"; path = "Fonts/ProximaNova-Bold.otf"; sourceTree = "<group>"; };
 		655437051C86258300FD9AA8 /* ProximaNova-Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Extrabold.otf"; path = "Fonts/ProximaNova-Extrabold.otf"; sourceTree = "<group>"; };
@@ -80,7 +86,9 @@
 		6554370C1C862A9700FD9AA8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6554370E1C86510200FD9AA8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6563D08C1C91D97C001529A3 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		65744B001CA22F9100D8B8B7 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		657D44551C88DCA600AA7013 /* CloudKitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
+		6586D4931CA2153200073E8D /* ShopDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopDetailCell.swift; path = Views/ShopDetailCell.swift; sourceTree = "<group>"; };
 		65A17CE91CA055BC006D65A3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		65B738B21C9B464C00C93661 /* ShopsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopsVC.swift; path = "View Controllers/ShopsVC.swift"; sourceTree = "<group>"; };
 		65B738B41C9B484800C93661 /* ShopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopCell.swift; path = "View Controllers/ShopCell.swift"; sourceTree = "<group>"; };
@@ -161,6 +169,16 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		651787461CA1E0CC0059E6E2 /* ShopsNew */ = {
+			isa = PBXGroup;
+			children = (
+				651787471CA1E0EE0059E6E2 /* ShopsCVC.swift */,
+				651787491CA1F8370059E6E2 /* ShopsDetailCVC.swift */,
+				65744B001CA22F9100D8B8B7 /* TransitionManager.swift */,
+			);
+			name = ShopsNew;
+			sourceTree = "<group>";
+		};
 		655437031C86257300FD9AA8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				65B738B21C9B464C00C93661 /* ShopsVC.swift */,
-				65B738B41C9B484800C93661 /* ShopCell.swift */,
 			);
 			name = Shops;
 			sourceTree = "<group>";
@@ -271,6 +288,7 @@
 		65F081291C80DBDE00660D3F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				651787461CA1E0CC0059E6E2 /* ShopsNew */,
 				65B738B11C9B462800C93661 /* Shops */,
 				65F3133B1C823DE9007EDC43 /* HomeVC.swift */,
 				6505960B1C84C08300B81AA0 /* HomeTableViewCell.swift */,
@@ -282,6 +300,8 @@
 		65F3133D1C823E12007EDC43 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6586D4931CA2153200073E8D /* ShopDetailCell.swift */,
+				65B738B41C9B484800C93661 /* ShopCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -594,16 +614,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				65F3133C1C823DE9007EDC43 /* HomeVC.swift in Sources */,
+				6517874A1CA1F8370059E6E2 /* ShopsDetailCVC.swift in Sources */,
 				650596191C84DCE700B81AA0 /* Configuration.swift in Sources */,
 				6563D08D1C91D97C001529A3 /* LocationService.swift in Sources */,
 				65F081271C80C47F00660D3F /* Shop.swift in Sources */,
 				655437021C8616B400FD9AA8 /* ShopDetailVC.swift in Sources */,
 				657D44561C88DCA600AA7013 /* CloudKitService.swift in Sources */,
 				6505960C1C84C08300B81AA0 /* HomeTableViewCell.swift in Sources */,
+				65744B011CA22F9100D8B8B7 /* TransitionManager.swift in Sources */,
 				65B738B51C9B484800C93661 /* ShopCell.swift in Sources */,
 				65B98F581C80C28600845035 /* AppDelegate.swift in Sources */,
 				65B738B31C9B464C00C93661 /* ShopsVC.swift in Sources */,
 				6505961C1C84DE0200B81AA0 /* Extensions.swift in Sources */,
+				651787481CA1E0EE0059E6E2 /* ShopsCVC.swift in Sources */,
+				6586D4941CA2153200073E8D /* ShopDetailCell.swift in Sources */,
 				65EF841D1C84EDB7008EFE0C /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

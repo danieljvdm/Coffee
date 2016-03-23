@@ -20,6 +20,7 @@ class ShopsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         view.backgroundColor = UIColor(patternImage: UIImage(named: "ios-linen.jpg")!)
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView.dataSource = self

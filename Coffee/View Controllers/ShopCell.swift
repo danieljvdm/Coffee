@@ -9,8 +9,9 @@
 import UIKit
 
 class ShopCell: UICollectionViewCell {
-    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var shopTitle: UILabel!
+    @IBOutlet weak var backgroundImage: UIImageView!
+
     var shop = Shop(){
         didSet {
             shopTitle.text = shop.name

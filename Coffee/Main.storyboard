@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3lG-gc-x5G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uO5-Et-7VP">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -47,80 +47,138 @@
                                     <constraint firstAttribute="width" constant="40" id="QmS-dC-SVb"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tlP-Bf-LUc">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pe7-Lz-Q7i">
-                                    <size key="itemSize" width="474.5" height="179"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shopCell" id="rkz-Di-SnN" customClass="ShopCell" customModule="Coffee" customModuleProvider="target">
-                                        <rect key="frame" x="63" y="0.0" width="474.5" height="179"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="474.5" height="179"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m30-bY-nNI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="474.5" height="179"/>
-                                                </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hq-oj-TaK">
-                                                    <rect key="frame" x="81" y="65.5" width="313" height="48.5"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69787267736486491" colorSpace="calibratedRGB"/>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stumptown Coffee" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wE3-7H-eRR">
-                                                    <rect key="frame" x="88" y="70.5" width="298" height="38.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="m30-bY-nNI" secondAttribute="bottom" constant="-8" id="7s0-Rp-52U"/>
-                                            <constraint firstItem="wE3-7H-eRR" firstAttribute="centerY" secondItem="rkz-Di-SnN" secondAttribute="centerY" id="8ne-X7-TzC"/>
-                                            <constraint firstItem="2Hq-oj-TaK" firstAttribute="centerX" secondItem="rkz-Di-SnN" secondAttribute="centerX" id="H4D-nX-xT9"/>
-                                            <constraint firstItem="2Hq-oj-TaK" firstAttribute="width" secondItem="wE3-7H-eRR" secondAttribute="width" constant="15" id="KjP-qc-pdC"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="m30-bY-nNI" secondAttribute="trailing" constant="-8" id="TaG-Hu-JmZ"/>
-                                            <constraint firstItem="2Hq-oj-TaK" firstAttribute="centerY" secondItem="rkz-Di-SnN" secondAttribute="centerY" id="hGk-yo-6w1"/>
-                                            <constraint firstItem="wE3-7H-eRR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rkz-Di-SnN" secondAttribute="leadingMargin" constant="30" id="j3k-uX-uPV"/>
-                                            <constraint firstItem="2Hq-oj-TaK" firstAttribute="height" secondItem="wE3-7H-eRR" secondAttribute="height" constant="10" id="qJt-DV-6KL"/>
-                                            <constraint firstItem="m30-bY-nNI" firstAttribute="leading" secondItem="rkz-Di-SnN" secondAttribute="leadingMargin" constant="-8" id="qos-bG-5hB"/>
-                                            <constraint firstItem="wE3-7H-eRR" firstAttribute="centerX" secondItem="rkz-Di-SnN" secondAttribute="centerX" id="sqh-uJ-HAv"/>
-                                            <constraint firstItem="m30-bY-nNI" firstAttribute="top" secondItem="rkz-Di-SnN" secondAttribute="topMargin" constant="-8" id="uKg-Vu-cYl"/>
-                                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="wE3-7H-eRR" secondAttribute="trailing" constant="30" id="vqj-RY-reX"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="backgroundImage" destination="m30-bY-nNI" id="k2u-ky-79X"/>
-                                            <outlet property="shopTitle" destination="wE3-7H-eRR" id="dKO-i5-ZxF"/>
-                                            <segue destination="giU-Lw-31I" kind="show" identifier="ShowShopDetail" id="7fY-19-2Fc"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Xrj-hp-bhI" firstAttribute="centerY" secondItem="7eq-ea-XwK" secondAttribute="centerY" id="9n3-Fe-8kB"/>
-                            <constraint firstItem="tlP-Bf-LUc" firstAttribute="leading" secondItem="7eq-ea-XwK" secondAttribute="leadingMargin" constant="-20" id="Gku-Z4-0Sh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tlP-Bf-LUc" secondAttribute="trailing" constant="-20" id="ZlW-8w-4Vz"/>
-                            <constraint firstItem="7n2-CF-Yk6" firstAttribute="top" secondItem="tlP-Bf-LUc" secondAttribute="bottom" id="aHT-oT-saP"/>
-                            <constraint firstItem="tlP-Bf-LUc" firstAttribute="top" secondItem="AXM-Pu-h5J" secondAttribute="bottom" id="loP-uI-MWI"/>
                             <constraint firstItem="Xrj-hp-bhI" firstAttribute="centerX" secondItem="7eq-ea-XwK" secondAttribute="centerX" id="oRD-Da-72w"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="z6m-Fq-xcY"/>
                     <connections>
                         <outlet property="activityView" destination="Xrj-hp-bhI" id="fmr-j8-u1i"/>
-                        <outlet property="collectionView" destination="tlP-Bf-LUc" id="E9Q-no-nlV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gns-dp-EjI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="243"/>
+            <point key="canvasLocation" x="113" y="259"/>
+        </scene>
+        <!--Near Me-->
+        <scene sceneID="PNV-fo-GuT">
+            <objects>
+                <collectionViewController id="ZpW-ZG-7vU" customClass="ShopsCVC" customModule="Coffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="kZw-FY-uqO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2ZK-VS-bH1">
+                            <size key="itemSize" width="596.5" height="225"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shopCell" id="Gzt-AD-hXZ" customClass="ShopCell" customModule="Coffee" customModuleProvider="target">
+                                <rect key="frame" x="2" y="64" width="596.5" height="225"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="596.5" height="225"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stumptown.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5ew-yx-hPq" userLabel="Background Image">
+                                            <rect key="frame" x="0.0" y="0.0" width="596.5" height="225"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZn-IK-1G0">
+                                            <rect key="frame" x="141.5" y="81.5" width="313" height="63.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stumptown Coffee" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehm-GA-aGZ" userLabel="Shop Title">
+                                            <rect key="frame" x="149" y="93.5" width="298" height="38.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="5ew-yx-hPq" firstAttribute="leading" secondItem="Gzt-AD-hXZ" secondAttribute="leadingMargin" constant="-8" id="7zY-mU-O0t"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="5ew-yx-hPq" secondAttribute="bottom" constant="-8" id="80o-r4-dMl"/>
+                                    <constraint firstItem="ehm-GA-aGZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Gzt-AD-hXZ" secondAttribute="leadingMargin" constant="30" id="9rL-F4-ra1"/>
+                                    <constraint firstItem="ehm-GA-aGZ" firstAttribute="centerX" secondItem="Gzt-AD-hXZ" secondAttribute="centerX" id="Ogw-ox-psB"/>
+                                    <constraint firstItem="QZn-IK-1G0" firstAttribute="height" secondItem="ehm-GA-aGZ" secondAttribute="height" constant="25" id="R5Q-Q5-ZtL"/>
+                                    <constraint firstItem="QZn-IK-1G0" firstAttribute="centerY" secondItem="Gzt-AD-hXZ" secondAttribute="centerY" id="V3l-do-Xa8"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="5ew-yx-hPq" secondAttribute="trailing" constant="-8" id="Zjg-Om-5Ga"/>
+                                    <constraint firstItem="QZn-IK-1G0" firstAttribute="centerX" secondItem="Gzt-AD-hXZ" secondAttribute="centerX" id="gLF-1f-q0T"/>
+                                    <constraint firstItem="ehm-GA-aGZ" firstAttribute="centerY" secondItem="Gzt-AD-hXZ" secondAttribute="centerY" id="nPI-iR-zJY"/>
+                                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ehm-GA-aGZ" secondAttribute="trailing" constant="30" id="ofP-XC-LCf"/>
+                                    <constraint firstItem="QZn-IK-1G0" firstAttribute="width" secondItem="ehm-GA-aGZ" secondAttribute="width" constant="15" id="ptP-al-XdA"/>
+                                    <constraint firstItem="5ew-yx-hPq" firstAttribute="top" secondItem="Gzt-AD-hXZ" secondAttribute="topMargin" constant="-8" id="qYs-dr-GgY"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="backgroundImage" destination="5ew-yx-hPq" id="KPO-DA-qQm"/>
+                                    <outlet property="shopTitle" destination="ehm-GA-aGZ" id="wR0-Vk-GrM"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailCell" id="i73-sF-Llj" customClass="ShopDetailCell" customModule="Coffee" customModuleProvider="target">
+                                <rect key="frame" x="2" y="299" width="596.5" height="358"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="596.5" height="358"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="stumptown.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ih5-Cx-7Ht" userLabel="Background Image">
+                                            <rect key="frame" x="0.0" y="0.0" width="596.5" height="225"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="ih5-Cx-7Ht" firstAttribute="top" secondItem="i73-sF-Llj" secondAttribute="topMargin" constant="-8" id="9Ys-xn-NKS"/>
+                                    <constraint firstItem="ih5-Cx-7Ht" firstAttribute="leading" secondItem="i73-sF-Llj" secondAttribute="leadingMargin" constant="-8" id="mpS-vt-ueQ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="ih5-Cx-7Ht" secondAttribute="trailing" constant="-8" id="ykb-hX-iu7"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="ih5-Cx-7Ht" secondAttribute="bottom" constant="-8" id="yn4-Tu-dhB"/>
+                                </constraints>
+                                <size key="customSize" width="596.5" height="358"/>
+                                <connections>
+                                    <outlet property="backgroundImage" destination="ih5-Cx-7Ht" id="tH0-Yb-tLq"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="ZpW-ZG-7vU" id="yhj-Z3-Dpf"/>
+                            <outlet property="delegate" destination="ZpW-ZG-7vU" id="yxB-ue-PiD"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Near Me" id="wUu-6u-wGG"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9l7-J9-rHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11" y="1170"/>
+        </scene>
+        <!--Shops DetailCVC-->
+        <scene sceneID="4Ce-ne-azG">
+            <objects>
+                <collectionViewController storyboardIdentifier="ShopsDetailCVC" id="kGn-if-EDB" customClass="ShopsDetailCVC" customModule="Coffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="CQU-wU-Q7R">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KOi-gk-Td4">
+                            <size key="itemSize" width="600" height="600"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="kGn-if-EDB" id="avb-zd-zc2"/>
+                            <outlet property="delegate" destination="kGn-if-EDB" id="4P9-lP-1Ko"/>
+                        </connections>
+                    </collectionView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vKV-Dz-A06" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780" y="1170"/>
         </scene>
         <!--Stumptown Coffee-->
         <scene sceneID="t0B-f6-0o1">
@@ -134,19 +192,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stumptown.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pl7-nl-CfO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="stumptown.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pl7-nl-CfO">
                                 <rect key="frame" x="0.0" y="243" width="600" height="657"/>
                             </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PKP-oN-Q4M">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PKP-oN-Q4M">
                                 <rect key="frame" x="0.0" y="64" width="600" height="179"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="179" id="bIq-C5-GPT"/>
                                 </constraints>
                             </mapView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lam-nC-EIm">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lam-nC-EIm">
                                 <rect key="frame" x="0.0" y="243" width="600" height="657"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-qn-hJl" userLabel="Content View">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-qn-hJl" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="317"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YE0-eI-Qba" userLabel="Top Stack View Overlay">
@@ -197,15 +255,15 @@ Know every bean on a personal level. Adjust times and temperatures throughout th
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73990709459459458" colorSpace="calibratedRGB"/>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCI-4m-9Pb" userLabel="Bottom Stack View Overlay">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCI-4m-9Pb" userLabel="Bottom Stack View Overlay">
                                                 <rect key="frame" x="10" y="289" width="580" height="35.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69927153716216217" colorSpace="calibratedRGB"/>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mb4-C6-DjM" userLabel="Bottom Stack View">
-                                                <rect key="frame" x="20" y="297" width="560" height="20.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mb4-C6-DjM" userLabel="Bottom Stack View">
+                                                <rect key="frame" x="20" y="297" width="560" height="21"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8r-4Z-TWb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8r-4Z-TWb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -287,7 +345,25 @@ Know every bean on a personal level. Adjust times and temperatures throughout th
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="800" y="243"/>
+            <point key="canvasLocation" x="882" y="243"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="P1w-Gz-G7o">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uO5-Et-7VP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H3U-On-oZ8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZpW-ZG-7vU" kind="relationship" relationship="rootViewController" id="WWF-nb-p7z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rio-2f-4CQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-699" y="1170"/>
         </scene>
     </scenes>
     <resources>
