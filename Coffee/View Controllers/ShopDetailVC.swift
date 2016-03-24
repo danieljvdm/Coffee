@@ -48,11 +48,11 @@ class ShopDetailVC: UIViewController {
     
     func updateText() {
         addressLabel.updateAttributedText(shop.address)
-        addressLabel.addAttributes([NSFontAttributeName: UIFont(name: "ProximaNova-Regular", size: 16)!, NSForegroundColorAttributeName: UIColor.hex("007AFF")])
+        //addressLabel.addAttributes([NSFontAttributeName: UIFont(name: "ProximaNova-Regular", size: 16)!, NSForegroundColorAttributeName: UIColor.hex("007AFF")])
         shopTitleLabel.updateAttributedText(shop.name)
-        shopTitleLabel.addAttributes([NSFontAttributeName: UIFont(name: "ProximaNova-Semibold", size: 22)!])
+        //shopTitleLabel.addAttributes([NSFontAttributeName: UIFont(name: "ProximaNova-Semibold", size: 22)!])
         descriptionLabel.updateAttributedText(shop.description)
-        descriptionLabel.addAttributes([NSFontAttributeName: UIFont(name: "ProximaNova-Regular", size: 16)!])
+        descriptionLabel.addAttributes([NSFontAttributeName: UIFont.systemFontOfSize(16.0)])
     }
     
     @IBAction func addressTapped(sender: AnyObject) {

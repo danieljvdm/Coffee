@@ -5,11 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="ProximaNova-Semibold.otf">
-            <string>ProximaNova-Semibold</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="Vpq-b8-nxy">
@@ -134,80 +129,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="stumptown.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pl7-nl-CfO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stumptown.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pl7-nl-CfO">
                                 <rect key="frame" x="0.0" y="243" width="600" height="657"/>
                             </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PKP-oN-Q4M">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PKP-oN-Q4M">
                                 <rect key="frame" x="0.0" y="64" width="600" height="179"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="179" id="bIq-C5-GPT"/>
                                 </constraints>
                             </mapView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lam-nC-EIm">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lam-nC-EIm">
                                 <rect key="frame" x="0.0" y="243" width="600" height="657"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-qn-hJl" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="317"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="232.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YE0-eI-Qba" userLabel="Top Stack View Overlay">
-                                                <rect key="frame" x="10" y="12" width="580" height="272"/>
+                                                <rect key="frame" x="10" y="12" width="580" height="78"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75124049831081086" colorSpace="calibratedRGB"/>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wtt-jw-12O" userLabel="Top Stack View">
-                                                <rect key="frame" x="20" y="20" width="560" height="257"/>
+                                                <rect key="frame" x="20" y="20" width="560" height="63"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stumptown Coffee Ace Hotel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jc-Y5-Kay">
-                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="24"/>
-                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="24"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="29"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uld-ns-LEx">
-                                                        <rect key="frame" x="0.0" y="34" width="560" height="22"/>
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27 W 4th Street, New York, NY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uld-ns-LEx">
+                                                        <rect key="frame" x="0.0" y="39" width="560" height="24"/>
                                                         <gestureRecognizers/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="27 W 4th Street, New York, NY">
-                                                                <attributes>
-                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    <font key="NSFont" size="22" name="ProximaNova-Regular"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                        <color key="textColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <connections>
                                                             <outletCollection property="gestureRecognizers" destination="eoz-sL-lDV" appends="YES" id="gOo-gZ-VVL"/>
                                                         </connections>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFD-oa-pxb" userLabel="Description Label">
-                                                        <rect key="frame" x="0.0" y="66" width="560" height="191"/>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73990709459459458" colorSpace="calibratedRGB"/>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCI-4m-9Pb" userLabel="Bottom Stack View Overlay">
+                                                <rect key="frame" x="10" y="95.5" width="580" height="315.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69927153716216217" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mb4-C6-DjM" userLabel="Bottom Stack View">
+                                                <rect key="frame" x="20" y="103" width="560" height="121"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8r-4Z-TWb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="121"/>
                                                         <attributedString key="attributedText">
                                                             <fragment>
                                                                 <string key="content">Someone stands by that roaster, all day, a person who knows exactly how to bring the best out of every bean — that ideal ratio of sweetness to acidity, that balance — because he or she has been doing this for years.
 Know every bean on a personal level. Adjust times and temperatures throughout the day, knowing that 15 seconds could make the difference between letting this bean shine and overwhelming it.</string>
                                                                 <attributes>
                                                                     <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    <font key="NSFont" size="20" name="ProximaNova-Regular"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" paragraphSpacing="10" tighteningFactorForTruncation="0.0"/>
+                                                                    <font key="NSFont" size="16" name="SFUIText-Medium"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" paragraphSpacing="10" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
                                                         </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73990709459459458" colorSpace="calibratedRGB"/>
-                                            </stackView>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCI-4m-9Pb" userLabel="Bottom Stack View Overlay">
-                                                <rect key="frame" x="10" y="289" width="580" height="35.5"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69927153716216217" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mb4-C6-DjM" userLabel="Bottom Stack View">
-                                                <rect key="frame" x="20" y="297" width="560" height="21"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8r-4Z-TWb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -275,7 +257,7 @@ Know every bean on a personal level. Adjust times and temperatures throughout th
                     <connections>
                         <outlet property="addressLabel" destination="Uld-ns-LEx" id="6T7-AZ-aky"/>
                         <outlet property="backgroundImage" destination="pl7-nl-CfO" id="SJT-ex-Gk9"/>
-                        <outlet property="descriptionLabel" destination="SFD-oa-pxb" id="5df-d3-AJg"/>
+                        <outlet property="descriptionLabel" destination="G8r-4Z-TWb" id="OvE-3p-MJn"/>
                         <outlet property="mapView" destination="PKP-oN-Q4M" id="31m-vb-bpl"/>
                         <outlet property="shopTitleLabel" destination="0Jc-Y5-Kay" id="BD6-fp-2YS"/>
                     </connections>

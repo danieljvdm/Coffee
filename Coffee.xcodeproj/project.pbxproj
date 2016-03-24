@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		404ED4E3329B4C99960BE6F2 /* Pods_CoffeeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6D01ADF534610F7D7C0AB9 /* Pods_CoffeeUITests.framework */; };
-		6505960C1C84C08300B81AA0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505960B1C84C08300B81AA0 /* HomeTableViewCell.swift */; };
 		650596121C84C44E00B81AA0 /* bluebottle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6505960D1C84C44E00B81AA0 /* bluebottle.jpg */; };
 		650596131C84C44E00B81AA0 /* brooklyn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6505960E1C84C44E00B81AA0 /* brooklyn.jpg */; };
 		650596141C84C44E00B81AA0 /* intelligentsia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6505960F1C84C44E00B81AA0 /* intelligentsia.jpg */; };
@@ -37,7 +36,6 @@
 		65EF84201C851FE5008EFE0C /* ios-linen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65EF841F1C851FE5008EFE0C /* ios-linen.jpg */; };
 		65F081271C80C47F00660D3F /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F081261C80C47F00660D3F /* Shop.swift */; };
 		65F0812D1C80DE8100660D3F /* stumptown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65F0812C1C80DE8100660D3F /* stumptown.jpg */; };
-		65F3133C1C823DE9007EDC43 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F3133B1C823DE9007EDC43 /* HomeVC.swift */; };
 		65FC3CF61C8F6775004F9AB8 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FC3CF51C8F6775004F9AB8 /* CloudKit.framework */; };
 		AE9B41E987C414B144AFC481 /* Pods_CoffeeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E67F157ADF48BDC22AEF83 /* Pods_CoffeeTests.framework */; };
 		F2F892D4742D187C9E26300F /* Pods_Coffee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC094306DBD9A8DDB6575EDA /* Pods_Coffee.framework */; };
@@ -65,7 +63,6 @@
 		26E67F157ADF48BDC22AEF83 /* Pods_CoffeeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F83B0CAC541DAFBD31C7B0 /* Pods-CoffeeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeTests/Pods-CoffeeTests.release.xcconfig"; sourceTree = "<group>"; };
 		543B5189AB9C66D3049534C3 /* Pods-Coffee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coffee/Pods-Coffee.debug.xcconfig"; sourceTree = "<group>"; };
-		6505960B1C84C08300B81AA0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewCell.swift; path = "View Controllers/HomeTableViewCell.swift"; sourceTree = "<group>"; };
 		6505960D1C84C44E00B81AA0 /* bluebottle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bluebottle.jpg; path = Images/bluebottle.jpg; sourceTree = "<group>"; };
 		6505960E1C84C44E00B81AA0 /* brooklyn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = brooklyn.jpg; path = Images/brooklyn.jpg; sourceTree = "<group>"; };
 		6505960F1C84C44E00B81AA0 /* intelligentsia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = intelligentsia.jpg; path = Images/intelligentsia.jpg; sourceTree = "<group>"; };
@@ -100,7 +97,6 @@
 		65EF841F1C851FE5008EFE0C /* ios-linen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ios-linen.jpg"; sourceTree = "<group>"; };
 		65F081261C80C47F00660D3F /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		65F0812C1C80DE8100660D3F /* stumptown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = stumptown.jpg; path = Images/stumptown.jpg; sourceTree = "<group>"; };
-		65F3133B1C823DE9007EDC43 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = "View Controllers/HomeVC.swift"; sourceTree = "<group>"; };
 		65FC3CF41C8F6736004F9AB8 /* Coffee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Coffee.entitlements; path = Coffee/Coffee.entitlements; sourceTree = "<group>"; };
 		65FC3CF51C8F6775004F9AB8 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		8F6D01ADF534610F7D7C0AB9 /* Pods_CoffeeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,8 +271,6 @@
 			isa = PBXGroup;
 			children = (
 				65B738B11C9B462800C93661 /* Shops */,
-				65F3133B1C823DE9007EDC43 /* HomeVC.swift */,
-				6505960B1C84C08300B81AA0 /* HomeTableViewCell.swift */,
 				655437011C8616B400FD9AA8 /* ShopDetailVC.swift */,
 			);
 			name = "View Controllers";
@@ -596,14 +590,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65F3133C1C823DE9007EDC43 /* HomeVC.swift in Sources */,
 				650596191C84DCE700B81AA0 /* Configuration.swift in Sources */,
 				6563D08D1C91D97C001529A3 /* LocationService.swift in Sources */,
 				65F081271C80C47F00660D3F /* Shop.swift in Sources */,
 				655437021C8616B400FD9AA8 /* ShopDetailVC.swift in Sources */,
 				657D44561C88DCA600AA7013 /* CloudKitService.swift in Sources */,
 				65296D021CA2F2F0002ABAC1 /* AnimationService.swift in Sources */,
-				6505960C1C84C08300B81AA0 /* HomeTableViewCell.swift in Sources */,
 				65B738B51C9B484800C93661 /* ShopCell.swift in Sources */,
 				65B98F581C80C28600845035 /* AppDelegate.swift in Sources */,
 				65B738B31C9B464C00C93661 /* ShopsVC.swift in Sources */,

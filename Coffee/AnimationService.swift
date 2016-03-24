@@ -25,7 +25,6 @@ class AnimationService: NSObject, UIViewControllerAnimatedTransitioning {
         tempImage.contentMode = .ScaleAspectFill
         tempImage.clipsToBounds = true
         
-        let imageCopy = UIImageView(frame: toView.backgroundImage.frame)
         //imageCopy.center = fromView.collectionView.convertRect(cell.frame, toView: fromView.view)
         
         toView.view.alpha = 1

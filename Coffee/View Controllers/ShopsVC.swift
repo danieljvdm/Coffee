@@ -20,7 +20,6 @@ class ShopsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.delegate = self
         
         view.backgroundColor = UIColor(patternImage: UIImage(named: "ios-linen.jpg")!)
         collectionView.backgroundColor = UIColor.clearColor()
@@ -41,6 +40,14 @@ class ShopsVC: UIViewController {
         
         setupNavBar()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        navigationController?.delegate = self
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        navigationController?.delegate = nil
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -111,7 +118,6 @@ extension ShopsVC {
                 self.collectionView.reloadSections(NSIndexSet(index: 0))
                 self.activityView.stopAnimation()
             })
-            //self.selectedCellLabel.text = "Coffee \(cities[indexPath])"
         }
         
     }
@@ -122,6 +128,7 @@ extension ShopsVC: UINavigationControllerDelegate {
         if operation == .Push {
             return self.animator
         }
+        
         return nil
     }
 }
