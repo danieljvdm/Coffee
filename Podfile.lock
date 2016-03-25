@@ -3,6 +3,7 @@ PODS:
   - BTNavigationDropdownMenu (0.2.1)
   - Hue (1.0.1)
   - NVActivityIndicatorView (2.3)
+  - RxSwift (2.3.1)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
@@ -10,6 +11,7 @@ DEPENDENCIES:
   - BTNavigationDropdownMenu
   - Hue
   - NVActivityIndicatorView
+  - RxSwift
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -17,6 +19,9 @@ SPEC CHECKSUMS:
   BTNavigationDropdownMenu: 9cf4060162c96510ee27c388412e28678320cdc0
   Hue: 0a53589bb58317e74068863b701ef1e5eee89ac1
   NVActivityIndicatorView: c7ef25ef527ab5e51b00322cb1ddd58681bcf2a3
+  RxSwift: 829b2843e9eddc77a02cb3f5117f0d55f8f646f1
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 5faf94aeb488997d1e860c062d9bd49c47347fcd
+
+COCOAPODS: 1.0.0.beta.3

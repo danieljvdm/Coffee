@@ -115,7 +115,7 @@
                     <navigationItem key="navigationItem" id="z6m-Fq-xcY"/>
                     <connections>
                         <outlet property="activityView" destination="Xrj-hp-bhI" id="fmr-j8-u1i"/>
-                        <outlet property="collectionView" destination="tlP-Bf-LUc" id="E9Q-no-nlV"/>
+                        <outlet property="collectionView" destination="tlP-Bf-LUc" id="AhM-eF-8SK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gns-dp-EjI" userLabel="First Responder" sceneMemberID="firstResponder"/>

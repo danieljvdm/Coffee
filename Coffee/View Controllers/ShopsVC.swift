@@ -9,6 +9,7 @@
 import UIKit
 import NVActivityIndicatorView
 import BTNavigationDropdownMenu
+import RxSwift
 
 class ShopsVC: UIViewController {
 
@@ -16,16 +17,15 @@ class ShopsVC: UIViewController {
     @IBOutlet weak var activityView: NVActivityIndicatorView!
     var clearTable = false
     var shops = [Shop]()
+    lazy var vm: ShopsViewModel {
+        
+    }
     let animator = AnimationService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
         
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "ios-linen.jpg")!)
-        collectionView.contentInset = UIEdgeInsetsZero
-        
-        activityView.type = .BallBeat
-        activityView.startAnimation()
         Shop.getNearestShops(){ (shops: [Shop]) in
             
             self.shops = shops.sort(Shop.sortByLoc)
@@ -37,6 +37,14 @@ class ShopsVC: UIViewController {
         
         setupNavBar()
         // Do any additional setup after loading the view.
+    }
+    
+    func configure() {
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "ios-linen.jpg")!)
+        collectionView.contentInset = UIEdgeInsetsZero
+        
+        activityView.type = .BallBeat
+        activityView.startAnimation()
     }
     
     override func viewDidAppear(animated: Bool) {

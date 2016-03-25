@@ -9,6 +9,7 @@ pod 'Hue'
 pod 'NVActivityIndicatorView'
 pod 'Alamofire'
 pod 'SwiftyJSON'
+pod 'RxSwift'
 end
 
 target 'CoffeeTests' do
