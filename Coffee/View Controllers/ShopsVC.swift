@@ -22,9 +22,6 @@ class ShopsVC: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(patternImage: UIImage(named: "ios-linen.jpg")!)
-        collectionView.backgroundColor = UIColor.clearColor()
-        collectionView.dataSource = self
-        collectionView.delegate = self
         collectionView.contentInset = UIEdgeInsetsZero
         
         activityView.type = .BallBeat

@@ -183,8 +183,8 @@
 		657D44541C88DC9600AA7013 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				657D44551C88DCA600AA7013 /* CloudKitService.swift */,
 				6563D08C1C91D97C001529A3 /* LocationService.swift */,
+				657D44551C88DCA600AA7013 /* CloudKitService.swift */,
 				65296D011CA2F2F0002ABAC1 /* AnimationService.swift */,
 			);
 			name = Services;
