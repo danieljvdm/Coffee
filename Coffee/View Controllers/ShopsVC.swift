@@ -28,7 +28,7 @@ class ShopsVC: UIViewController {
         vm.shops?
         .observeOn(MainScheduler.instance)
         .bindTo(collectionView.rx_itemsWithCellIdentifier("shopCell", cellType: ShopCell.self)){ (row, element, cell) in
-            cell.shop = element
+            cell.vm = ShopCellViewModel(shop: element)
         }
         .addDisposableTo(disposeBag)
         configure()

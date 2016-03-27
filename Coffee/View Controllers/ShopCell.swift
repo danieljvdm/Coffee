@@ -16,41 +16,12 @@ class ShopCell: UICollectionViewCell {
     @IBOutlet weak var distanceLabel: UILabel!
     
     let disposeBag = DisposeBag()
-    
-    var shop = Shop(){
+    var vm: ShopCellViewModel? {
         didSet {
-            shopTitle.text = shop.name
-            backgroundImage.image = shop.image
-            
-            LocationService.sharedInstance.locations?.subscribeNext({ location in
-                self.distanceLabel.text = self.prettyDistance(self.shop.location.distanceFromLocation(location))
-            }).addDisposableTo(disposeBag)
-            
-//            if let lastKnownLoc = LocationService.sharedInstance.lastKnownLoc {
-//                let distance = shop.location.distanceFromLocation(lastKnownLoc)
-//                distanceLabel.text = prettyDistance(distance)
-//            } else {
-//                distanceLabel.text = ""
-//            }
+            shopTitle.text = vm!.shop?.name
+            backgroundImage.image = vm!.shop?.image
+            vm!.distanceFromUser?.bindTo(distanceLabel.rx_text)
+                .addDisposableTo(disposeBag)
         }
-    }
-    
-    func prettyDistance(distance: Double) -> String {
-        if distance >= 1000 {
-            let distanceKM =  distance/1000.0
-            let roundedDistance = round(distanceKM*100)/100
-            return " \(roundedDistance)km "
-        } else {
-            let distanceM = Int(round(distance))
-            return " \(distanceM)m "
-        }
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        
-        //shopTitle.preferredMaxLayoutWidth = self.bounds.width - 40
-
     }
 }
