@@ -8,17 +8,23 @@
 
 import Foundation
 import CoreLocation
+import RxSwift
+import RxCocoa
 
 class LocationService: NSObject {
     static let sharedInstance = LocationService()
     let locationManager = CLLocationManager()
     var authorized = CLLocationManager.authorizationStatus()
-    var lastKnownLoc: CLLocation?
+    var locations: Observable<CLLocation>?
     
     override init() {
         super.init()
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.delegate = self
+
+        
+        locations = locationManager.rx_didUpdateLocations
+            .map{return $0.last!}
 
         if authorized == .AuthorizedWhenInUse || authorized == .AuthorizedAlways {
             locationManager.startUpdatingLocation()
@@ -33,9 +39,9 @@ extension LocationService: CLLocationManagerDelegate {
         authorized = status
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let lastLoc = locations.last {
-            lastKnownLoc = lastLoc
-        }
-    }
+//    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        if let lastLoc = locations.last {
+//            lastKnownLoc = lastLoc
+//        }
+//    }
 }

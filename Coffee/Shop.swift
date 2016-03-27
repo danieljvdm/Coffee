@@ -9,6 +9,7 @@
 import Foundation
 import CloudKit
 import UIKit
+import RxSwift
     
 class Shop {
     var name = ""
@@ -18,6 +19,8 @@ class Shop {
     var neighborhood = ""
     var location = CLLocation()
     var description = ""
+    
+    static let disposeBag = DisposeBag()
     
 //    convenience init(name: String, backgroundImage: String, address: String, coordinates: (latitude: Double, longitude: Double)){
 //        self.init()
@@ -52,10 +55,15 @@ class Shop {
         }
     }
     
-    static func sortByLoc(shop1: Shop, shop2: Shop) -> Bool{
-        if let lastKnownLoc = LocationService.sharedInstance.lastKnownLoc {
-            return shop2.location.distanceFromLocation(lastKnownLoc) > shop1.location.distanceFromLocation(lastKnownLoc)
-        }
+    static func sortByLoc(shop1: Shop, shop2: Shop) -> Bool {
+        
+        LocationService.sharedInstance.locations?.subscribeNext { location in
+            return shop2.location.distanceFromLocation(location) > shop1.location.distanceFromLocation(location)
+        }.addDisposableTo(disposeBag)
+        
+//        if let lastKnownLoc = LocationService.sharedInstance.lastKnownLoc {
+//            return shop2.location.distanceFromLocation(lastKnownLoc) > shop1.location.distanceFromLocation(lastKnownLoc)
+//        }
         
         return false
     }

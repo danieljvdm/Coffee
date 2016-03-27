@@ -23,7 +23,7 @@ class CloudKitService {
                 for shop in results {
                     shops.append(Shop(record: shop))
                 }
-                print(LocationService.sharedInstance.lastKnownLoc)
+               // print(LocationService.sharedInstance.lastKnownLoc)
                 completion(result: shops)
             }
         }
