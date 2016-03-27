@@ -10,6 +10,7 @@ pod 'NVActivityIndicatorView'
 pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'RxSwift'
+pod 'RxCocoa'
 end
 
 target 'CoffeeTests' do

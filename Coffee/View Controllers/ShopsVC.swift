@@ -10,33 +10,29 @@ import UIKit
 import NVActivityIndicatorView
 import BTNavigationDropdownMenu
 import RxSwift
+import RxCocoa
 
 class ShopsVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityView: NVActivityIndicatorView!
     var clearTable = false
-    var shops = [Shop]()
-    lazy var vm: ShopsViewModel {
-        
-    }
+    let vm = ShopsViewModel()
+    let disposeBag = DisposeBag()
+
     let animator = AnimationService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        vm.shops?
+        .observeOn(MainScheduler.instance)
+        .bindTo(collectionView.rx_itemsWithCellIdentifier("shopCell", cellType: ShopCell.self)){ (row, element, cell) in
+            cell.shop = element
+        }
+        .addDisposableTo(disposeBag)
         configure()
         
-        Shop.getNearestShops(){ (shops: [Shop]) in
-            
-            self.shops = shops.sort(Shop.sortByLoc)
-            dispatch_async(dispatch_get_main_queue()){
-                self.activityView.stopAnimation()
-                self.collectionView.reloadData()
-            }
-        }
-        
-        setupNavBar()
-        // Do any additional setup after loading the view.
     }
     
     func configure() {
@@ -45,6 +41,9 @@ class ShopsVC: UIViewController {
         
         activityView.type = .BallBeat
         activityView.startAnimation()
+        
+        setupNavBar()
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -58,8 +57,8 @@ class ShopsVC: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowShopDetail" {
             if let destination = segue.destinationViewController as? ShopDetailVC {
-                if let index = collectionView.indexPathsForSelectedItems()?.first?.row {
-                    destination.shop = shops[index]
+                if let index = collectionView.indexPathsForSelectedItems()?.first {
+                    destination.shop = try! collectionView.rx_modelAtIndexPath(index)
                 }
             }
         }
@@ -67,18 +66,6 @@ class ShopsVC: UIViewController {
 
 }
 
-extension ShopsVC: UICollectionViewDataSource {
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return clearTable ? 0 : shops.count
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("shopCell", forIndexPath: indexPath) as! ShopCell
-        cell.shop = shops[indexPath.row]
-        return cell
-    }
-}
 
 extension ShopsVC: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {

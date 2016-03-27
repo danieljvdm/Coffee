@@ -8,6 +8,8 @@
 
 import Foundation
 import CloudKit
+import RxSwift
+import RxCocoa
 
 class CloudKitService {
     static let container = CKContainer.defaultContainer()
@@ -26,6 +28,13 @@ class CloudKitService {
             }
         }
     }
+    
+//    static func getAllShops() -> Observable<Shop> {
+//        let query = CKQuery(recordType: "Shop", predicate: NSPredicate(value: true))
+//        publicData.performQuery(query, inZoneWithID: nil) { results, error in
+//            
+//        }
+//    }
     
     static func getNearestShops(location: CLLocation = CLLocation(latitude: 40.7459766, longitude: -74.00466310000002), completion: (result: [Shop]) -> Void){
         var shops = [Shop]()

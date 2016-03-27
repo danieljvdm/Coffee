@@ -25,7 +25,7 @@
         <!--ShopsVC-->
         <scene sceneID="a6U-4f-tX2">
             <objects>
-                <viewController id="Fn1-Ij-Bkn" customClass="ShopsVC" customModule="Coffee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Fn1-Ij-Bkn" customClass="ShopsVC" customModule="Coffee" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AXM-Pu-h5J"/>
                         <viewControllerLayoutGuide type="bottom" id="7n2-CF-Yk6"/>
@@ -34,14 +34,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xrj-hp-bhI" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                <rect key="frame" x="280" y="280" width="40" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Pld-Wp-Qtb"/>
-                                    <constraint firstAttribute="width" constant="40" id="QmS-dC-SVb"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tlP-Bf-LUc">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -63,12 +55,18 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="474.5" height="179"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hq-oj-TaK">
-                                                    <rect key="frame" x="81" y="65.5" width="313" height="48.5"/>
+                                                    <rect key="frame" x="81" y="65" width="313" height="48.5"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69787267736486491" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stumptown Coffee" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wE3-7H-eRR">
-                                                    <rect key="frame" x="88" y="70.5" width="298" height="38.5"/>
+                                                    <rect key="frame" x="88" y="70" width="298" height="38.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIu-W9-Kec">
+                                                    <rect key="frame" x="417" y="150" width="49" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -80,9 +78,11 @@
                                             <constraint firstItem="wE3-7H-eRR" firstAttribute="centerY" secondItem="rkz-Di-SnN" secondAttribute="centerY" id="8ne-X7-TzC"/>
                                             <constraint firstItem="2Hq-oj-TaK" firstAttribute="centerX" secondItem="rkz-Di-SnN" secondAttribute="centerX" id="H4D-nX-xT9"/>
                                             <constraint firstItem="2Hq-oj-TaK" firstAttribute="width" secondItem="wE3-7H-eRR" secondAttribute="width" constant="15" id="KjP-qc-pdC"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="uIu-W9-Kec" secondAttribute="bottom" id="NBA-Sh-DF7"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="m30-bY-nNI" secondAttribute="trailing" constant="-8" id="TaG-Hu-JmZ"/>
                                             <constraint firstItem="2Hq-oj-TaK" firstAttribute="centerY" secondItem="rkz-Di-SnN" secondAttribute="centerY" id="hGk-yo-6w1"/>
                                             <constraint firstItem="wE3-7H-eRR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rkz-Di-SnN" secondAttribute="leadingMargin" constant="30" id="j3k-uX-uPV"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="uIu-W9-Kec" secondAttribute="trailing" constant="0.5" id="kfZ-VD-ECh"/>
                                             <constraint firstItem="2Hq-oj-TaK" firstAttribute="height" secondItem="wE3-7H-eRR" secondAttribute="height" constant="10" id="qJt-DV-6KL"/>
                                             <constraint firstItem="m30-bY-nNI" firstAttribute="leading" secondItem="rkz-Di-SnN" secondAttribute="leadingMargin" constant="-8" id="qos-bG-5hB"/>
                                             <constraint firstItem="wE3-7H-eRR" firstAttribute="centerX" secondItem="rkz-Di-SnN" secondAttribute="centerX" id="sqh-uJ-HAv"/>
@@ -91,16 +91,24 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="backgroundImage" destination="m30-bY-nNI" id="k2u-ky-79X"/>
+                                            <outlet property="distanceLabel" destination="uIu-W9-Kec" id="m8W-or-0ZD"/>
                                             <outlet property="shopTitle" destination="wE3-7H-eRR" id="dKO-i5-ZxF"/>
                                             <segue destination="giU-Lw-31I" kind="show" identifier="ShowShopDetail" id="7fY-19-2Fc"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="Fn1-Ij-Bkn" id="UjA-rG-dAn"/>
                                     <outlet property="delegate" destination="Fn1-Ij-Bkn" id="OIN-lW-cSA"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xrj-hp-bhI" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="280" y="280" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Pld-Wp-Qtb"/>
+                                    <constraint firstAttribute="width" constant="40" id="QmS-dC-SVb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>

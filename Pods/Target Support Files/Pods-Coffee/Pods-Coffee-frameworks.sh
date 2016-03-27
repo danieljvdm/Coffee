@@ -88,6 +88,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Coffee/BTNavigationDropdownMenu.framework"
   install_framework "Pods-Coffee/Hue.framework"
   install_framework "Pods-Coffee/NVActivityIndicatorView.framework"
+  install_framework "Pods-Coffee/RxCocoa.framework"
   install_framework "Pods-Coffee/RxSwift.framework"
   install_framework "Pods-Coffee/SwiftyJSON.framework"
 fi
@@ -96,6 +97,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Coffee/BTNavigationDropdownMenu.framework"
   install_framework "Pods-Coffee/Hue.framework"
   install_framework "Pods-Coffee/NVActivityIndicatorView.framework"
+  install_framework "Pods-Coffee/RxCocoa.framework"
   install_framework "Pods-Coffee/RxSwift.framework"
   install_framework "Pods-Coffee/SwiftyJSON.framework"
 fi
