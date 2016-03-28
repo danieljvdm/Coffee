@@ -72,9 +72,13 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P1k-PI-SI8">
+                                                    <rect key="frame" x="421" y="150.5" width="46" height="21.5"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIu-W9-Kec">
-                                                    <rect key="frame" x="417" y="150" width="49" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <rect key="frame" x="422" y="151.5" width="44" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -84,18 +88,22 @@
                                         <constraints>
                                             <constraint firstAttribute="bottomMargin" secondItem="m30-bY-nNI" secondAttribute="bottom" constant="-8" id="7s0-Rp-52U"/>
                                             <constraint firstItem="wE3-7H-eRR" firstAttribute="centerY" secondItem="rkz-Di-SnN" secondAttribute="centerY" id="8ne-X7-TzC"/>
+                                            <constraint firstItem="P1k-PI-SI8" firstAttribute="width" secondItem="uIu-W9-Kec" secondAttribute="width" constant="2" id="FPv-Bm-YPZ"/>
                                             <constraint firstItem="2Hq-oj-TaK" firstAttribute="centerX" secondItem="rkz-Di-SnN" secondAttribute="centerX" id="H4D-nX-xT9"/>
                                             <constraint firstItem="2Hq-oj-TaK" firstAttribute="width" secondItem="wE3-7H-eRR" secondAttribute="width" constant="15" id="KjP-qc-pdC"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="uIu-W9-Kec" secondAttribute="bottom" id="NBA-Sh-DF7"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="m30-bY-nNI" secondAttribute="trailing" constant="-8" id="TaG-Hu-JmZ"/>
+                                            <constraint firstItem="P1k-PI-SI8" firstAttribute="height" secondItem="uIu-W9-Kec" secondAttribute="height" constant="2" id="fAO-ge-FTF"/>
                                             <constraint firstItem="2Hq-oj-TaK" firstAttribute="centerY" secondItem="rkz-Di-SnN" secondAttribute="centerY" id="hGk-yo-6w1"/>
                                             <constraint firstItem="wE3-7H-eRR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rkz-Di-SnN" secondAttribute="leadingMargin" constant="30" id="j3k-uX-uPV"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="uIu-W9-Kec" secondAttribute="trailing" constant="0.5" id="kfZ-VD-ECh"/>
+                                            <constraint firstItem="P1k-PI-SI8" firstAttribute="centerX" secondItem="uIu-W9-Kec" secondAttribute="centerX" id="pQq-Pz-Fjg"/>
                                             <constraint firstItem="2Hq-oj-TaK" firstAttribute="height" secondItem="wE3-7H-eRR" secondAttribute="height" constant="10" id="qJt-DV-6KL"/>
                                             <constraint firstItem="m30-bY-nNI" firstAttribute="leading" secondItem="rkz-Di-SnN" secondAttribute="leadingMargin" constant="-8" id="qos-bG-5hB"/>
                                             <constraint firstItem="wE3-7H-eRR" firstAttribute="centerX" secondItem="rkz-Di-SnN" secondAttribute="centerX" id="sqh-uJ-HAv"/>
                                             <constraint firstItem="m30-bY-nNI" firstAttribute="top" secondItem="rkz-Di-SnN" secondAttribute="topMargin" constant="-8" id="uKg-Vu-cYl"/>
                                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="wE3-7H-eRR" secondAttribute="trailing" constant="30" id="vqj-RY-reX"/>
+                                            <constraint firstItem="P1k-PI-SI8" firstAttribute="centerY" secondItem="uIu-W9-Kec" secondAttribute="centerY" id="yKc-Qy-nqY"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="backgroundImage" destination="m30-bY-nNI" id="k2u-ky-79X"/>
@@ -153,7 +161,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lam-nC-EIm">
                                 <rect key="frame" x="0.0" y="243" width="600" height="657"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-qn-hJl" userLabel="Content View">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-qn-hJl" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="403.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YE0-eI-Qba" userLabel="Top Stack View Overlay">

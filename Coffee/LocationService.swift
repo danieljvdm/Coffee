@@ -21,16 +21,15 @@ class LocationService: NSObject {
         super.init()
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.delegate = self
-
         
-        locations = locationManager.rx_didUpdateLocations
-            .map{return $0.last!}
-
         if authorized == .AuthorizedWhenInUse || authorized == .AuthorizedAlways {
             locationManager.startUpdatingLocation()
         } else {
             locationManager.requestAlwaysAuthorization()
         }
+        
+        locations = locationManager.rx_didUpdateLocations
+            .map{return $0.last!}
     }
 }
 
