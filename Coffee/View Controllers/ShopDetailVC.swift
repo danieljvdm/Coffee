@@ -15,31 +15,31 @@ import RxCocoa
 class ShopDetailVC: UIViewController {
     
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
+    
     @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var shopTitleLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var mapView: MKMapView!
+//    @IBOutlet weak var backgroundImage: UIImageView!
+//    @IBOutlet weak var shopTitleLabel: UILabel!
+//    @IBOutlet weak var addressLabel: UILabel!
+//    @IBOutlet weak var mapView: MKMapView!
     let regionRadius: CLLocationDistance = 300
     @IBOutlet weak var descriptionLabel: UILabel!
     let locationManager = CLLocationManager()
     let disposeBag = DisposeBag()
 
-    var viewModel: ShopDetailViewModel! {
-        didSet {
-            self.bindToViewModel()
-            self.configureView()
-        }
-    }
+    var viewModel: ShopDetailViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mapView.delegate = self
+        self.bindToViewModel()
+        self.configureView()
     }
     
     func bindToViewModel() {
         self.navigationItem.title = viewModel.name
-        self.backgroundImage.image = viewModel.image
+        //self.backgroundImage.image = viewModel.image
         self.tapGestureRecognizer.rx_event
             .subscribeNext { recognizer in
                 self.viewModel.openMapsApp()

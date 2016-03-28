@@ -50,7 +50,6 @@ class ShopsVC: UIViewController {
         
         collectionView.rx_itemSelected.subscribeNext { indexpath in
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ShopDetail") as! ShopDetailVC
-            vc.shop = try! self.collectionView.rx_modelAtIndexPath(indexpath)
             vc.viewModel = ShopDetailViewModel(shop: try! self.collectionView.rx_modelAtIndexPath(indexpath))
             self.navigationController?.pushViewController(vc, animated: true)
             }
