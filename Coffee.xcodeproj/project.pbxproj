@@ -15,7 +15,6 @@
 		650596151C84C44E00B81AA0 /* laughingman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 650596101C84C44E00B81AA0 /* laughingman.jpg */; };
 		650596161C84C44E00B81AA0 /* tobysestate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 650596111C84C44E00B81AA0 /* tobysestate.jpg */; };
 		650596191C84DCE700B81AA0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650596181C84DCE700B81AA0 /* Configuration.swift */; };
-		6505961C1C84DE0200B81AA0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505961B1C84DE0200B81AA0 /* Extensions.swift */; };
 		65296D021CA2F2F0002ABAC1 /* AnimationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65296D011CA2F2F0002ABAC1 /* AnimationService.swift */; };
 		655437021C8616B400FD9AA8 /* ShopDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655437011C8616B400FD9AA8 /* ShopDetailVC.swift */; };
 		655437081C86258300FD9AA8 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 655437041C86258300FD9AA8 /* ProximaNova-Bold.otf */; };
@@ -35,6 +34,9 @@
 		65B98F6D1C80C28700845035 /* CoffeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B98F6C1C80C28700845035 /* CoffeeTests.swift */; };
 		65B98F781C80C28700845035 /* CoffeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B98F771C80C28700845035 /* CoffeeUITests.swift */; };
 		65C0FB911CA99F5E003110E5 /* ShopDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FB901CA99F5E003110E5 /* ShopDetailViewModel.swift */; };
+		65C0FB931CA9AF71003110E5 /* UIColor+CoffeeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FB921CA9AF71003110E5 /* UIColor+CoffeeColors.swift */; };
+		65C0FB951CA9AFD9003110E5 /* UILabel+BetterAttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FB941CA9AFD9003110E5 /* UILabel+BetterAttributedText.swift */; };
+		65C0FB971CA9AFFC003110E5 /* UIDictionary+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FB961CA9AFFC003110E5 /* UIDictionary+Merge.swift */; };
 		65D0E92A1CA5A84100D3F902 /* ShopsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0E9291CA5A84100D3F902 /* ShopsViewModel.swift */; };
 		65EF841D1C84EDB7008EFE0C /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EF841C1C84EDB7008EFE0C /* City.swift */; };
 		65EF84201C851FE5008EFE0C /* ios-linen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65EF841F1C851FE5008EFE0C /* ios-linen.jpg */; };
@@ -70,7 +72,6 @@
 		650596101C84C44E00B81AA0 /* laughingman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = laughingman.jpg; path = Images/laughingman.jpg; sourceTree = "<group>"; };
 		650596111C84C44E00B81AA0 /* tobysestate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tobysestate.jpg; path = Images/tobysestate.jpg; sourceTree = "<group>"; };
 		650596181C84DCE700B81AA0 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		6505961B1C84DE0200B81AA0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		65296D011CA2F2F0002ABAC1 /* AnimationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationService.swift; sourceTree = "<group>"; };
 		655437011C8616B400FD9AA8 /* ShopDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopDetailVC.swift; path = "View Controllers/ShopDetailVC.swift"; sourceTree = "<group>"; };
 		655437041C86258300FD9AA8 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Bold.otf"; path = "Fonts/ProximaNova-Bold.otf"; sourceTree = "<group>"; };
@@ -96,6 +97,9 @@
 		65B98F771C80C28700845035 /* CoffeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeUITests.swift; sourceTree = "<group>"; };
 		65B98F791C80C28700845035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65C0FB901CA99F5E003110E5 /* ShopDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewModel.swift; sourceTree = "<group>"; };
+		65C0FB921CA9AF71003110E5 /* UIColor+CoffeeColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+CoffeeColors.swift"; path = "Extensions/UIColor+CoffeeColors.swift"; sourceTree = "<group>"; };
+		65C0FB941CA9AFD9003110E5 /* UILabel+BetterAttributedText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UILabel+BetterAttributedText.swift"; path = "Extensions/UILabel+BetterAttributedText.swift"; sourceTree = "<group>"; };
+		65C0FB961CA9AFFC003110E5 /* UIDictionary+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIDictionary+Merge.swift"; path = "Extensions/UIDictionary+Merge.swift"; sourceTree = "<group>"; };
 		65D0E9291CA5A84100D3F902 /* ShopsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopsViewModel.swift; path = "View Models/ShopsViewModel.swift"; sourceTree = "<group>"; };
 		65EF841C1C84EDB7008EFE0C /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		65EF841F1C851FE5008EFE0C /* ios-linen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ios-linen.jpg"; sourceTree = "<group>"; };
@@ -160,7 +164,9 @@
 		6505961A1C84DDC400B81AA0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				6505961B1C84DE0200B81AA0 /* Extensions.swift */,
+				65C0FB921CA9AF71003110E5 /* UIColor+CoffeeColors.swift */,
+				65C0FB941CA9AFD9003110E5 /* UILabel+BetterAttributedText.swift */,
+				65C0FB961CA9AFFC003110E5 /* UIDictionary+Merge.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -599,6 +605,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C0FB931CA9AF71003110E5 /* UIColor+CoffeeColors.swift in Sources */,
 				650596191C84DCE700B81AA0 /* Configuration.swift in Sources */,
 				6563D08D1C91D97C001529A3 /* LocationService.swift in Sources */,
 				65F081271C80C47F00660D3F /* Shop.swift in Sources */,
@@ -607,11 +614,12 @@
 				657D44561C88DCA600AA7013 /* CloudKitService.swift in Sources */,
 				65296D021CA2F2F0002ABAC1 /* AnimationService.swift in Sources */,
 				65B738B51C9B484800C93661 /* ShopCell.swift in Sources */,
+				65C0FB971CA9AFFC003110E5 /* UIDictionary+Merge.swift in Sources */,
 				65B98F581C80C28600845035 /* AppDelegate.swift in Sources */,
 				65D0E92A1CA5A84100D3F902 /* ShopsViewModel.swift in Sources */,
 				65B738B31C9B464C00C93661 /* ShopsVC.swift in Sources */,
 				65789F671CA7A15B00B5C79D /* ShopCellViewModel.swift in Sources */,
-				6505961C1C84DE0200B81AA0 /* Extensions.swift in Sources */,
+				65C0FB951CA9AFD9003110E5 /* UILabel+BetterAttributedText.swift in Sources */,
 				65EF841D1C84EDB7008EFE0C /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
