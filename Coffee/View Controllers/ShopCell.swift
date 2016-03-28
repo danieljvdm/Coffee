@@ -24,8 +24,8 @@ class ShopCell: UICollectionViewCell {
     }
     
     func bindToViewModel() {
-        shopTitle.text = viewModel.shop?.name
-        backgroundImage.image = viewModel.shop?.image
+        shopTitle.text = viewModel.shop.name
+        backgroundImage.image = viewModel.shop.image
         //This will update the distance from label in real time
         viewModel.distanceFromUser?.bindTo(distanceLabel.rx_text)
             .addDisposableTo(disposeBag)

@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class ShopCellViewModel {
-    var shop: Shop?
+    var shop: Shop
     var distanceFromUser: Observable<String>?
     let disposeBag = DisposeBag()
     
@@ -20,7 +20,7 @@ class ShopCellViewModel {
         
         distanceFromUser = (LocationService.sharedInstance.locations?
             .map ({
-                return self.prettyDistance((self.shop?.location.distanceFromLocation($0))!)
+                return self.prettyDistance(self.shop.location.distanceFromLocation($0))
             })
         )
     }

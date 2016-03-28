@@ -70,3 +70,11 @@ extension UILabel {
         self.attributedText = NSAttributedString(string: labelText.string, attributes: existingAttributes)
     }
 }
+
+extension Dictionary {
+    mutating func merge<K, V>(dict: [K: V]){
+        for (k, v) in dict {
+            self.updateValue(v as! Value, forKey: k as! Key)
+        }
+    }
+}

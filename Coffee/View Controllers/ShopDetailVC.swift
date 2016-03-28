@@ -9,9 +9,12 @@
 import UIKit
 import MapKit
 import CoreLocation
+import RxSwift
+import RxCocoa
 
 class ShopDetailVC: UIViewController {
     
+    @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var shopTitleLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -19,74 +22,53 @@ class ShopDetailVC: UIViewController {
     let regionRadius: CLLocationDistance = 300
     @IBOutlet weak var descriptionLabel: UILabel!
     let locationManager = CLLocationManager()
+    let disposeBag = DisposeBag()
 
-
-    var shop = Shop(){
+    var viewModel: ShopDetailViewModel! {
         didSet {
-            self.navigationItem.title = shop.name
+            self.bindToViewModel()
+            self.configureView()
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundImage.image = shop.image
-        updateText()
-        
         mapView.delegate = self
-        let location = shop.location
-        centerMapOnLocation(location)
-        let point = MKPointAnnotation()
-        point.coordinate = location.coordinate
-        point.title = shop.name
-        point.subtitle = "310 W 29th St"
-        mapView.addAnnotation(point)
-        
-        // Do any additional setup after loading the view.
+    }
+    
+    func bindToViewModel() {
+        self.navigationItem.title = viewModel.name
+        self.backgroundImage.image = viewModel.image
+        self.tapGestureRecognizer.rx_event
+            .subscribeNext { recognizer in
+                self.viewModel.openMapsApp()
+            }
+            .addDisposableTo(disposeBag)
+
+    }
+    
+    func configureView() {
+        updateText()
+        mapView.addAnnotation(viewModel.getMapMarker())
+        mapView.setRegion(viewModel.getMapRegion(), animated: true)
     }
     
     
     func updateText() {
-        addressLabel.updateAttributedText(shop.address)
-        //addressLabel.addAttributes([NSFontAttributeName: UIFont(name: "ProximaNova-Regular", size: 16)!, NSForegroundColorAttributeName: UIColor.hex("007AFF")])
-        shopTitleLabel.updateAttributedText(shop.name)
-        //shopTitleLabel.addAttributes([NSFontAttributeName: UIFont(name: "ProximaNova-Semibold", size: 22)!])
-        descriptionLabel.updateAttributedText(shop.description)
+        addressLabel.updateAttributedText(viewModel.address)
+        shopTitleLabel.updateAttributedText(viewModel.name)
+        descriptionLabel.updateAttributedText(viewModel.description)
         descriptionLabel.addAttributes([NSFontAttributeName: UIFont.systemFontOfSize(16.0)])
     }
     
-    @IBAction func addressTapped(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?ll=\(shop.location.coordinate.latitude),\(shop.location.coordinate.longitude)")!)
-    }
-    
     @IBAction func share(sender: AnyObject) {
-        displayShareSheet([shop.name, shop.address])
+        displayShareSheet([viewModel.name, viewModel.address])
     }
     
     func displayShareSheet(shareContent:[AnyObject]) {
         let activityViewController = UIActivityViewController(activityItems: shareContent, applicationActivities: nil)
         presentViewController(activityViewController, animated: true, completion: {})
     }
-    
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-            regionRadius * 2.0, regionRadius * 2.0)
-        mapView.setRegion(coordinateRegion, animated: true)
-    }
 
-}
-
-extension Dictionary {
-    mutating func merge<K, V>(dict: [K: V]){
-        for (k, v) in dict {
-            self.updateValue(v as! Value, forKey: k as! Key)
-        }
-    }
-}
-
-
-extension ShopDetailVC: MKMapViewDelegate {
-//    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-//        
-//    }
 }
