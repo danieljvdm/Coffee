@@ -16,12 +16,18 @@ class ShopCell: UICollectionViewCell {
     @IBOutlet weak var distanceLabel: UILabel!
     
     let disposeBag = DisposeBag()
-    var vm: ShopCellViewModel? {
+    
+    var viewModel: ShopCellViewModel! {
         didSet {
-            shopTitle.text = vm!.shop?.name
-            backgroundImage.image = vm!.shop?.image
-            vm!.distanceFromUser?.bindTo(distanceLabel.rx_text)
-                .addDisposableTo(disposeBag)
+            bindToViewModel()
         }
+    }
+    
+    func bindToViewModel() {
+        shopTitle.text = viewModel.shop?.name
+        backgroundImage.image = viewModel.shop?.image
+        //This will update the distance from label in real time
+        viewModel.distanceFromUser?.bindTo(distanceLabel.rx_text)
+            .addDisposableTo(disposeBag)
     }
 }

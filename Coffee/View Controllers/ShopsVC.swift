@@ -17,7 +17,7 @@ class ShopsVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityView: NVActivityIndicatorView!
     var clearTable = false
-    let vm = ShopsViewModel()
+    let viewModel = ShopsViewModel()
     let disposeBag = DisposeBag()
 
     let animator = AnimationService()
@@ -25,17 +25,11 @@ class ShopsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        vm.shops?
-        .observeOn(MainScheduler.instance)
-        .bindTo(collectionView.rx_itemsWithCellIdentifier("shopCell", cellType: ShopCell.self)){ (row, element, cell) in
-            cell.vm = ShopCellViewModel(shop: element)
-        }
-        .addDisposableTo(disposeBag)
-        configure()
-        
+        bindToViewModel()
+        configureView()
     }
     
-    func configure() {
+    func configureView() {
         view.backgroundColor = UIColor(patternImage: UIImage(named: "ios-linen.jpg")!)
         collectionView.contentInset = UIEdgeInsetsZero
         
@@ -46,6 +40,22 @@ class ShopsVC: UIViewController {
 
     }
     
+    func bindToViewModel() {
+        viewModel.shops?
+            .observeOn(MainScheduler.instance)
+            .bindTo(collectionView.rx_itemsWithCellIdentifier("shopCell", cellType: ShopCell.self)){ (row, element, cell) in
+                cell.viewModel = ShopCellViewModel(shop: element)
+            }
+            .addDisposableTo(disposeBag)
+        
+        collectionView.rx_itemSelected.subscribeNext { indexpath in
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ShopDetail") as! ShopDetailVC
+            vc.shop = try! self.collectionView.rx_modelAtIndexPath(indexpath)
+            self.navigationController?.pushViewController(vc, animated: true)
+            }
+            .addDisposableTo(disposeBag)
+    }
+    
     override func viewDidAppear(animated: Bool) {
         navigationController?.delegate = self
     }
@@ -54,38 +64,10 @@ class ShopsVC: UIViewController {
         navigationController?.delegate = nil
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowShopDetail" {
-            if let destination = segue.destinationViewController as? ShopDetailVC {
-                if let index = collectionView.indexPathsForSelectedItems()?.first {
-                    destination.shop = try! collectionView.rx_modelAtIndexPath(index)
-                }
-            }
-        }
-    }
-
-}
-
-
-extension ShopsVC: UICollectionViewDelegateFlowLayout {
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width-2, height: collectionView.frame.height/4)
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(0, 0, 0, 0)
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 0
-    }
 }
 
 extension ShopsVC {
+    //To be replaced with real data
     func setupNavBar() {
         self.navigationController?.navigationBar.barTintColor = UIColor.coffeeBlueNav()
         let menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: "Near Me", items: ["Near Me", "New York"])
@@ -122,5 +104,23 @@ extension ShopsVC: UINavigationControllerDelegate {
         }
         
         return nil
+    }
+}
+
+extension ShopsVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width-2, height: collectionView.frame.height/4)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(0, 0, 0, 0)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 0
     }
 }

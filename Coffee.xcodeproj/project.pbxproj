@@ -34,6 +34,8 @@
 		65B98F5F1C80C28700845035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B98F5E1C80C28700845035 /* Assets.xcassets */; };
 		65B98F6D1C80C28700845035 /* CoffeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B98F6C1C80C28700845035 /* CoffeeTests.swift */; };
 		65B98F781C80C28700845035 /* CoffeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B98F771C80C28700845035 /* CoffeeUITests.swift */; };
+		65C0FB8A1CA993F2003110E5 /* BindsToViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FB891CA993F2003110E5 /* BindsToViewModel.swift */; };
+		65C0FB8C1CA99417003110E5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FB8B1CA99417003110E5 /* ViewModel.swift */; };
 		65D0E92A1CA5A84100D3F902 /* ShopsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0E9291CA5A84100D3F902 /* ShopsViewModel.swift */; };
 		65EF841D1C84EDB7008EFE0C /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EF841C1C84EDB7008EFE0C /* City.swift */; };
 		65EF84201C851FE5008EFE0C /* ios-linen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65EF841F1C851FE5008EFE0C /* ios-linen.jpg */; };
@@ -94,6 +96,8 @@
 		65B98F731C80C28700845035 /* CoffeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B98F771C80C28700845035 /* CoffeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeUITests.swift; sourceTree = "<group>"; };
 		65B98F791C80C28700845035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65C0FB891CA993F2003110E5 /* BindsToViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindsToViewModel.swift; sourceTree = "<group>"; };
+		65C0FB8B1CA99417003110E5 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		65D0E9291CA5A84100D3F902 /* ShopsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopsViewModel.swift; path = "View Models/ShopsViewModel.swift"; sourceTree = "<group>"; };
 		65EF841C1C84EDB7008EFE0C /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		65EF841F1C851FE5008EFE0C /* ios-linen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ios-linen.jpg"; sourceTree = "<group>"; };
@@ -199,6 +203,8 @@
 			children = (
 				65B738B21C9B464C00C93661 /* ShopsVC.swift */,
 				65B738B41C9B484800C93661 /* ShopCell.swift */,
+				65C0FB891CA993F2003110E5 /* BindsToViewModel.swift */,
+				65C0FB8B1CA99417003110E5 /* ViewModel.swift */,
 			);
 			name = Shops;
 			sourceTree = "<group>";
@@ -596,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C0FB8A1CA993F2003110E5 /* BindsToViewModel.swift in Sources */,
 				650596191C84DCE700B81AA0 /* Configuration.swift in Sources */,
 				6563D08D1C91D97C001529A3 /* LocationService.swift in Sources */,
 				65F081271C80C47F00660D3F /* Shop.swift in Sources */,
@@ -605,6 +612,7 @@
 				65B738B51C9B484800C93661 /* ShopCell.swift in Sources */,
 				65B98F581C80C28600845035 /* AppDelegate.swift in Sources */,
 				65D0E92A1CA5A84100D3F902 /* ShopsViewModel.swift in Sources */,
+				65C0FB8C1CA99417003110E5 /* ViewModel.swift in Sources */,
 				65B738B31C9B464C00C93661 /* ShopsVC.swift in Sources */,
 				65789F671CA7A15B00B5C79D /* ShopCellViewModel.swift in Sources */,
 				6505961C1C84DE0200B81AA0 /* Extensions.swift in Sources */,
