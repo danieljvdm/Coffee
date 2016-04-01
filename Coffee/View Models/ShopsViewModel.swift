@@ -12,6 +12,7 @@ import RxSwift
 class ShopsViewModel {
     
     var shops: Observable<[Shop]>?
+    var city: Observable<City>?
     
     init(){
         shops = getShops()

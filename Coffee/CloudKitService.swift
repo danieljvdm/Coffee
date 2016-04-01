@@ -13,12 +13,12 @@ import RxCocoa
 
 class CloudKitService {
     static let container = CKContainer.defaultContainer()
-    static let publicData = container.publicCloudDatabase
+    static let publicDB = container.publicCloudDatabase
     
     static func getShops(completion: (result: [Shop]) -> Void) {
         var shops = [Shop]()
         let query = CKQuery(recordType: "Shop", predicate: NSPredicate(value: true))
-        publicData.performQuery(query, inZoneWithID: nil) { results, error in
+        publicDB.performQuery(query, inZoneWithID: nil) { results, error in
             if let results = results {
                 for shop in results {
                     shops.append(Shop(record: shop))
@@ -29,9 +29,40 @@ class CloudKitService {
         }
     }
     
+    static func getShopsSummary(city: City) -> Observable<[Shop]> {
+        return Observable.create { observer in
+            var shops = [Shop]()
+            let cityPredicate = NSPredicate(format: "city CONTAINS New York")
+            let query = CKQuery(recordType: "Shop", predicate: cityPredicate)
+            let queryOperation = CKQueryOperation(query: query)
+            queryOperation.desiredKeys = ["Description", "Image", "Location", "Name"]
+            queryOperation.recordFetchedBlock = { record in
+                shops.append(Shop(record: record))
+            }
+            queryOperation.queryCompletionBlock = { (cursor, error) in
+                if let error = error {
+                    observer.onError(error)
+                } else {
+                    observer.onNext(shops)
+                }
+            }
+            return AnonymousDisposable {}
+        }
+    }
+    
+    private func getShops() -> Observable<[Shop]>{
+        return Observable.create { observer in
+            CloudKitService.getShops() { shops in
+                observer.onNext(shops)
+            }
+            
+            return AnonymousDisposable {}
+        }
+    }
+    
 //    static func getAllShops() -> Observable<Shop> {
 //        let query = CKQuery(recordType: "Shop", predicate: NSPredicate(value: true))
-//        publicData.performQuery(query, inZoneWithID: nil) { results, error in
+//        publicDB.performQuery(query, inZoneWithID: nil) { results, error in
 //            
 //        }
 //    }
@@ -40,7 +71,7 @@ class CloudKitService {
         var shops = [Shop]()
         let predicate = NSPredicate(format: "distanceToLocation:fromLocation:(Location, %@) < 40000000", location)
         let query = CKQuery(recordType: "Shop", predicate: predicate)
-        publicData.performQuery(query, inZoneWithID: nil) { results, error in
+        publicDB.performQuery(query, inZoneWithID: nil) { results, error in
             if let results = results {
                 for shop in results {
                     shops.append(Shop(record: shop))

@@ -23,6 +23,7 @@ class ShopCellViewModel {
                 return self.prettyDistance(self.shop.location.distanceFromLocation($0))
             })
         )
+        
     }
     
     func prettyDistance(distance: Double) -> String {

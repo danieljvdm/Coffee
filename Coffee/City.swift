@@ -8,12 +8,10 @@
 
 import Foundation
 
-class City {
-    dynamic var name = ""
-    var coffeeShops = [Shop]()
-
-    convenience init(name: String){
-        self.init()
+struct City {
+    let name: String
+    
+    init(name: String){
         self.name = name
     }
     
