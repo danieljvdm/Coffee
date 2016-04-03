@@ -20,10 +20,7 @@ class ShopDetailVC: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var shopTitleLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-//    @IBOutlet weak var backgroundImage: UIImageView!
-//    @IBOutlet weak var shopTitleLabel: UILabel!
-//    @IBOutlet weak var addressLabel: UILabel!
-//    @IBOutlet weak var mapView: MKMapView!
+
     let regionRadius: CLLocationDistance = 300
     @IBOutlet weak var descriptionLabel: UILabel!
     let locationManager = CLLocationManager()

@@ -8,30 +8,16 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
+
+typealias API = CloudKitService
 
 class ShopsViewModel {
-    
     var shops: Observable<[Shop]>?
-    var city: Observable<City>?
+    var city = PublishSubject<City>()
     
     init(){
-        shops = getShops()
+        shops = self.city
+            .flatMap {API.getShops($0)}
     }
-    
-    static func getAllShops(completion: (result: [Shop]) -> Void) {
-        CloudKitService.getShops(){ result in
-            completion(result: result)
-        }
-    }
-    
-    private func getShops() -> Observable<[Shop]>{
-        return Observable.create { observer in
-            CloudKitService.getShops() { shops in
-                observer.onNext(shops)
-            }
-            
-            return AnonymousDisposable {}
-        }
-    }
-    
 }

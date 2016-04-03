@@ -70,30 +70,16 @@ extension ShopsVC {
     //To be replaced with real data
     func setupNavBar() {
         self.navigationController?.navigationBar.barTintColor = UIColor.coffeeBlueNav()
-        let menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: "Near Me", items: ["Near Me", "New York"])
+        let cities = [City(name: "New York"), City(name: "Cape Town")]
+        let menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: "Near Me", items: ["Near Me"] + cities.map{$0.name})
         menuView.cellBackgroundColor = UIColor.coffeeBlue()
         menuView.cellTextLabelFont = UIFont(name: "ProximaNova-Bold", size: 18.0)
         menuView.cellTextLabelAlignment = .Center
         self.navigationItem.titleView = menuView
         
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
-            
-            print("Did select item at index: \(indexPath)")
-            self.clearTable = true
-            self.collectionView.reloadSections(NSIndexSet(index: 0))
-            self.activityView.startAnimation()
-            
-            let seconds = 1.5
-            let delay = seconds * Double(NSEC_PER_SEC)  // nanoseconds per seconds
-            let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-            
-            dispatch_after(dispatchTime, dispatch_get_main_queue(), {
-                self.clearTable = false
-                self.collectionView.reloadSections(NSIndexSet(index: 0))
-                self.activityView.stopAnimation()
-            })
+            self.viewModel.city.onNext(cities[indexPath-1])
         }
-        
     }
 }
 

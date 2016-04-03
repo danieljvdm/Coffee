@@ -21,8 +21,8 @@ class ShopDetailViewModel {
     init(shop: Shop){
         self.shop = shop
         self.name = shop.name
-        self.address = shop.address
-        self.description = shop.description
+        self.address = shop.address ?? ""
+        self.description = shop.description ?? ""
         self.image = shop.image
     }
     
@@ -41,7 +41,5 @@ class ShopDetailViewModel {
     
     func openMapsApp() {
         UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?ll=\(shop.location.coordinate.latitude),\(shop.location.coordinate.longitude)")!)
-    }
-    
-    
+    }    
 }
