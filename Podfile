@@ -11,6 +11,7 @@ pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'RxSwift'
 pod 'RxCocoa'
+pod 'ContentfulDeliveryAPI'
 end
 
 target 'CoffeeTests' do

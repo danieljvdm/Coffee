@@ -84,18 +84,24 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Coffee/AFNetworking.framework"
   install_framework "Pods-Coffee/Alamofire.framework"
   install_framework "Pods-Coffee/BTNavigationDropdownMenu.framework"
+  install_framework "Pods-Coffee/ContentfulDeliveryAPI.framework"
   install_framework "Pods-Coffee/Hue.framework"
+  install_framework "Pods-Coffee/ISO8601DateFormatter.framework"
   install_framework "Pods-Coffee/NVActivityIndicatorView.framework"
   install_framework "Pods-Coffee/RxCocoa.framework"
   install_framework "Pods-Coffee/RxSwift.framework"
   install_framework "Pods-Coffee/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Coffee/AFNetworking.framework"
   install_framework "Pods-Coffee/Alamofire.framework"
   install_framework "Pods-Coffee/BTNavigationDropdownMenu.framework"
+  install_framework "Pods-Coffee/ContentfulDeliveryAPI.framework"
   install_framework "Pods-Coffee/Hue.framework"
+  install_framework "Pods-Coffee/ISO8601DateFormatter.framework"
   install_framework "Pods-Coffee/NVActivityIndicatorView.framework"
   install_framework "Pods-Coffee/RxCocoa.framework"
   install_framework "Pods-Coffee/RxSwift.framework"

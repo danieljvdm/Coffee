@@ -33,6 +33,7 @@
 		65B98F5F1C80C28700845035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B98F5E1C80C28700845035 /* Assets.xcassets */; };
 		65B98F6D1C80C28700845035 /* CoffeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B98F6C1C80C28700845035 /* CoffeeTests.swift */; };
 		65B98F781C80C28700845035 /* CoffeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B98F771C80C28700845035 /* CoffeeUITests.swift */; };
+		65BDFAF81CB0B78C00193985 /* ContentfulService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BDFAF71CB0B78C00193985 /* ContentfulService.swift */; };
 		65C0FB911CA99F5E003110E5 /* ShopDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FB901CA99F5E003110E5 /* ShopDetailViewModel.swift */; };
 		65C0FB931CA9AF71003110E5 /* UIColor+CoffeeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FB921CA9AF71003110E5 /* UIColor+CoffeeColors.swift */; };
 		65C0FB951CA9AFD9003110E5 /* UILabel+BetterAttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FB941CA9AFD9003110E5 /* UILabel+BetterAttributedText.swift */; };
@@ -96,6 +97,7 @@
 		65B98F731C80C28700845035 /* CoffeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B98F771C80C28700845035 /* CoffeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeUITests.swift; sourceTree = "<group>"; };
 		65B98F791C80C28700845035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65BDFAF71CB0B78C00193985 /* ContentfulService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentfulService.swift; sourceTree = "<group>"; };
 		65C0FB901CA99F5E003110E5 /* ShopDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewModel.swift; sourceTree = "<group>"; };
 		65C0FB921CA9AF71003110E5 /* UIColor+CoffeeColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+CoffeeColors.swift"; path = "Extensions/UIColor+CoffeeColors.swift"; sourceTree = "<group>"; };
 		65C0FB941CA9AFD9003110E5 /* UILabel+BetterAttributedText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UILabel+BetterAttributedText.swift"; path = "Extensions/UILabel+BetterAttributedText.swift"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				6563D08C1C91D97C001529A3 /* LocationService.swift */,
 				657D44551C88DCA600AA7013 /* CloudKitService.swift */,
 				65296D011CA2F2F0002ABAC1 /* AnimationService.swift */,
+				65BDFAF71CB0B78C00193985 /* ContentfulService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				65296D021CA2F2F0002ABAC1 /* AnimationService.swift in Sources */,
 				65B738B51C9B484800C93661 /* ShopCell.swift in Sources */,
 				65C0FB971CA9AFFC003110E5 /* UIDictionary+Merge.swift in Sources */,
+				65BDFAF81CB0B78C00193985 /* ContentfulService.swift in Sources */,
 				65B98F581C80C28600845035 /* AppDelegate.swift in Sources */,
 				65D0E92A1CA5A84100D3F902 /* ShopsViewModel.swift in Sources */,
 				65B738B31C9B464C00C93661 /* ShopsVC.swift in Sources */,

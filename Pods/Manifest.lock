@@ -1,7 +1,32 @@
 PODS:
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - Alamofire (3.3.0)
   - BTNavigationDropdownMenu (0.2.1)
+  - ContentfulDeliveryAPI (1.9.6):
+    - AFNetworking (~> 2.5.3)
+    - ISO8601DateFormatter
   - Hue (1.1)
+  - ISO8601DateFormatter (0.7)
   - NVActivityIndicatorView (2.3)
   - RxCocoa (2.3.1):
     - RxSwift (~> 2.3.1)
@@ -11,6 +36,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - BTNavigationDropdownMenu
+  - ContentfulDeliveryAPI
   - Hue
   - NVActivityIndicatorView
   - RxCocoa
@@ -18,14 +44,17 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
   BTNavigationDropdownMenu: 9cf4060162c96510ee27c388412e28678320cdc0
+  ContentfulDeliveryAPI: 86f1a69dce907032b92e5ec0fbbf3a0dbd49c588
   Hue: ed6781be844b58b2a38150cfd4bf24c33449faf8
+  ISO8601DateFormatter: ab926648eebe497f4d167c0fd083992f959f1274
   NVActivityIndicatorView: c7ef25ef527ab5e51b00322cb1ddd58681bcf2a3
   RxCocoa: a2baaf3462b989559a51dce59d78fbebb8fe0afa
   RxSwift: 829b2843e9eddc77a02cb3f5117f0d55f8f646f1
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 2fe9837971dab98847c1fc2db30c78de08b768bc
+PODFILE CHECKSUM: 75bec5504a06a56360a3661704947f5939250755
 
 COCOAPODS: 1.0.0.beta.3
