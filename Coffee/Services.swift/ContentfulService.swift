@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import ContentfulDeliveryAPI
+
+class ContentfulService {
+    let client = CDAClient()
+    client.
+}
