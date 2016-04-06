@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-typealias API = CloudKitService
+typealias API = ContentfulService
 
 class ShopsViewModel {
     var shops: Observable<[Shop]>?

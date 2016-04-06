@@ -11,6 +11,7 @@ pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'RxSwift'
 pod 'RxCocoa'
+pod 'RxAlamofire'
 end
 
 target 'CoffeeTests' do

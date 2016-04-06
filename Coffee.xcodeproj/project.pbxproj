@@ -15,6 +15,7 @@
 		650596151C84C44E00B81AA0 /* laughingman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 650596101C84C44E00B81AA0 /* laughingman.jpg */; };
 		650596161C84C44E00B81AA0 /* tobysestate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 650596111C84C44E00B81AA0 /* tobysestate.jpg */; };
 		650596191C84DCE700B81AA0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650596181C84DCE700B81AA0 /* Configuration.swift */; };
+		6519CC0C1CB0BF9100AEE656 /* ContentfulService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519CC0B1CB0BF9100AEE656 /* ContentfulService.swift */; };
 		65296D021CA2F2F0002ABAC1 /* AnimationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65296D011CA2F2F0002ABAC1 /* AnimationService.swift */; };
 		655437021C8616B400FD9AA8 /* ShopDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655437011C8616B400FD9AA8 /* ShopDetailVC.swift */; };
 		655437081C86258300FD9AA8 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 655437041C86258300FD9AA8 /* ProximaNova-Bold.otf */; };
@@ -72,6 +73,7 @@
 		650596101C84C44E00B81AA0 /* laughingman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = laughingman.jpg; path = Images/laughingman.jpg; sourceTree = "<group>"; };
 		650596111C84C44E00B81AA0 /* tobysestate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tobysestate.jpg; path = Images/tobysestate.jpg; sourceTree = "<group>"; };
 		650596181C84DCE700B81AA0 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		6519CC0B1CB0BF9100AEE656 /* ContentfulService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentfulService.swift; sourceTree = "<group>"; };
 		65296D011CA2F2F0002ABAC1 /* AnimationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationService.swift; sourceTree = "<group>"; };
 		655437011C8616B400FD9AA8 /* ShopDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopDetailVC.swift; path = "View Controllers/ShopDetailVC.swift"; sourceTree = "<group>"; };
 		655437041C86258300FD9AA8 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Bold.otf"; path = "Fonts/ProximaNova-Bold.otf"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				6563D08C1C91D97C001529A3 /* LocationService.swift */,
 				657D44551C88DCA600AA7013 /* CloudKitService.swift */,
 				65296D011CA2F2F0002ABAC1 /* AnimationService.swift */,
+				6519CC0B1CB0BF9100AEE656 /* ContentfulService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				65B738B31C9B464C00C93661 /* ShopsVC.swift in Sources */,
 				65789F671CA7A15B00B5C79D /* ShopCellViewModel.swift in Sources */,
 				65C0FB951CA9AFD9003110E5 /* UILabel+BetterAttributedText.swift in Sources */,
+				6519CC0C1CB0BF9100AEE656 /* ContentfulService.swift in Sources */,
 				65EF841D1C84EDB7008EFE0C /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

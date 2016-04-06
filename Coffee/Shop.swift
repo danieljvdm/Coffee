@@ -15,6 +15,7 @@ class Shop {
     var name = ""
     var city: City?
     var image = UIImage()
+    var imageURL: String?
     var address: String?
     var neighborhood: String?
     var location = CLLocation()
