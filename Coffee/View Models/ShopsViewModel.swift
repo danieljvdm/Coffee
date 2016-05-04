@@ -11,13 +11,17 @@ import RxSwift
 import RxCocoa
 
 typealias API = ContentfulService
+typealias DefinitionSearchResult = String
 
 class ShopsViewModel {
     var shops: Observable<[Shop]>?
     var city = PublishSubject<City>()
+    var isLoading = false
     
     init(){
         shops = self.city
-            .flatMap {API.getShops($0)}
+            .flatMapLatest {API.getShops($0)}
+        
     }
+
 }

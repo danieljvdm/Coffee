@@ -35,7 +35,7 @@ class ShopsVC: UIViewController {
         
         activityView.type = .BallBeat
         activityView.startAnimation()
-        
+
         setupNavBar()
 
     }
@@ -54,6 +54,7 @@ class ShopsVC: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
             }
             .addDisposableTo(disposeBag)
+        
     }
     
     override func viewDidAppear(animated: Bool) {

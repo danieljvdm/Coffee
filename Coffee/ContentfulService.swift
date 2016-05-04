@@ -22,10 +22,11 @@ class ContentfulService {
         static let fullUrl = "\(baseUrl + spaceKey)/"
     }
 
-    static let disposeBag = DisposeBag()
+    static private let disposeBag = DisposeBag()
     
     static func getShops(city: City, summary: Bool = false) -> Observable<[Shop]> {
         //var shops = [Shop]()
+        syncInitial()
         let parameters: [String: AnyObject] = ["access_token" : Constants.accessToken, "content_type" : "shop"]
         let url = Constants.fullUrl + "entries?"
         return Alamofire.request(.GET, url, parameters: parameters)
@@ -42,6 +43,17 @@ class ContentfulService {
                 return Observable.just(shops)
             }
     }
+    
+    static private func syncInitial() {
+        let parameters: [String: AnyObject] = ["access_token" : Constants.accessToken, "sync_token" : "w5ZGw6JFwqZmVcKsE8Kow4grw45QdybClR7DjAFKw7PDgcKFHxDCnGnCkB3CjcO6JQXCg8K_wp3CsxzDgy_Cg8Ktw4HCjBLDu8KCLMOMw6NNwodSwrXDrcKPwppCwosVw73Du8KYP8OgRgjCiMKYwp5DQ2k9w6_CmXDCl8KP"]
+        let url = Constants.fullUrl + "sync?"
+        Alamofire.request(.GET, url, parameters: parameters)
+            .rx_responseJSON()
+            .subscribeNext { response, json in
+                let json = JSON(json)
+                print(json)
+            }.addDisposableTo(disposeBag)
+    }
 }
 
 
@@ -55,7 +67,7 @@ extension Shop {
         self.city = City(name: json["city"]["name"].stringValue)
         self.imageURL = json["image"]["file"]["url"].stringValue
         
-        let lat = json["fields"]["location"]["lat"].doubleValue
+        let lat = json["fields"]["location"]["lat"].doubleValue 
         let lon = json["fields"]["location"]["lon"].doubleValue
         self.location = CLLocation(latitude: lat, longitude: lon)
 

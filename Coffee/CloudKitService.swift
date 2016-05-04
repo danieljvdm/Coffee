@@ -29,7 +29,6 @@ class CloudKitService {
     }
     
     static func getShops(city: City, summary: Bool = false) -> Observable<[Shop]> {
-        //ContentfulService.getShops(city).subscribeNext{shops in}
         return Observable.create { observer in
             var shops = [Shop]()
             let cityPredicate = NSPredicate(format: "City BEGINSWITH '\(city.name)'")
@@ -48,7 +47,9 @@ class CloudKitService {
             }
             
             publicDB.addOperation(queryOperation)
-            return AnonymousDisposable {}
+            return AnonymousDisposable {
+                queryOperation.cancel()
+            }
         }
     }
 

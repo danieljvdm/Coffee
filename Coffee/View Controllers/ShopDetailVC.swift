@@ -42,7 +42,6 @@ class ShopDetailVC: UIViewController {
                 self.viewModel.openMapsApp()
             }
             .addDisposableTo(disposeBag)
-
     }
     
     func configureView() {

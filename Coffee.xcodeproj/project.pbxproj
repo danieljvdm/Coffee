@@ -16,6 +16,7 @@
 		650596161C84C44E00B81AA0 /* tobysestate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 650596111C84C44E00B81AA0 /* tobysestate.jpg */; };
 		650596191C84DCE700B81AA0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650596181C84DCE700B81AA0 /* Configuration.swift */; };
 		6519CC0C1CB0BF9100AEE656 /* ContentfulService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519CC0B1CB0BF9100AEE656 /* ContentfulService.swift */; };
+		652633221CDA5FF9000229B1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652633211CDA5FF9000229B1 /* AppCoordinator.swift */; };
 		65296D021CA2F2F0002ABAC1 /* AnimationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65296D011CA2F2F0002ABAC1 /* AnimationService.swift */; };
 		655437021C8616B400FD9AA8 /* ShopDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655437011C8616B400FD9AA8 /* ShopDetailVC.swift */; };
 		655437081C86258300FD9AA8 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 655437041C86258300FD9AA8 /* ProximaNova-Bold.otf */; };
@@ -74,6 +75,7 @@
 		650596111C84C44E00B81AA0 /* tobysestate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tobysestate.jpg; path = Images/tobysestate.jpg; sourceTree = "<group>"; };
 		650596181C84DCE700B81AA0 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		6519CC0B1CB0BF9100AEE656 /* ContentfulService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentfulService.swift; sourceTree = "<group>"; };
+		652633211CDA5FF9000229B1 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		65296D011CA2F2F0002ABAC1 /* AnimationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationService.swift; sourceTree = "<group>"; };
 		655437011C8616B400FD9AA8 /* ShopDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopDetailVC.swift; path = "View Controllers/ShopDetailVC.swift"; sourceTree = "<group>"; };
 		655437041C86258300FD9AA8 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Bold.otf"; path = "Fonts/ProximaNova-Bold.otf"; sourceTree = "<group>"; };
@@ -173,6 +175,14 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		652633201CDA5EA4000229B1 /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				652633211CDA5FF9000229B1 /* AppCoordinator.swift */,
+			);
+			name = Architecture;
+			sourceTree = "<group>";
+		};
 		655437031C86257300FD9AA8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +240,7 @@
 		65B98F561C80C28600845035 /* Coffee */ = {
 			isa = PBXGroup;
 			children = (
+				652633201CDA5EA4000229B1 /* Architecture */,
 				65A17CE91CA055BC006D65A3 /* Main.storyboard */,
 				65B98F571C80C28600845035 /* AppDelegate.swift */,
 				657D44541C88DC9600AA7013 /* Services */,
@@ -614,6 +625,7 @@
 				65F081271C80C47F00660D3F /* Shop.swift in Sources */,
 				65C0FB911CA99F5E003110E5 /* ShopDetailViewModel.swift in Sources */,
 				655437021C8616B400FD9AA8 /* ShopDetailVC.swift in Sources */,
+				652633221CDA5FF9000229B1 /* AppCoordinator.swift in Sources */,
 				657D44561C88DCA600AA7013 /* CloudKitService.swift in Sources */,
 				65296D021CA2F2F0002ABAC1 /* AnimationService.swift in Sources */,
 				65B738B51C9B484800C93661 /* ShopCell.swift in Sources */,
