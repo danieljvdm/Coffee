@@ -9,36 +9,36 @@
 import UIKit
 
 class AnimationService: NSObject, UIViewControllerAnimatedTransitioning {
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.5
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        let fromView = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! ShopsVC
-        let toView = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)! as! ShopDetailVC
-        guard let indexPath = fromView.collectionView.indexPathsForSelectedItems()!.first, cell = fromView.collectionView.cellForItemAtIndexPath(indexPath) as? ShopCell else {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let fromView = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as! ShopsVC
+        let toView = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)! as! ShopDetailVC
+        guard let indexPath = fromView.collectionView.indexPathsForSelectedItems!.first, let cell = fromView.collectionView.cellForItem(at: indexPath) as? ShopCell else {
             return
         }
         
-        let tempImage = UIImageView(frame: fromView.collectionView.convertRect(cell.frame, toView: fromView.view))
+        let tempImage = UIImageView(frame: fromView.collectionView.convert(cell.frame, to: fromView.view))
         tempImage.image = cell.backgroundImage.image
-        tempImage.contentMode = .ScaleAspectFill
+        tempImage.contentMode = .scaleAspectFill
         tempImage.clipsToBounds = true
         
         //imageCopy.center = fromView.collectionView.convertRect(cell.frame, toView: fromView.view)
         
         toView.view.alpha = 1
         
-        let containerView = transitionContext.containerView()!
+        let containerView = transitionContext.containerView
         containerView.addSubview(toView.view)
         let originalCenter = toView.view.center
-        toView.view.transform = CGAffineTransformMakeScale(0.2, 0.2)
+        toView.view.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
         toView.view.center = tempImage.center
         //containerView.addSubview(tempImage)
 
-        UIView.animateWithDuration(self.transitionDuration(transitionContext), delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: .CurveLinear, animations: {
+        UIView.animate(withDuration: self.transitionDuration(using: transitionContext), delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: .curveLinear, animations: {
             toView.view.center = originalCenter
-            toView.view.transform = CGAffineTransformMakeScale(1, 1)
+            toView.view.transform = CGAffineTransform(scaleX: 1, y: 1)
             toView.view.alpha = 1
             }) { (finished) in
                 tempImage.removeFromSuperview()

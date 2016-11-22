@@ -11,7 +11,7 @@ import MapKit
 
 class ShopDetailViewModel {
     let kRegionRadius: Double = 300
-    private let shop: Shop
+    fileprivate let shop: Shop
     let name: String
     let address: String
     let description: String
@@ -40,6 +40,6 @@ class ShopDetailViewModel {
     }
     
     func openMapsApp() {
-        UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?ll=\(shop.location.coordinate.latitude),\(shop.location.coordinate.longitude)")!)
+        UIApplication.shared.openURL(URL(string: "http://maps.apple.com/?ll=\(shop.location.coordinate.latitude),\(shop.location.coordinate.longitude)")!)
     }    
 }

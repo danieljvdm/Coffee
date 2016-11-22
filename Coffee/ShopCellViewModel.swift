@@ -32,7 +32,7 @@ class ShopCellViewModel {
         
     }
     
-    func prettyDistance(distance: Double) -> String {
+    func prettyDistance(_ distance: Double) -> String {
         if distance >= 1000 {
             let distanceKM =  distance/1000.0
             let roundedDistance = round(distanceKM*100)/100

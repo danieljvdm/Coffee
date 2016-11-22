@@ -22,19 +22,19 @@ class LocationService: NSObject {
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.delegate = self
         
-        if authorized == .AuthorizedWhenInUse || authorized == .AuthorizedAlways {
+        if authorized == .authorizedWhenInUse || authorized == .authorizedAlways {
             locationManager.startUpdatingLocation()
         } else {
             locationManager.requestAlwaysAuthorization()
         }
-        
+                
         locations = locationManager.rx_didUpdateLocations
             .map{return $0.last!}
     }
 }
 
 extension LocationService: CLLocationManagerDelegate {
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         authorized = status
     }
     

@@ -25,10 +25,10 @@ class Shop {
     
     convenience init(partialRecord: CKRecord) {
         self.init()
-        self.name = partialRecord.objectForKey("Name") as! String
-        self.location = partialRecord.objectForKey("Location") as! CLLocation
-        let file = partialRecord.objectForKey("Image") as! CKAsset
-        if let data = NSData(contentsOfURL: file.fileURL), image = UIImage(data: data) {
+        self.name = partialRecord.object(forKey: "Name") as! String
+        self.location = partialRecord.object(forKey: "Location") as! CLLocation
+        let file = partialRecord.object(forKey: "Image") as! CKAsset
+        if let data = try? Data(contentsOf: file.fileURL), let image = UIImage(data: data) {
             self.image = image
         }
         
@@ -36,13 +36,13 @@ class Shop {
     
     convenience init(record: CKRecord) {
         self.init()
-        self.city = City(name: record.objectForKey("City") as! String)
-        self.name = record.objectForKey("Name") as! String
-        self.location = record.objectForKey("Location") as! CLLocation
-        self.address = record.objectForKey("Address") as? String
-        self.description = (record.objectForKey("Description") as! String).componentsSeparatedByString("\\n").joinWithSeparator("\n")
-        let file = record.objectForKey("Image") as! CKAsset
-        if let data = NSData(contentsOfURL: file.fileURL), image = UIImage(data: data) {
+        self.city = City(name: record.object(forKey: "City") as! String)
+        self.name = record.object(forKey: "Name") as! String
+        self.location = record.object(forKey: "Location") as! CLLocation
+        self.address = record.object(forKey: "Address") as? String
+        self.description = (record.object(forKey: "Description") as! String).components(separatedBy: "\\n").joined(separator: "\n")
+        let file = record.object(forKey: "Image") as! CKAsset
+        if let data = try? Data(contentsOf: file.fileURL), let image = UIImage(data: data) {
             self.image = image
         }
         

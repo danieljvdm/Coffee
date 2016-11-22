@@ -345,12 +345,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65B98F7C1C80C28700845035 /* Build configuration list for PBXNativeTarget "Coffee" */;
 			buildPhases = (
-				6B477CBA923D5107B1AFB525 /* Check Pods Manifest.lock */,
+				6B477CBA923D5107B1AFB525 /* [CP] Check Pods Manifest.lock */,
 				65B98F501C80C28600845035 /* Sources */,
 				65B98F511C80C28600845035 /* Frameworks */,
 				65B98F521C80C28600845035 /* Resources */,
-				BA1996E4B44E3DE50090CF10 /* Embed Pods Frameworks */,
-				057C2E63C26CF9A6668FABE1 /* Copy Pods Resources */,
+				BA1996E4B44E3DE50090CF10 /* [CP] Embed Pods Frameworks */,
+				057C2E63C26CF9A6668FABE1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -365,12 +365,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65B98F7F1C80C28700845035 /* Build configuration list for PBXNativeTarget "CoffeeTests" */;
 			buildPhases = (
-				5BACCE2DAB0A82B2F5AE8075 /* Check Pods Manifest.lock */,
+				5BACCE2DAB0A82B2F5AE8075 /* [CP] Check Pods Manifest.lock */,
 				65B98F641C80C28700845035 /* Sources */,
 				65B98F651C80C28700845035 /* Frameworks */,
 				65B98F661C80C28700845035 /* Resources */,
-				26D8D9ABD25F062983990C2C /* Embed Pods Frameworks */,
-				59E5B382DFC88CBF9DE13E75 /* Copy Pods Resources */,
+				26D8D9ABD25F062983990C2C /* [CP] Embed Pods Frameworks */,
+				59E5B382DFC88CBF9DE13E75 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -386,11 +386,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65B98F821C80C28700845035 /* Build configuration list for PBXNativeTarget "CoffeeUITests" */;
 			buildPhases = (
-				E588FEED88FC8917C886A638 /* Check Pods Manifest.lock */,
+				E588FEED88FC8917C886A638 /* [CP] Check Pods Manifest.lock */,
 				65B98F6F1C80C28700845035 /* Sources */,
 				65B98F701C80C28700845035 /* Frameworks */,
 				65B98F711C80C28700845035 /* Resources */,
-				E19A48CED749983390DFAC2B /* Copy Pods Resources */,
+				E19A48CED749983390DFAC2B /* [CP] Copy Pods Resources */,
+				2D70B348C45E303FB7A741B5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -415,6 +416,7 @@
 					65B98F531C80C28600845035 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 9U2PZ99768;
+						LastSwiftMigration = 0810;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -426,10 +428,12 @@
 					};
 					65B98F671C80C28700845035 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = 65B98F531C80C28600845035;
 					};
 					65B98F721C80C28700845035 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = 65B98F531C80C28600845035;
 					};
 				};
@@ -492,14 +496,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		057C2E63C26CF9A6668FABE1 /* Copy Pods Resources */ = {
+		057C2E63C26CF9A6668FABE1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,14 +511,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coffee/Pods-Coffee-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		26D8D9ABD25F062983990C2C /* Embed Pods Frameworks */ = {
+		26D8D9ABD25F062983990C2C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,14 +526,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoffeeTests/Pods-CoffeeTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		59E5B382DFC88CBF9DE13E75 /* Copy Pods Resources */ = {
+		2D70B348C45E303FB7A741B5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoffeeUITests/Pods-CoffeeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59E5B382DFC88CBF9DE13E75 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,44 +556,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoffeeTests/Pods-CoffeeTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5BACCE2DAB0A82B2F5AE8075 /* Check Pods Manifest.lock */ = {
+		5BACCE2DAB0A82B2F5AE8075 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6B477CBA923D5107B1AFB525 /* Check Pods Manifest.lock */ = {
+		6B477CBA923D5107B1AFB525 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		BA1996E4B44E3DE50090CF10 /* Embed Pods Frameworks */ = {
+		BA1996E4B44E3DE50090CF10 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,14 +601,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coffee/Pods-Coffee-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E19A48CED749983390DFAC2B /* Copy Pods Resources */ = {
+		E19A48CED749983390DFAC2B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,19 +616,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoffeeUITests/Pods-CoffeeUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E588FEED88FC8917C886A638 /* Check Pods Manifest.lock */ = {
+		E588FEED88FC8917C886A638 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -766,6 +785,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.danieljvdm.Coffee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -783,6 +803,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.danieljvdm.Coffee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -796,6 +817,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danieljvdm.CoffeeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coffee.app/Coffee";
 			};
 			name = Debug;
@@ -809,6 +831,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danieljvdm.CoffeeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coffee.app/Coffee";
 			};
 			name = Release;
@@ -821,6 +844,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danieljvdm.CoffeeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Coffee;
 				USES_XCTRUNNER = YES;
 			};
@@ -834,6 +858,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danieljvdm.CoffeeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Coffee;
 				USES_XCTRUNNER = YES;
 			};

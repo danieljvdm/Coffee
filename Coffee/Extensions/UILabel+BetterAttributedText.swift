@@ -10,21 +10,21 @@ import Foundation
 import UIKit
 
 extension UILabel {
-    func updateAttributedText(text: String) {
+    func updateAttributedText(_ text: String) {
         guard let labelText = self.attributedText else {
             return
         }
         
-        let existingAttributes = labelText.attributesAtIndex(0, effectiveRange: nil)
+        let existingAttributes = labelText.attributes(at: 0, effectiveRange: nil)
         self.attributedText = NSAttributedString(string: text, attributes: existingAttributes)
     }
     
-    func addAttributes(attributes: [String: AnyObject]){
+    func addAttributes(_ attributes: [String: AnyObject]){
         guard let labelText = self.attributedText else {
             return
         }
         
-        var existingAttributes = labelText.attributesAtIndex(0, effectiveRange: nil)
+        var existingAttributes = labelText.attributes(at: 0, effectiveRange: nil)
         existingAttributes.merge(attributes)
         self.attributedText = NSAttributedString(string: labelText.string, attributes: existingAttributes)
     }

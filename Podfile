@@ -4,7 +4,7 @@
 use_frameworks!
 
 target 'Coffee' do
-pod 'BTNavigationDropdownMenu'
+pod 'BTNavigationDropdownMenu', :git => 'https://github.com/PhamBaTho/BTNavigationDropdownMenu.git', :branch => 'swift-3.0'
 pod 'Hue'
 pod 'NVActivityIndicatorView'
 pod 'Alamofire'

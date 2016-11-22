@@ -15,19 +15,19 @@ import SwiftyJSON
 import CoreLocation
 
 class ContentfulService {
-    private struct Constants {
+    fileprivate struct Constants {
         static let accessToken = "64686235d65af42171777a17ea98e1f3b2aec649ed687b390636803c8d0051fe"
         static let spaceKey = "sl312cfh6srr"
         static let baseUrl = "https://cdn.contentful.com/spaces/"
         static let fullUrl = "\(baseUrl + spaceKey)/"
     }
 
-    static private let disposeBag = DisposeBag()
+    static fileprivate let disposeBag = DisposeBag()
     
-    static func getShops(city: City, summary: Bool = false) -> Observable<[Shop]> {
+    static func getShops(_ city: City, summary: Bool = false) -> Observable<[Shop]> {
         //var shops = [Shop]()
         syncInitial()
-        let parameters: [String: AnyObject] = ["access_token" : Constants.accessToken, "content_type" : "shop"]
+        let parameters: [String: AnyObject] = ["access_token" : Constants.accessToken as AnyObject, "content_type" : "shop" as AnyObject]
         let url = Constants.fullUrl + "entries?"
         return Alamofire.request(.GET, url, parameters: parameters)
             .rx_responseJSON()
@@ -44,8 +44,8 @@ class ContentfulService {
             }
     }
     
-    static private func syncInitial() {
-        let parameters: [String: AnyObject] = ["access_token" : Constants.accessToken, "sync_token" : "w5ZGw6JFwqZmVcKsE8Kow4grw45QdybClR7DjAFKw7PDgcKFHxDCnGnCkB3CjcO6JQXCg8K_wp3CsxzDgy_Cg8Ktw4HCjBLDu8KCLMOMw6NNwodSwrXDrcKPwppCwosVw73Du8KYP8OgRgjCiMKYwp5DQ2k9w6_CmXDCl8KP"]
+    static fileprivate func syncInitial() {
+        let parameters: [String: AnyObject] = ["access_token" : Constants.accessToken as AnyObject, "sync_token" : "w5ZGw6JFwqZmVcKsE8Kow4grw45QdybClR7DjAFKw7PDgcKFHxDCnGnCkB3CjcO6JQXCg8K_wp3CsxzDgy_Cg8Ktw4HCjBLDu8KCLMOMw6NNwodSwrXDrcKPwppCwosVw73Du8KYP8OgRgjCiMKYwp5DQ2k9w6_CmXDCl8KP" as AnyObject]
         let url = Constants.fullUrl + "sync?"
         Alamofire.request(.GET, url, parameters: parameters)
             .rx_responseJSON()

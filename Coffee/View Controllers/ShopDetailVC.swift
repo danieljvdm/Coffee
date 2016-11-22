@@ -55,16 +55,16 @@ class ShopDetailVC: UIViewController {
         addressLabel.updateAttributedText(viewModel.address)
         shopTitleLabel.updateAttributedText(viewModel.name)
         descriptionLabel.updateAttributedText(viewModel.description)
-        descriptionLabel.addAttributes([NSFontAttributeName: UIFont.systemFontOfSize(16.0)])
+        descriptionLabel.addAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 16.0)])
     }
     
-    @IBAction func share(sender: AnyObject) {
-        displayShareSheet([viewModel.name, viewModel.address])
+    @IBAction func share(_ sender: AnyObject) {
+        displayShareSheet([viewModel.name as AnyObject, viewModel.address as AnyObject])
     }
     
-    func displayShareSheet(shareContent:[AnyObject]) {
+    func displayShareSheet(_ shareContent:[AnyObject]) {
         let activityViewController = UIActivityViewController(activityItems: shareContent, applicationActivities: nil)
-        presentViewController(activityViewController, animated: true, completion: {})
+        present(activityViewController, animated: true, completion: {})
     }
 
 }

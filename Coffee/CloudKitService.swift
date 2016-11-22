@@ -12,23 +12,23 @@ import RxSwift
 import RxCocoa
 
 class CloudKitService {
-    static let container = CKContainer.defaultContainer()
+    static let container = CKContainer.default()
     static let publicDB = container.publicCloudDatabase
     
-    static func getShops(completion: (result: [Shop]) -> Void) {
+    static func getShops(_ completion: @escaping (_ result: [Shop]) -> Void) {
         var shops = [Shop]()
         let query = CKQuery(recordType: "Shop", predicate: NSPredicate(value: true))
-        publicDB.performQuery(query, inZoneWithID: nil) { results, error in
+        publicDB.perform(query, inZoneWith: nil) { results, error in
             if let results = results {
                 for shop in results {
                     shops.append(Shop(record: shop))
                 }
-                completion(result: shops)
+                completion(shops)
             }
         }
     }
     
-    static func getShops(city: City, summary: Bool = false) -> Observable<[Shop]> {
+    static func getShops(_ city: City, summary: Bool = false) -> Observable<[Shop]> {
         return Observable.create { observer in
             var shops = [Shop]()
             let cityPredicate = NSPredicate(format: "City BEGINSWITH '\(city.name)'")
