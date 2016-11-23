@@ -43,7 +43,7 @@ class RealmService {
                         entry.neighborhood = fields["neighborhood"]["en-US"].string
                         entry.longitude.value = fields["coordinates"]["en-US"]["lon"].double
                         entry.latitude.value = fields["coordinates"]["en-US"]["lat"].double
-                        entry.bio = fields["bio"]["en-US"].string
+                        entry.bio = fields["description"]["en-US"].string
                         
                         if let imageId = fields["image"]["en-US"]["sys"]["id"].string {
                             if let photo = realm.object(ofType: RealmPhoto.self, forPrimaryKey: imageId) {

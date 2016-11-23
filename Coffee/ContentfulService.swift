@@ -38,7 +38,6 @@ class ContentfulService {
     }
     
     func sync() {
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         let realmManager = RealmService.sharedService
         
@@ -48,13 +47,12 @@ class ContentfulService {
         }
         
         var parameters = Constants.parameters
-//        if let token = self.syncToken {
-//            parameters.updateValue(token, forKey: "sync_token")
-//        } else {
-//            parameters.updateValue(true, forKey: "initial")
-//        }
-        parameters.updateValue(true, forKey: "initial")
-        
+        if let token = self.syncToken {
+            parameters.updateValue(token, forKey: "sync_token")
+        } else {
+            parameters.updateValue(true, forKey: "initial")
+        }
+
         let url = Constants.fullUrl + "sync?"
         fetch(with: url, parameters: parameters)
     }
