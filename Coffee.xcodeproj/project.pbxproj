@@ -28,7 +28,15 @@
 		6563D08D1C91D97C001529A3 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563D08C1C91D97C001529A3 /* LocationService.swift */; };
 		65789F671CA7A15B00B5C79D /* ShopCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65789F661CA7A15B00B5C79D /* ShopCellViewModel.swift */; };
 		657D44561C88DCA600AA7013 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657D44551C88DCA600AA7013 /* CloudKitService.swift */; };
+		659AE6CC1DE49AF300164098 /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659AE6CB1DE49AF300164098 /* CLLocationManager+Rx.swift */; };
+		659AE6CE1DE49B7700164098 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659AE6CD1DE49B7700164098 /* RxCLLocationManagerDelegateProxy.swift */; };
 		65A17CEA1CA055BC006D65A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A17CE91CA055BC006D65A3 /* Main.storyboard */; };
+		65A839E31DE5A485005F2CC4 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A839E21DE5A485005F2CC4 /* RealmService.swift */; };
+		65A839E51DE5A50C005F2CC4 /* RealmPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A839E41DE5A50C005F2CC4 /* RealmPhoto.swift */; };
+		65A839E71DE5A52D005F2CC4 /* RealmShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A839E61DE5A52D005F2CC4 /* RealmShop.swift */; };
+		65A839E91DE5A6CC005F2CC4 /* RealmCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A839E81DE5A6CC005F2CC4 /* RealmCity.swift */; };
+		65A839EB1DE5BC1B005F2CC4 /* MapKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A839EA1DE5BC1B005F2CC4 /* MapKit+Extensions.swift */; };
+		65A839ED1DE5BE96005F2CC4 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A839EC1DE5BE96005F2CC4 /* String+URL.swift */; };
 		65B738B31C9B464C00C93661 /* ShopsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B738B21C9B464C00C93661 /* ShopsVC.swift */; };
 		65B738B51C9B484800C93661 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B738B41C9B484800C93661 /* ShopCell.swift */; };
 		65B98F581C80C28600845035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B98F571C80C28600845035 /* AppDelegate.swift */; };
@@ -87,7 +95,15 @@
 		6563D08C1C91D97C001529A3 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		65789F661CA7A15B00B5C79D /* ShopCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCellViewModel.swift; sourceTree = "<group>"; };
 		657D44551C88DCA600AA7013 /* CloudKitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
+		659AE6CB1DE49AF300164098 /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CLLocationManager+Rx.swift"; path = "Extensions/CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
+		659AE6CD1DE49B7700164098 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxCLLocationManagerDelegateProxy.swift; path = Extensions/RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
 		65A17CE91CA055BC006D65A3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		65A839E21DE5A485005F2CC4 /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmService.swift; path = Services/RealmService.swift; sourceTree = "<group>"; };
+		65A839E41DE5A50C005F2CC4 /* RealmPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmPhoto.swift; path = Models/RealmPhoto.swift; sourceTree = "<group>"; };
+		65A839E61DE5A52D005F2CC4 /* RealmShop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmShop.swift; path = Models/RealmShop.swift; sourceTree = "<group>"; };
+		65A839E81DE5A6CC005F2CC4 /* RealmCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmCity.swift; path = Models/RealmCity.swift; sourceTree = "<group>"; };
+		65A839EA1DE5BC1B005F2CC4 /* MapKit+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MapKit+Extensions.swift"; path = "Extensions/MapKit+Extensions.swift"; sourceTree = "<group>"; };
+		65A839EC1DE5BE96005F2CC4 /* String+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+URL.swift"; path = "Extensions/String+URL.swift"; sourceTree = "<group>"; };
 		65B738B21C9B464C00C93661 /* ShopsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopsVC.swift; path = "View Controllers/ShopsVC.swift"; sourceTree = "<group>"; };
 		65B738B41C9B484800C93661 /* ShopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopCell.swift; path = "View Controllers/ShopCell.swift"; sourceTree = "<group>"; };
 		65B98F541C80C28600845035 /* Coffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +187,10 @@
 				65C0FB921CA9AF71003110E5 /* UIColor+CoffeeColors.swift */,
 				65C0FB941CA9AFD9003110E5 /* UILabel+BetterAttributedText.swift */,
 				65C0FB961CA9AFFC003110E5 /* UIDictionary+Merge.swift */,
+				659AE6CB1DE49AF300164098 /* CLLocationManager+Rx.swift */,
+				659AE6CD1DE49B7700164098 /* RxCLLocationManagerDelegateProxy.swift */,
+				65A839EA1DE5BC1B005F2CC4 /* MapKit+Extensions.swift */,
+				65A839EC1DE5BE96005F2CC4 /* String+URL.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -211,6 +231,7 @@
 				657D44551C88DCA600AA7013 /* CloudKitService.swift */,
 				65296D011CA2F2F0002ABAC1 /* AnimationService.swift */,
 				6519CC0B1CB0BF9100AEE656 /* ContentfulService.swift */,
+				65A839E21DE5A485005F2CC4 /* RealmService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -308,6 +329,9 @@
 			children = (
 				65F081261C80C47F00660D3F /* Shop.swift */,
 				65EF841C1C84EDB7008EFE0C /* City.swift */,
+				65A839E41DE5A50C005F2CC4 /* RealmPhoto.swift */,
+				65A839E61DE5A52D005F2CC4 /* RealmShop.swift */,
+				65A839E81DE5A6CC005F2CC4 /* RealmCity.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -640,20 +664,28 @@
 			files = (
 				65C0FB931CA9AF71003110E5 /* UIColor+CoffeeColors.swift in Sources */,
 				650596191C84DCE700B81AA0 /* Configuration.swift in Sources */,
+				65A839ED1DE5BE96005F2CC4 /* String+URL.swift in Sources */,
 				6563D08D1C91D97C001529A3 /* LocationService.swift in Sources */,
+				659AE6CE1DE49B7700164098 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				65F081271C80C47F00660D3F /* Shop.swift in Sources */,
 				65C0FB911CA99F5E003110E5 /* ShopDetailViewModel.swift in Sources */,
 				655437021C8616B400FD9AA8 /* ShopDetailVC.swift in Sources */,
 				652633221CDA5FF9000229B1 /* AppCoordinator.swift in Sources */,
 				657D44561C88DCA600AA7013 /* CloudKitService.swift in Sources */,
 				65296D021CA2F2F0002ABAC1 /* AnimationService.swift in Sources */,
+				65A839E71DE5A52D005F2CC4 /* RealmShop.swift in Sources */,
 				65B738B51C9B484800C93661 /* ShopCell.swift in Sources */,
+				65A839E91DE5A6CC005F2CC4 /* RealmCity.swift in Sources */,
 				65C0FB971CA9AFFC003110E5 /* UIDictionary+Merge.swift in Sources */,
 				65B98F581C80C28600845035 /* AppDelegate.swift in Sources */,
 				65D0E92A1CA5A84100D3F902 /* ShopsViewModel.swift in Sources */,
+				659AE6CC1DE49AF300164098 /* CLLocationManager+Rx.swift in Sources */,
 				65B738B31C9B464C00C93661 /* ShopsVC.swift in Sources */,
+				65A839E51DE5A50C005F2CC4 /* RealmPhoto.swift in Sources */,
+				65A839E31DE5A485005F2CC4 /* RealmService.swift in Sources */,
 				65789F671CA7A15B00B5C79D /* ShopCellViewModel.swift in Sources */,
 				65C0FB951CA9AFD9003110E5 /* UILabel+BetterAttributedText.swift in Sources */,
+				65A839EB1DE5BC1B005F2CC4 /* MapKit+Extensions.swift in Sources */,
 				6519CC0C1CB0BF9100AEE656 /* ContentfulService.swift in Sources */,
 				65EF841D1C84EDB7008EFE0C /* City.swift in Sources */,
 			);

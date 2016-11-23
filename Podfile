@@ -8,6 +8,7 @@ pod 'BTNavigationDropdownMenu', :git => 'https://github.com/PhamBaTho/BTNavigati
 pod 'Hue'
 pod 'NVActivityIndicatorView'
 pod 'Alamofire'
+pod 'AlamofireImage'
 pod 'SwiftyJSON'
 pod 'RxSwift'
 pod 'RxCocoa'

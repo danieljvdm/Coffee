@@ -14,32 +14,33 @@ class ShopDetailViewModel {
     fileprivate let shop: Shop
     let name: String
     let address: String
-    let description: String
-    let image: UIImage
+    let bio: String
+    var imageUrl: URL?
     
     
     init(shop: Shop){
         self.shop = shop
         self.name = shop.name
         self.address = shop.address ?? ""
-        self.description = shop.description ?? ""
-        self.image = shop.image
+        self.bio = shop.bio ?? ""
+        if let imageString = shop.image {
+            self.imageUrl = URL(string: imageString)
+        }
     }
     
     func getMapMarker() -> MKPointAnnotation {
         let point = MKPointAnnotation()
-        point.coordinate = shop.location.coordinate
+        point.coordinate = CLLocationCoordinate2D(latitude: shop.coordinates!.lat, longitude: shop.coordinates!.lon)
         point.title = shop.name
         point.subtitle = shop.address
         return point 
     }
     
     func getMapRegion() -> MKCoordinateRegion {
-        return MKCoordinateRegionMakeWithDistance(shop.location.coordinate,
-                                                                  kRegionRadius * 2.0, kRegionRadius * 2.0)
+        return MKCoordinateRegion(coordinates: self.shop.coordinates!, radius: kRegionRadius * 2.0)
     }
     
     func openMapsApp() {
-        UIApplication.shared.openURL(URL(string: "http://maps.apple.com/?ll=\(shop.location.coordinate.latitude),\(shop.location.coordinate.longitude)")!)
+        UIApplication.shared.openURL(URL(string: "http://maps.apple.com/?ll=\(shop.coordinates!.lat),\(shop.coordinates!.lon)")!)
     }    
 }

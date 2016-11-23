@@ -27,9 +27,8 @@ class LocationService: NSObject {
         } else {
             locationManager.requestAlwaysAuthorization()
         }
-                
-        locations = locationManager.rx_didUpdateLocations
-            .map{return $0.last!}
+        
+        locations = locationManager.rx.didUpdateLocations.map{return $0.last!}
     }
 }
 

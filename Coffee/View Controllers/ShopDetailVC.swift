@@ -37,11 +37,10 @@ class ShopDetailVC: UIViewController {
     func bindToViewModel() {
         self.navigationItem.title = viewModel.name
         //self.backgroundImage.image = viewModel.image
-        self.tapGestureRecognizer.rx_event
-            .subscribeNext { recognizer in
-                self.viewModel.openMapsApp()
-            }
-            .addDisposableTo(disposeBag)
+        tapGestureRecognizer.rx.event.subscribe(onNext: { (recognizer) in
+            self.viewModel.openMapsApp()
+        }, onError: nil, onCompleted: nil, onDisposed: nil).addDisposableTo(disposeBag)
+        
     }
     
     func configureView() {
@@ -54,7 +53,7 @@ class ShopDetailVC: UIViewController {
     func updateText() {
         addressLabel.updateAttributedText(viewModel.address)
         shopTitleLabel.updateAttributedText(viewModel.name)
-        descriptionLabel.updateAttributedText(viewModel.description)
+        descriptionLabel.updateAttributedText(viewModel.bio)
         descriptionLabel.addAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 16.0)])
     }
     

@@ -13,6 +13,7 @@ import RxAlamofire
 import Alamofire
 import SwiftyJSON
 import CoreLocation
+import RealmSwift
 
 class ContentfulService {
     fileprivate struct Constants {
@@ -20,56 +21,67 @@ class ContentfulService {
         static let spaceKey = "sl312cfh6srr"
         static let baseUrl = "https://cdn.contentful.com/spaces/"
         static let fullUrl = "\(baseUrl + spaceKey)/"
+        static let parameters: Parameters = ["access_token" : Constants.accessToken]
     }
 
-    static fileprivate let disposeBag = DisposeBag()
+    static let sharedService = ContentfulService()
+    fileprivate let disposeBag = DisposeBag()
     
-    static func getShops(_ city: City, summary: Bool = false) -> Observable<[Shop]> {
-        //var shops = [Shop]()
-        syncInitial()
-        let parameters: [String: AnyObject] = ["access_token" : Constants.accessToken as AnyObject, "content_type" : "shop" as AnyObject]
-        let url = Constants.fullUrl + "entries?"
-        return Alamofire.request(.GET, url, parameters: parameters)
-            .rx_responseJSON()
-            .flatMap { response, json -> Observable<[Shop]> in
-                var shops = [Shop]()
-                let json = JSON(json)
-                for(index, subJson) in json["items"]{
-                    var newJson = subJson
-                    newJson["city"] = json["includes"]["Entry"][Int(index)!]["fields"]
-                    newJson["image"] = json["includes"]["Asset"][Int(index)!]["fields"]
-                    shops.append(Shop(json: newJson))
-                }
-                return Observable.just(shops)
-            }
+    private var syncToken: String? {
+        get {
+            return UserDefaults.standard.string(forKey: "syncToken")
+        }
+        set(newToken) {
+            UserDefaults.standard.set(newToken, forKey: "syncToken")
+            UserDefaults.standard.synchronize()
+        }
     }
     
-    static fileprivate func syncInitial() {
-        let parameters: [String: AnyObject] = ["access_token" : Constants.accessToken as AnyObject, "sync_token" : "w5ZGw6JFwqZmVcKsE8Kow4grw45QdybClR7DjAFKw7PDgcKFHxDCnGnCkB3CjcO6JQXCg8K_wp3CsxzDgy_Cg8Ktw4HCjBLDu8KCLMOMw6NNwodSwrXDrcKPwppCwosVw73Du8KYP8OgRgjCiMKYwp5DQ2k9w6_CmXDCl8KP" as AnyObject]
-        let url = Constants.fullUrl + "sync?"
-        Alamofire.request(.GET, url, parameters: parameters)
-            .rx_responseJSON()
-            .subscribeNext { response, json in
-                let json = JSON(json)
-                print(json)
-            }.addDisposableTo(disposeBag)
-    }
-}
-
-
-extension Shop {
-    convenience init(json: JSON){
-        self.init()
-        self.name = json["fields"]["name"].stringValue
-        self.description = json["fields"]["description"].string
-        self.address = json["fields"]["address"].string
-        self.neighborhood = json["fields"]["neighborhood"].string
-        self.city = City(name: json["city"]["name"].stringValue)
-        self.imageURL = json["image"]["file"]["url"].stringValue
+    func sync() {
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        let lat = json["fields"]["location"]["lat"].doubleValue 
-        let lon = json["fields"]["location"]["lon"].doubleValue
-        self.location = CLLocation(latitude: lat, longitude: lon)
-
+        let realmManager = RealmService.sharedService
+        
+        if realmManager.isCorrupt() {
+            realmManager.clean()
+            self.syncToken = nil
+        }
+        
+        var parameters = Constants.parameters
+//        if let token = self.syncToken {
+//            parameters.updateValue(token, forKey: "sync_token")
+//        } else {
+//            parameters.updateValue(true, forKey: "initial")
+//        }
+        parameters.updateValue(true, forKey: "initial")
+        
+        let url = Constants.fullUrl + "sync?"
+        fetch(with: url, parameters: parameters)
+    }
+    
+    func fetch(with url: String, parameters: Parameters, existingJsonItems: JSON? = nil) {
+        let realmManager = RealmService.sharedService
+        Alamofire.request(url, parameters: parameters)
+            .rx
+            .responseJSON()
+            .subscribe(onNext: { [weak self] _, json in
+                let json = JSON(json)
+                var jsonItems = json["items"]
+                if let existingJsonItems = existingJsonItems {
+                    jsonItems = JSON(jsonItems.arrayObject! + existingJsonItems.arrayObject!)
+                }
+                
+                if let token = json["nextSyncUrl"].string {
+                    realmManager.createObjectsFromContentful(json: jsonItems)
+                    self?.syncToken = token.replacingOccurrences(of: "\(Constants.fullUrl)sync?sync_token=", with: "")
+                } else if let nextPage = json["nextPageUrl"].string {
+                    print("getting next page url")
+                    let token = nextPage.replacingOccurrences(of: "\(Constants.fullUrl)sync?sync_token=", with: "")
+                    var parameters = Constants.parameters
+                    parameters.updateValue(token, forKey: "sync_token")
+                    self?.fetch(with: url, parameters: parameters, existingJsonItems: jsonItems)
+                }
+                
+            }).addDisposableTo(disposeBag)
     }
 }

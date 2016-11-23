@@ -33,8 +33,8 @@ class ShopsVC: UIViewController {
         view.backgroundColor = UIColor(patternImage: UIImage(named: "ios-linen.jpg")!)
         collectionView.contentInset = UIEdgeInsets.zero
         
-        activityView.type = .BallBeat
-        activityView.startAnimation()
+        activityView.type = .ballBeat
+        activityView.startAnimating()
 
         setupNavBar()
 
@@ -43,17 +43,18 @@ class ShopsVC: UIViewController {
     func bindToViewModel() {
         viewModel.shops?
             .observeOn(MainScheduler.instance)
-            .bindTo(collectionView.rx_itemsWithCellIdentifier("shopCell", cellType: ShopCell.self)){ (row, element, cell) in
+            .bindTo(collectionView.rx.items(cellIdentifier: "shopCell", cellType: ShopCell.self)) { (row, element, cell) in
                 cell.viewModel = ShopCellViewModel(shop: element)
             }
             .addDisposableTo(disposeBag)
         
-        collectionView.rx_itemSelected.subscribeNext { indexpath in
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ShopDetail") as! ShopDetailVC
-            vc.viewModel = ShopDetailViewModel(shop: try! self.collectionView.rx_modelAtIndexPath(indexpath))
-            self.navigationController?.pushViewController(vc, animated: true)
-            }
-            .addDisposableTo(disposeBag)
+        collectionView.rx.itemSelected
+            .subscribe(onNext: { indexpath in
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShopDetail") as! ShopDetailVC
+                vc.viewModel = ShopDetailViewModel(shop: try! self.collectionView.rx.model(at: indexpath))
+                self.navigationController?.pushViewController(vc, animated: true)
+            }).addDisposableTo(disposeBag)
+        
         
     }
     
@@ -72,10 +73,11 @@ extension ShopsVC {
     func setupNavBar() {
         self.navigationController?.navigationBar.barTintColor = UIColor.coffeeBlueNav()
         let cities = [City(name: "New York"), City(name: "Cape Town")]
-        let menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: "Near Me", items: ["Near Me"] + cities.map{$0.name})
+        let items = ["Near Me"] + cities.map{$0.name}
+        let menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: "Near Me", items: items as [AnyObject])
         menuView.cellBackgroundColor = UIColor.coffeeBlue()
         menuView.cellTextLabelFont = UIFont(name: "ProximaNova-Bold", size: 18.0)
-        menuView.cellTextLabelAlignment = .Center
+        menuView.cellTextLabelAlignment = .center
         self.navigationItem.titleView = menuView
         
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in

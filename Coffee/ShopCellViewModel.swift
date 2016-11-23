@@ -10,25 +10,21 @@ import Foundation
 import RxSwift
 import RxCocoa
 import Alamofire
+import MapKit
 
 class ShopCellViewModel {
     var shop: Shop
     var distanceFromUser: Observable<String>?
     let disposeBag = DisposeBag()
-    var image: Observable<UIImage>?
     
     init(shop: Shop){
         self.shop = shop
         
         distanceFromUser = (LocationService.sharedInstance.locations?
             .map ({
-                return self.prettyDistance(self.shop.location.distanceFromLocation($0))
+                return self.prettyDistance(CLLocation(coordinates: self.shop.coordinates!).distance(from: $0))
             })
         )
-        
-        guard let url = shop.imageURL else {return}
-        Alamofire.request(.GET, url)
-
         
     }
     

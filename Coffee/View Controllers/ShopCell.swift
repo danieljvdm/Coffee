@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import AlamofireImage
 
 class ShopCell: UICollectionViewCell {
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -25,9 +26,11 @@ class ShopCell: UICollectionViewCell {
     
     func bindToViewModel() {
         shopTitle.text = viewModel.shop.name
-        backgroundImage.image = viewModel.shop.image
+        if let url = viewModel.shop.image?.toUrl() {
+            backgroundImage.af_setImage(withURL: url)
+        }
         //This will update the distance from label in real time
-        viewModel.distanceFromUser?.bindTo(distanceLabel.rx_text)
+        viewModel.distanceFromUser?.bindTo(distanceLabel.rx.text)
             .addDisposableTo(disposeBag)
     }
 }
