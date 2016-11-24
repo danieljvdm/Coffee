@@ -12,6 +12,7 @@ protocol Injectable {
     var viewModel: T! {get set}
     mutating func inject(viewModel: T)
     func assertDependencies()
+    func bindViewModel()
 }
 
 extension Injectable {

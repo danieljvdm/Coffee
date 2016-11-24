@@ -25,8 +25,8 @@ class ShopCell: UICollectionViewCell {
     }
     
     func bindToViewModel() {
-        shopTitle.text = viewModel.shop.name
-        if let url = viewModel.shop.image?.toUrl() {
+        shopTitle.text = viewModel.shopTitle
+        if let url = viewModel.imageUrl {
             backgroundImage.af_setImage(withURL: url)
         }
         //This will update the distance from label in real time

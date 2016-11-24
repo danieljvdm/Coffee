@@ -16,7 +16,7 @@ protocol ShopsDelegate: class {
     func didSelectShop(_: Shop)
 }
 
-class ShopsVC: UIViewController, Injectable, Reactive {
+class ShopsVC: UIViewController, Injectable {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityView: NVActivityIndicatorView!

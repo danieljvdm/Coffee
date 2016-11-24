@@ -123,7 +123,12 @@ class RealmService {
     func getAllShops() -> Observable<[Shop]> {
         let realm = try! Realm()
         let shops = realm.objects(RealmShop.self)
-        
+        return Observable.just(shops.map{Shop($0)})
+    }
+    
+    func getShops(for city: City) -> Observable<[Shop]>{
+        let realm = try! Realm()
+        let shops = realm.objects(RealmShop.self).filter(NSPredicate(format: "city.name == %@", city.name))
         return Observable.just(shops.map{Shop($0)})
     }
     

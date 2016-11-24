@@ -12,7 +12,7 @@ import CoreLocation
 import RxSwift
 import RxCocoa
 
-class ShopDetailVC: UIViewController, Injectable, Reactive {
+class ShopDetailVC: UIViewController, Injectable {
     
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     

@@ -13,16 +13,18 @@ import Alamofire
 import MapKit
 
 class ShopCellViewModel {
-    var shop: Shop
+    let shopTitle: String
+    let imageUrl: URL?
     var distanceFromUser: Observable<String>?
     let disposeBag = DisposeBag()
     
     init(shop: Shop){
-        self.shop = shop
+        self.shopTitle = shop.name
+        self.imageUrl = shop.image?.toUrl()
         
         distanceFromUser = (LocationService.sharedInstance.locations?
             .map ({
-                return self.prettyDistance(CLLocation(coordinates: self.shop.coordinates!).distance(from: $0))
+                return self.prettyDistance(CLLocation(coordinates: shop.coordinates!).distance(from: $0))
             })
         )
         

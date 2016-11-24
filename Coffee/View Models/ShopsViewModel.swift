@@ -20,7 +20,7 @@ class ShopsViewModel {
     
     init(){
         shops = self.city
-            .flatMapLatest { _ in RealmService.sharedService.getAllShops() }        
+            .flatMapLatest { city in RealmService.sharedService.getShops(for: city) }
     }
 
 }
