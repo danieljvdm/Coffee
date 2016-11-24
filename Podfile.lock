@@ -5,6 +5,9 @@ PODS:
   - BTNavigationDropdownMenu (0.4.1)
   - Hue (2.0.1)
   - NVActivityIndicatorView (3.0)
+  - R.swift (3.1.0):
+    - R.swift.Library (~> 3.0.2)
+  - R.swift.Library (3.0.2)
   - Realm (2.1.0):
     - Realm/Headers (= 2.1.0)
   - Realm/Headers (2.1.0)
@@ -26,6 +29,7 @@ DEPENDENCIES:
   - BTNavigationDropdownMenu (from `https://github.com/PhamBaTho/BTNavigationDropdownMenu.git`, branch `swift-3.0`)
   - Hue
   - NVActivityIndicatorView
+  - R.swift
   - RealmSwift
   - RxAlamofire
   - RxCocoa
@@ -48,6 +52,8 @@ SPEC CHECKSUMS:
   BTNavigationDropdownMenu: 093f3cbfad1572f2c222bdf8d17584d1e13380d4
   Hue: 354caec055fdc9d38b5ef33ca2e7224721843baf
   NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
+  R.swift: 14400e5784224d1e4e59a8fc5549198c7e8fe360
+  R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   Realm: bc829ad0ef3d4eea70c34cfcc3b1704d18d50df1
   RealmSwift: a4d4abbf0088c337cab5b738054395842e4b3052
   RxAlamofire: 0b1fa48f545fffe7f7a28af2086bcaa3b5946cc9
@@ -55,6 +61,6 @@ SPEC CHECKSUMS:
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 085fc3b94f45f6bc2ebfd894b286d454f5926ff3
+PODFILE CHECKSUM: 26d3736e5855e3865e3bfca5b3792fdefd051dd7
 
 COCOAPODS: 1.2.0.beta.1

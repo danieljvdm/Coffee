@@ -12,20 +12,27 @@ import BTNavigationDropdownMenu
 import RxSwift
 import RxCocoa
 
-class ShopsVC: UIViewController {
+protocol ShopsDelegate: class {
+    func didSelectShop(_: Shop)
+}
+
+class ShopsVC: UIViewController, Injectable, Reactive {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityView: NVActivityIndicatorView!
     var clearTable = false
-    let viewModel = ShopsViewModel()
+    var viewModel: ShopsViewModel!
     let disposeBag = DisposeBag()
 
+    weak var delegate: ShopsDelegate?
+    
     let animator = AnimationService()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bindToViewModel()
+        bindViewModel()
         configureView()
     }
     
@@ -40,7 +47,7 @@ class ShopsVC: UIViewController {
 
     }
     
-    func bindToViewModel() {
+    func bindViewModel() {
         viewModel.shops?
             .observeOn(MainScheduler.instance)
             .bindTo(collectionView.rx.items(cellIdentifier: "shopCell", cellType: ShopCell.self)) { (row, element, cell) in
@@ -50,9 +57,10 @@ class ShopsVC: UIViewController {
         
         collectionView.rx.itemSelected
             .subscribe(onNext: { indexpath in
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShopDetail") as! ShopDetailVC
-                vc.viewModel = ShopDetailViewModel(shop: try! self.collectionView.rx.model(at: indexpath))
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.delegate?.didSelectShop(try! self.collectionView.rx.model(at: indexpath))
+//                guard let vc = R.storyboard.main.shopDetail() else { return }
+//                vc.viewModel = ShopDetailViewModel(shop: try! self.collectionView.rx.model(at: indexpath))
+//                self.navigationController?.pushViewController(vc, animated: true)
             }).addDisposableTo(disposeBag)
         
         

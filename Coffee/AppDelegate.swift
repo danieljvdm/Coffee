@@ -13,7 +13,7 @@ import CoreLocation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var coordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -30,6 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let _ = LocationService.sharedInstance
         
+        let navCtrl = UINavigationController()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navCtrl
+        window?.makeKeyAndVisible()
+        coordinator = AppCoordinator(root: navCtrl, realm: RealmService())
+        coordinator?.start()
         return true
     }
 

@@ -16,7 +16,6 @@
 		650596161C84C44E00B81AA0 /* tobysestate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 650596111C84C44E00B81AA0 /* tobysestate.jpg */; };
 		650596191C84DCE700B81AA0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650596181C84DCE700B81AA0 /* Configuration.swift */; };
 		6519CC0C1CB0BF9100AEE656 /* ContentfulService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519CC0B1CB0BF9100AEE656 /* ContentfulService.swift */; };
-		652633221CDA5FF9000229B1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652633211CDA5FF9000229B1 /* AppCoordinator.swift */; };
 		65296D021CA2F2F0002ABAC1 /* AnimationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65296D011CA2F2F0002ABAC1 /* AnimationService.swift */; };
 		655437021C8616B400FD9AA8 /* ShopDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655437011C8616B400FD9AA8 /* ShopDetailVC.swift */; };
 		655437081C86258300FD9AA8 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 655437041C86258300FD9AA8 /* ProximaNova-Bold.otf */; };
@@ -52,6 +51,13 @@
 		65EF84201C851FE5008EFE0C /* ios-linen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65EF841F1C851FE5008EFE0C /* ios-linen.jpg */; };
 		65F081271C80C47F00660D3F /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F081261C80C47F00660D3F /* Shop.swift */; };
 		65F0812D1C80DE8100660D3F /* stumptown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65F0812C1C80DE8100660D3F /* stumptown.jpg */; };
+		65F8ED6F1DE6C39700B81A5E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8ED6E1DE6C39700B81A5E /* R.generated.swift */; };
+		65F8ED751DE6CFDA00B81A5E /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8ED741DE6CFDA00B81A5E /* CoordinatorType.swift */; };
+		65F8ED771DE6D85200B81A5E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8ED761DE6D85200B81A5E /* AppCoordinator.swift */; };
+		65F8ED791DE6D97800B81A5E /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8ED781DE6D97800B81A5E /* HomeCoordinator.swift */; };
+		65F8ED7C1DE6DBDC00B81A5E /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8ED7B1DE6DBDC00B81A5E /* Injectable.swift */; };
+		65F8ED7E1DE6DBE700B81A5E /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8ED7D1DE6DBE700B81A5E /* Reactive.swift */; };
+		65F8ED801DE6DBFA00B81A5E /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8ED7F1DE6DBFA00B81A5E /* ViewModelType.swift */; };
 		65FC3CF61C8F6775004F9AB8 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FC3CF51C8F6775004F9AB8 /* CloudKit.framework */; };
 		9C12C7E2E09DDD85870C8BCC /* Pods_CoffeeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BFEB9D62B05BBCE2BC86755 /* Pods_CoffeeUITests.framework */; };
 /* End PBXBuildFile section */
@@ -83,7 +89,6 @@
 		650596111C84C44E00B81AA0 /* tobysestate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tobysestate.jpg; path = Images/tobysestate.jpg; sourceTree = "<group>"; };
 		650596181C84DCE700B81AA0 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		6519CC0B1CB0BF9100AEE656 /* ContentfulService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentfulService.swift; sourceTree = "<group>"; };
-		652633211CDA5FF9000229B1 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		65296D011CA2F2F0002ABAC1 /* AnimationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationService.swift; sourceTree = "<group>"; };
 		655437011C8616B400FD9AA8 /* ShopDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopDetailVC.swift; path = "View Controllers/ShopDetailVC.swift"; sourceTree = "<group>"; };
 		655437041C86258300FD9AA8 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Bold.otf"; path = "Fonts/ProximaNova-Bold.otf"; sourceTree = "<group>"; };
@@ -125,6 +130,13 @@
 		65EF841F1C851FE5008EFE0C /* ios-linen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ios-linen.jpg"; sourceTree = "<group>"; };
 		65F081261C80C47F00660D3F /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		65F0812C1C80DE8100660D3F /* stumptown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = stumptown.jpg; path = Images/stumptown.jpg; sourceTree = "<group>"; };
+		65F8ED6E1DE6C39700B81A5E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		65F8ED741DE6CFDA00B81A5E /* CoordinatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoordinatorType.swift; path = Coordinators/CoordinatorType.swift; sourceTree = "<group>"; };
+		65F8ED761DE6D85200B81A5E /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppCoordinator.swift; path = Coordinators/AppCoordinator.swift; sourceTree = "<group>"; };
+		65F8ED781DE6D97800B81A5E /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeCoordinator.swift; path = Coordinators/HomeCoordinator.swift; sourceTree = "<group>"; };
+		65F8ED7B1DE6DBDC00B81A5E /* Injectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Injectable.swift; path = Protocols/Injectable.swift; sourceTree = "<group>"; };
+		65F8ED7D1DE6DBE700B81A5E /* Reactive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
+		65F8ED7F1DE6DBFA00B81A5E /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModelType.swift; path = Protocols/ViewModelType.swift; sourceTree = "<group>"; };
 		65FC3CF41C8F6736004F9AB8 /* Coffee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Coffee.entitlements; path = Coffee/Coffee.entitlements; sourceTree = "<group>"; };
 		65FC3CF51C8F6775004F9AB8 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		76315BC3EF1C9217FE2136E7 /* Pods_CoffeeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,14 +207,6 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		652633201CDA5EA4000229B1 /* Architecture */ = {
-			isa = PBXGroup;
-			children = (
-				652633211CDA5FF9000229B1 /* AppCoordinator.swift */,
-			);
-			name = Architecture;
-			sourceTree = "<group>";
-		};
 		655437031C86257300FD9AA8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +221,7 @@
 		6563D08E1C9207AF001529A3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				65F8ED6E1DE6C39700B81A5E /* R.generated.swift */,
 				65B98F631C80C28700845035 /* Info.plist */,
 				65FC3CF41C8F6736004F9AB8 /* Coffee.entitlements */,
 			);
@@ -261,15 +266,16 @@
 		65B98F561C80C28600845035 /* Coffee */ = {
 			isa = PBXGroup;
 			children = (
-				652633201CDA5EA4000229B1 /* Architecture */,
 				65A17CE91CA055BC006D65A3 /* Main.storyboard */,
 				65B98F571C80C28600845035 /* AppDelegate.swift */,
+				65F8ED731DE6CFC700B81A5E /* Coordinators */,
 				657D44541C88DC9600AA7013 /* Services */,
 				65F081281C80C49200660D3F /* Models */,
 				65C0FB8D1CA99B8B003110E5 /* Views */,
 				650596171C84C45F00B81AA0 /* Images */,
 				65B98F5E1C80C28700845035 /* Assets.xcassets */,
 				650596181C84DCE700B81AA0 /* Configuration.swift */,
+				65F8ED7A1DE6DB7800B81A5E /* Protocols */,
 				655437031C86257300FD9AA8 /* Fonts */,
 				6505961A1C84DDC400B81AA0 /* Extensions */,
 				6563D08E1C9207AF001529A3 /* Supporting Files */,
@@ -336,6 +342,26 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		65F8ED731DE6CFC700B81A5E /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				65F8ED741DE6CFDA00B81A5E /* CoordinatorType.swift */,
+				65F8ED761DE6D85200B81A5E /* AppCoordinator.swift */,
+				65F8ED781DE6D97800B81A5E /* HomeCoordinator.swift */,
+			);
+			name = Coordinators;
+			sourceTree = "<group>";
+		};
+		65F8ED7A1DE6DB7800B81A5E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				65F8ED7B1DE6DBDC00B81A5E /* Injectable.swift */,
+				65F8ED7D1DE6DBE700B81A5E /* Reactive.swift */,
+				65F8ED7F1DE6DBFA00B81A5E /* ViewModelType.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		8DA16A15046113651FCD8238 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +396,7 @@
 			buildConfigurationList = 65B98F7C1C80C28700845035 /* Build configuration list for PBXNativeTarget "Coffee" */;
 			buildPhases = (
 				6B477CBA923D5107B1AFB525 /* [CP] Check Pods Manifest.lock */,
+				65F8ED6D1DE6C36B00B81A5E /* ShellScript */,
 				65B98F501C80C28600845035 /* Sources */,
 				65B98F511C80C28600845035 /* Frameworks */,
 				65B98F521C80C28600845035 /* Resources */,
@@ -595,6 +622,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		65F8ED6D1DE6C36B00B81A5E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+		};
 		6B477CBA923D5107B1AFB525 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -670,21 +710,27 @@
 				65F081271C80C47F00660D3F /* Shop.swift in Sources */,
 				65C0FB911CA99F5E003110E5 /* ShopDetailViewModel.swift in Sources */,
 				655437021C8616B400FD9AA8 /* ShopDetailVC.swift in Sources */,
-				652633221CDA5FF9000229B1 /* AppCoordinator.swift in Sources */,
+				65F8ED771DE6D85200B81A5E /* AppCoordinator.swift in Sources */,
+				65F8ED7C1DE6DBDC00B81A5E /* Injectable.swift in Sources */,
+				65F8ED801DE6DBFA00B81A5E /* ViewModelType.swift in Sources */,
 				657D44561C88DCA600AA7013 /* CloudKitService.swift in Sources */,
 				65296D021CA2F2F0002ABAC1 /* AnimationService.swift in Sources */,
 				65A839E71DE5A52D005F2CC4 /* RealmShop.swift in Sources */,
 				65B738B51C9B484800C93661 /* ShopCell.swift in Sources */,
 				65A839E91DE5A6CC005F2CC4 /* RealmCity.swift in Sources */,
+				65F8ED751DE6CFDA00B81A5E /* CoordinatorType.swift in Sources */,
 				65C0FB971CA9AFFC003110E5 /* UIDictionary+Merge.swift in Sources */,
+				65F8ED791DE6D97800B81A5E /* HomeCoordinator.swift in Sources */,
 				65B98F581C80C28600845035 /* AppDelegate.swift in Sources */,
 				65D0E92A1CA5A84100D3F902 /* ShopsViewModel.swift in Sources */,
 				659AE6CC1DE49AF300164098 /* CLLocationManager+Rx.swift in Sources */,
 				65B738B31C9B464C00C93661 /* ShopsVC.swift in Sources */,
 				65A839E51DE5A50C005F2CC4 /* RealmPhoto.swift in Sources */,
+				65F8ED6F1DE6C39700B81A5E /* R.generated.swift in Sources */,
 				65A839E31DE5A485005F2CC4 /* RealmService.swift in Sources */,
 				65789F671CA7A15B00B5C79D /* ShopCellViewModel.swift in Sources */,
 				65C0FB951CA9AFD9003110E5 /* UILabel+BetterAttributedText.swift in Sources */,
+				65F8ED7E1DE6DBE700B81A5E /* Reactive.swift in Sources */,
 				65A839EB1DE5BC1B005F2CC4 /* MapKit+Extensions.swift in Sources */,
 				6519CC0C1CB0BF9100AEE656 /* ContentfulService.swift in Sources */,
 				65EF841D1C84EDB7008EFE0C /* City.swift in Sources */,

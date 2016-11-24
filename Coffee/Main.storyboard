@@ -14,7 +14,7 @@
         <scene sceneID="Vpq-b8-nxy">
             <objects>
                 <navigationController id="3lG-gc-x5G" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MXg-cf-zzx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="MXg-cf-zzx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -29,7 +29,7 @@
         <!--ShopsVC-->
         <scene sceneID="a6U-4f-tX2">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Fn1-Ij-Bkn" customClass="ShopsVC" customModule="Coffee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeScreen" automaticallyAdjustsScrollViewInsets="NO" id="Fn1-Ij-Bkn" customClass="ShopsVC" customModule="Coffee" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AXM-Pu-h5J"/>
                         <viewControllerLayoutGuide type="bottom" id="7n2-CF-Yk6"/>
@@ -64,24 +64,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m30-bY-nNI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="474.5" height="179"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="475" height="179"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hq-oj-TaK">
-                                                    <rect key="frame" x="81" y="65" width="313" height="48.5"/>
+                                                    <rect key="frame" x="81" y="65" width="313" height="49"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69787267736486491" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stumptown Coffee" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wE3-7H-eRR">
-                                                    <rect key="frame" x="88" y="70" width="298" height="38.5"/>
+                                                    <rect key="frame" x="88" y="70" width="298" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P1k-PI-SI8">
-                                                    <rect key="frame" x="421" y="150.5" width="46" height="21.5"/>
+                                                    <rect key="frame" x="421" y="150" width="46" height="22"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIu-W9-Kec">
-                                                    <rect key="frame" x="422" y="151.5" width="44" height="19.5"/>
+                                                    <rect key="frame" x="422" y="151" width="44" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>

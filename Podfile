@@ -14,6 +14,7 @@ pod 'RxSwift'
 pod 'RxCocoa'
 pod 'RxAlamofire'
 pod 'RealmSwift'
+pod 'R.swift'
 end
 
 target 'CoffeeTests' do

@@ -12,7 +12,7 @@ import CoreLocation
 import RxSwift
 import RxCocoa
 
-class ShopDetailVC: UIViewController {
+class ShopDetailVC: UIViewController, Injectable, Reactive {
     
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     
@@ -30,11 +30,11 @@ class ShopDetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.bindToViewModel()
+        self.bindViewModel()
         self.configureView()
     }
     
-    func bindToViewModel() {
+    func bindViewModel() {
         self.navigationItem.title = viewModel.name
         //self.backgroundImage.image = viewModel.image
         tapGestureRecognizer.rx.event.subscribe(onNext: { (recognizer) in
