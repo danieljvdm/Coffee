@@ -36,6 +36,9 @@ class ShopDetailVC: UIViewController, Injectable {
     
     func bindViewModel() {
         self.navigationItem.title = viewModel.name
+        if let url = viewModel.imageUrl {
+            backgroundImage.af_setImage(withURL: url)
+        }
         //self.backgroundImage.image = viewModel.image
         tapGestureRecognizer.rx.event.subscribe(onNext: { (recognizer) in
             self.viewModel.openMapsApp()

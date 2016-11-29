@@ -10,7 +10,7 @@ import UIKit
 
 class AnimationService: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.5
+        return 0.3
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -36,7 +36,7 @@ class AnimationService: NSObject, UIViewControllerAnimatedTransitioning {
         toView.view.center = tempImage.center
         //containerView.addSubview(tempImage)
 
-        UIView.animate(withDuration: self.transitionDuration(using: transitionContext), delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: .curveLinear, animations: {
+        UIView.animate(withDuration: self.transitionDuration(using: transitionContext), delay: 0.0, usingSpringWithDamping: 0.65, initialSpringVelocity: 0.0, options: .curveLinear, animations: {
             toView.view.center = originalCenter
             toView.view.transform = CGAffineTransform(scaleX: 1, y: 1)
             toView.view.alpha = 1

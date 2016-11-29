@@ -11,16 +11,13 @@ import RxSwift
 import RxCocoa
 
 typealias API = ContentfulService
-typealias DefinitionSearchResult = String
 
 class ShopsViewModel {
     var shops: Observable<[Shop]>?
     var city = PublishSubject<City>()
     var isLoading = false
     
-    init(){
-        shops = self.city
-            .flatMapLatest { city in RealmService.sharedService.getShops(for: city) }
+    init(getShops: @escaping (City) -> Observable<[Shop]>){
+        shops = self.city.flatMapLatest(getShops)
     }
-
 }

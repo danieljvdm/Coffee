@@ -10,9 +10,10 @@ import Foundation
 import RealmSwift
 import RxSwift
 import SwiftyJSON
+import GeoQueries
+import RxRealm
 
 class RealmService {
-    static let sharedService = RealmService()
     fileprivate let disposeBag = DisposeBag()
     
     func createObjectsFromContentful(json: JSON, initial: Bool = false) {
@@ -123,15 +124,31 @@ class RealmService {
     func getAllShops() -> Observable<[Shop]> {
         let realm = try! Realm()
         let shops = realm.objects(RealmShop.self)
-        return Observable.just(shops.map{Shop($0)})
+        return Observable.just(shops.map(Shop.init))
     }
     
     func getShops(for city: City) -> Observable<[Shop]>{
+        if city.name == "Near Me" {
+            return getNearestShops()
+        }
         let realm = try! Realm()
         let shops = realm.objects(RealmShop.self).filter(NSPredicate(format: "city.name == %@", city.name))
-        return Observable.just(shops.map{Shop($0)})
+        return Observable.just(shops.map(Shop.init))
     }
     
+    func getNearestShops() -> Observable<[Shop]> {
+        return LocationService.sharedInstance.locations?.flatMapLatest({ location -> Observable<[Shop]> in
+            let realm = try! Realm()
+            let shops = realm.findInRegion(type: RealmShop.self, region: location.region(with: 5000.0), latitudeKey: "latitude", longitudeKey: "longitude")
+            let obs = Observable.arrayFrom(shops)
+            let lol = obs.map { shops in
+                shops.map(Shop.init)
+            }
+            
+            return lol
+        }) ?? Observable.just([Shop]())
+    }
+
     func isCorrupt() -> Bool {
         let realm = try! Realm()
         let photos = realm.objects(RealmPhoto.self)

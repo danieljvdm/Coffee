@@ -11,16 +11,17 @@ import RxSwift
 
 final class AppCoordinator: CoordinatorType {
     var navCtrl: UINavigationController!
-    var realm: RealmService!
+    var api: APIService!
     fileprivate let disposeBag = DisposeBag()
     var coordinators = [CoordinatorType]()
     
     func start() {
+        api.sync()
         presentHome()
     }
     
     func presentHome() {
-        let coordinator = HomeCoordinator(root: navCtrl, realm: realm)
+        let coordinator = HomeCoordinator(root: navCtrl, api: api)
         coordinators.append(coordinator)
         coordinator.start()
     }

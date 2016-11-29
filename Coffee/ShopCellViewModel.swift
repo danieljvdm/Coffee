@@ -24,6 +24,7 @@ class ShopCellViewModel {
         
         distanceFromUser = (LocationService.sharedInstance.locations?
             .map ({
+                print("\(shop.name): \(shop.coordinates!)")
                 return self.prettyDistance(CLLocation(coordinates: shop.coordinates!).distance(from: $0))
             })
         )

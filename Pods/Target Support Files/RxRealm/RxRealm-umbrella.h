@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_CoffeeTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_CoffeeTestsVersionString[];
+FOUNDATION_EXPORT double RxRealmVersionNumber;
+FOUNDATION_EXPORT const unsigned char RxRealmVersionString[];
 

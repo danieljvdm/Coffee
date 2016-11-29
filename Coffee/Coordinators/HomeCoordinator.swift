@@ -12,7 +12,7 @@ import RxSwift
 
 final class HomeCoordinator: CoordinatorType {
     var navCtrl: UINavigationController!
-    var realm: RealmService!
+    var api: APIService!
     fileprivate let disposeBag = DisposeBag()
     
     func start() {
@@ -22,7 +22,8 @@ final class HomeCoordinator: CoordinatorType {
     func presentHomeScreen() {
         guard var vc = R.storyboard.main.homeScreen() else { return }
         vc.delegate = self
-        vc.inject(viewModel: ShopsViewModel())
+        let vm = ShopsViewModel(getShops: api.getShops)
+        vc.inject(viewModel: vm)
         navCtrl.pushViewController(vc, animated: false)
     }
     

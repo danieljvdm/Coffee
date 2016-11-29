@@ -23,8 +23,9 @@ class ContentfulService {
         static let fullUrl = "\(baseUrl + spaceKey)/"
         static let parameters: Parameters = ["access_token" : Constants.accessToken]
     }
-
-    static let sharedService = ContentfulService()
+    
+    let realmService: RealmService
+    
     fileprivate let disposeBag = DisposeBag()
     
     private var syncToken: String? {
@@ -37,12 +38,14 @@ class ContentfulService {
         }
     }
     
+    init(realmService: RealmService) {
+        self.realmService = realmService
+    }
+    
     func sync() {
         
-        let realmManager = RealmService.sharedService
-        
-        if realmManager.isCorrupt() {
-            realmManager.clean()
+        if realmService.isCorrupt() {
+            realmService.clean()
             self.syncToken = nil
         }
         
@@ -52,13 +55,13 @@ class ContentfulService {
         } else {
             parameters.updateValue(true, forKey: "initial")
         }
+        
 
         let url = Constants.fullUrl + "sync?"
         fetch(with: url, parameters: parameters)
     }
     
     func fetch(with url: String, parameters: Parameters, existingJsonItems: JSON? = nil) {
-        let realmManager = RealmService.sharedService
         Alamofire.request(url, parameters: parameters)
             .rx
             .responseJSON()
@@ -70,7 +73,7 @@ class ContentfulService {
                 }
                 
                 if let token = json["nextSyncUrl"].string {
-                    realmManager.createObjectsFromContentful(json: jsonItems)
+                    self?.realmService.createObjectsFromContentful(json: jsonItems)
                     self?.syncToken = token.replacingOccurrences(of: "\(Constants.fullUrl)sync?sync_token=", with: "")
                 } else if let nextPage = json["nextPageUrl"].string {
                     print("getting next page url")
@@ -80,6 +83,6 @@ class ContentfulService {
                     self?.fetch(with: url, parameters: parameters, existingJsonItems: jsonItems)
                 }
                 
-            }).addDisposableTo(disposeBag)
+                }, onError: { error in print(error)}).addDisposableTo(disposeBag)
     }
 }

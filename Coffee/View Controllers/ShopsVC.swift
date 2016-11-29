@@ -48,12 +48,15 @@ class ShopsVC: UIViewController, Injectable {
     }
     
     func bindViewModel() {
+        
         viewModel.shops?
             .observeOn(MainScheduler.instance)
             .bindTo(collectionView.rx.items(cellIdentifier: "shopCell", cellType: ShopCell.self)) { (row, element, cell) in
                 cell.viewModel = ShopCellViewModel(shop: element)
             }
             .addDisposableTo(disposeBag)
+        
+        viewModel.city.onNext(City(name: "Near Me"))
         
         collectionView.rx.itemSelected
             .subscribe(onNext: { indexpath in
@@ -89,6 +92,9 @@ extension ShopsVC {
         self.navigationItem.titleView = menuView
         
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
+            if indexPath == 0 {
+                return self.viewModel.city.onNext(City(name: "Near Me"))
+            }
             self.viewModel.city.onNext(cities[indexPath-1])
         }
     }

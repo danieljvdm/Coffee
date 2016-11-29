@@ -17,4 +17,8 @@ extension CLLocation {
     convenience init(coordinates: (lat: Double, lon: Double)) {
         self.init(latitude: coordinates.lat, longitude: coordinates.lon)
     }
+    
+    func region(with radius: Double) -> MKCoordinateRegion {
+        return MKCoordinateRegionMakeWithDistance(self.coordinate, radius, radius)
+    }
 }

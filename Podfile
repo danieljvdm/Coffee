@@ -15,13 +15,15 @@ pod 'RxCocoa'
 pod 'RxAlamofire'
 pod 'RealmSwift'
 pod 'R.swift'
+pod 'RealmGeoQueries'
+pod 'RxRealm'
 end
 
-target 'CoffeeTests' do
-
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '3.0'
+            config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '10.10'
+        end
+    end
 end
-
-target 'CoffeeUITests' do
-
-end
-

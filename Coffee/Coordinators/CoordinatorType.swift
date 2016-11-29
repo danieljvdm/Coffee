@@ -10,16 +10,16 @@ import UIKit
 
 protocol CoordinatorType {
     var navCtrl: UINavigationController! {get set}
-    var realm: RealmService! {get set}
+    var api: APIService! {get set}
     init()
-    init(root: UINavigationController, realm: RealmService)
+    init(root: UINavigationController, api: APIService)
     func start()
 }
 
 extension CoordinatorType {
-    init(root: UINavigationController, realm: RealmService){
+    init(root: UINavigationController, api: APIService){
         self.init()
         self.navCtrl = root
-        self.realm = realm
+        self.api = api
     }
 }
