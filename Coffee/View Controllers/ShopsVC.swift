@@ -44,7 +44,6 @@ class ShopsVC: UIViewController, Injectable {
         activityView.startAnimating()
 
         setupNavBar()
-
     }
     
     func bindViewModel() {

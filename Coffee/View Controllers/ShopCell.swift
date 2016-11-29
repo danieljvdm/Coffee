@@ -16,7 +16,7 @@ class ShopCell: UICollectionViewCell {
     @IBOutlet weak var shopTitle: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     
-    let disposeBag = DisposeBag()
+    fileprivate let disposeBag = DisposeBag()
     
     var viewModel: ShopCellViewModel! {
         didSet {

@@ -140,16 +140,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stumptown.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pl7-nl-CfO">
-                                <rect key="frame" x="0.0" y="243" width="600" height="657"/>
+                                <rect key="frame" x="0.0" y="214" width="600" height="686"/>
                             </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PKP-oN-Q4M">
-                                <rect key="frame" x="0.0" y="64" width="600" height="179"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="bIq-C5-GPT"/>
+                                    <constraint firstAttribute="height" constant="150" id="bIq-C5-GPT"/>
                                 </constraints>
                             </mapView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lam-nC-EIm">
-                                <rect key="frame" x="0.0" y="243" width="600" height="657"/>
+                                <rect key="frame" x="0.0" y="214" width="600" height="686"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-qn-hJl" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="226.5"/>
@@ -251,7 +251,7 @@ Know every bean on a personal level. Adjust times and temperatures throughout th
                             <constraint firstItem="PKP-oN-Q4M" firstAttribute="top" secondItem="oXG-Ye-hGc" secondAttribute="bottom" id="5i9-ot-R3V"/>
                             <constraint firstItem="rVM-D0-T9x" firstAttribute="top" secondItem="pl7-nl-CfO" secondAttribute="bottom" id="FdV-MQ-kpM"/>
                             <constraint firstItem="Lam-nC-EIm" firstAttribute="top" secondItem="oXG-Ye-hGc" secondAttribute="bottom" id="Ksr-pe-td4"/>
-                            <constraint firstItem="pl7-nl-CfO" firstAttribute="top" secondItem="oXG-Ye-hGc" secondAttribute="bottom" constant="179" id="MkU-ix-l4t"/>
+                            <constraint firstItem="pl7-nl-CfO" firstAttribute="top" secondItem="oXG-Ye-hGc" secondAttribute="bottom" constant="150" id="MkU-ix-l4t"/>
                             <constraint firstAttribute="trailing" secondItem="Lam-nC-EIm" secondAttribute="trailing" id="Mms-8t-hgB"/>
                             <constraint firstItem="rVM-D0-T9x" firstAttribute="top" secondItem="Lam-nC-EIm" secondAttribute="bottom" id="QPi-1S-Y2V"/>
                             <constraint firstItem="PKP-oN-Q4M" firstAttribute="leading" secondItem="Kjn-dD-EJs" secondAttribute="leading" id="TB8-Wl-3rh"/>
