@@ -137,15 +137,21 @@ class RealmService {
     }
     
     func getNearestShops() -> Observable<[Shop]> {
-        return LocationService.sharedInstance.locations?.flatMapLatest({ location -> Observable<[Shop]> in
+        return LocationService.sharedInstance.locations?
+            .distinctUntilChangeGreaterThan(meters: 100)
+            .flatMapLatest({ location -> Observable<[Shop]> in
             let realm = try! Realm()
             let shops = realm.findInRegion(type: RealmShop.self, region: location.region(with: 5000.0), latitudeKey: "latitude", longitudeKey: "longitude")
-            let obs = Observable.arrayFrom(shops)
-            let lol = obs.map { shops in
-                shops.map(Shop.init)
-            }
+            let test = shops.sortByDistance(center: location.coordinate, ascending: true, latitudeKey: "latitude", longitudeKey: "longitude")
             
-            return lol
+            return Observable.just(test.map(Shop.init))
+            
+//            let obs = Observable.arrayFrom(shops)
+//            let lol = obs.map { shops in
+//                shops.map(Shop.init)
+//            }
+//            
+//            return lol
         }) ?? Observable.just([Shop]())
     }
 

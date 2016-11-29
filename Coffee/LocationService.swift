@@ -28,7 +28,11 @@ class LocationService: NSObject {
             locationManager.requestAlwaysAuthorization()
         }
         
-        locations = locationManager.rx.didUpdateLocations.throttle(5, scheduler: MainScheduler.instance).map{return $0.last!}
+        locations = locationManager
+            .rx
+            .didUpdateLocations
+            .throttle(5.0, scheduler: MainScheduler.instance)
+            .map{return $0.last!}
     }
 }
 

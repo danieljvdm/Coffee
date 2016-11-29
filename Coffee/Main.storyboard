@@ -195,7 +195,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mb4-C6-DjM" userLabel="Bottom Stack View">
-                                                <rect key="frame" x="20" y="91.5" width="560" height="135"/>
+                                                <rect key="frame" x="20" y="92" width="560" height="135"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8r-4Z-TWb">
                                                         <rect key="frame" x="0.0" y="0.0" width="560" height="135"/>
@@ -214,23 +214,62 @@ Know every bean on a personal level. Adjust times and temperatures throughout th
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMK-Jv-zro" userLabel="Middle Stack View Overlay">
+                                                <rect key="frame" x="10" y="239.5" width="580" height="80.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69927153720000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="PEw-KN-ut7" userLabel="Middle Stack View">
+                                                <rect key="frame" x="20.5" y="247" width="560" height="65.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open: 6:30 - 18:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHd-0Y-OBv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serves food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hf-eZ-wCK">
+                                                        <rect key="frame" x="0.0" y="22.5" width="560" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WiFi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cR-8l-SK8">
+                                                        <rect key="frame" x="0.0" y="45" width="560" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="Wtt-jw-12O" firstAttribute="leading" secondItem="bYw-qn-hJl" secondAttribute="leading" constant="20" id="4tS-oR-HTb"/>
                                             <constraint firstItem="xCI-4m-9Pb" firstAttribute="height" secondItem="Mb4-C6-DjM" secondAttribute="height" constant="15" id="4uZ-cb-M47"/>
+                                            <constraint firstItem="PEw-KN-ut7" firstAttribute="top" secondItem="Mb4-C6-DjM" secondAttribute="bottom" constant="20" id="91P-sW-qDs"/>
                                             <constraint firstItem="YE0-eI-Qba" firstAttribute="height" secondItem="Wtt-jw-12O" secondAttribute="height" constant="15" id="9Eb-dI-ue4"/>
+                                            <constraint firstItem="AMK-Jv-zro" firstAttribute="height" secondItem="PEw-KN-ut7" secondAttribute="height" constant="15" id="BW0-lq-TDS"/>
                                             <constraint firstAttribute="bottom" secondItem="Mb4-C6-DjM" secondAttribute="bottom" id="FWv-kZ-Hp6"/>
                                             <constraint firstItem="xCI-4m-9Pb" firstAttribute="centerY" secondItem="Mb4-C6-DjM" secondAttribute="centerY" id="GEP-6p-ARM"/>
                                             <constraint firstItem="Wtt-jw-12O" firstAttribute="top" secondItem="bYw-qn-hJl" secondAttribute="top" constant="20" id="Ieb-gs-D6H"/>
                                             <constraint firstItem="YE0-eI-Qba" firstAttribute="centerX" secondItem="Wtt-jw-12O" secondAttribute="centerX" id="MM6-K0-vCZ"/>
                                             <constraint firstItem="Mb4-C6-DjM" firstAttribute="centerX" secondItem="Wtt-jw-12O" secondAttribute="centerX" id="QiJ-cr-kuy"/>
+                                            <constraint firstItem="PEw-KN-ut7" firstAttribute="width" secondItem="Mb4-C6-DjM" secondAttribute="width" id="S6u-XW-xFE"/>
                                             <constraint firstItem="Mb4-C6-DjM" firstAttribute="top" secondItem="Wtt-jw-12O" secondAttribute="bottom" constant="20" id="VTd-9e-Dcl"/>
                                             <constraint firstAttribute="trailing" secondItem="Wtt-jw-12O" secondAttribute="trailing" constant="20" id="Yze-Zj-ntJ"/>
+                                            <constraint firstItem="AMK-Jv-zro" firstAttribute="centerY" secondItem="PEw-KN-ut7" secondAttribute="centerY" id="ZYb-HY-7u1"/>
                                             <constraint firstItem="xCI-4m-9Pb" firstAttribute="width" secondItem="Mb4-C6-DjM" secondAttribute="width" constant="20" id="cj9-Zk-OjO"/>
+                                            <constraint firstItem="PEw-KN-ut7" firstAttribute="centerX" secondItem="Mb4-C6-DjM" secondAttribute="centerX" id="dCn-tG-YvM"/>
                                             <constraint firstItem="xCI-4m-9Pb" firstAttribute="centerX" secondItem="Mb4-C6-DjM" secondAttribute="centerX" id="fjD-2a-ncD"/>
                                             <constraint firstItem="Mb4-C6-DjM" firstAttribute="width" secondItem="Wtt-jw-12O" secondAttribute="width" id="lY2-Fo-z8t"/>
                                             <constraint firstItem="YE0-eI-Qba" firstAttribute="width" secondItem="Wtt-jw-12O" secondAttribute="width" constant="20" id="mMR-v3-T7u"/>
+                                            <constraint firstItem="AMK-Jv-zro" firstAttribute="centerX" secondItem="PEw-KN-ut7" secondAttribute="centerX" id="pTe-Ic-67l"/>
+                                            <constraint firstItem="AMK-Jv-zro" firstAttribute="width" secondItem="PEw-KN-ut7" secondAttribute="width" constant="20" id="sFS-7j-p1H"/>
                                             <constraint firstItem="YE0-eI-Qba" firstAttribute="centerY" secondItem="Wtt-jw-12O" secondAttribute="centerY" id="ttO-zM-92O"/>
                                         </constraints>
                                     </view>

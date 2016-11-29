@@ -23,6 +23,8 @@ class ShopCellViewModel {
         self.imageUrl = shop.image?.toUrl()
         
         distanceFromUser = (LocationService.sharedInstance.locations?
+            .observeOn(MainScheduler.instance)
+            .shareReplay(1)
             .map ({
                 let dis =  self.prettyDistance(CLLocation(coordinates: shop.coordinates!).distance(from: $0))
                 print("\(shop.name): \(dis)")
