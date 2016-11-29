@@ -154,6 +154,12 @@ class RealmService {
 //            return lol
         }) ?? Observable.just([Shop]())
     }
+    
+    func getCities() -> [City] {
+        return try! Realm()
+            .objects(RealmCity.self)
+            .map(City.init)
+    }
 
     func isCorrupt() -> Bool {
         let realm = try! Realm()

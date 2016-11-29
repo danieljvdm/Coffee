@@ -14,10 +14,12 @@ typealias API = ContentfulService
 
 class ShopsViewModel {
     var shops: Observable<[Shop]>?
+    let cities: [City]
     var city = PublishSubject<City>()
     var isLoading = false
     
-    init(getShops: @escaping (City) -> Observable<[Shop]>){
+    init(cities: [City], getShops: @escaping (City) -> Observable<[Shop]>){
+        self.cities = cities
         shops = self.city.flatMapLatest(getShops)
     }
 }

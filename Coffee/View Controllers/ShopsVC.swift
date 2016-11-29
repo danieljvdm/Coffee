@@ -82,8 +82,7 @@ extension ShopsVC {
     //To be replaced with real data
     func setupNavBar() {
         self.navigationController?.navigationBar.barTintColor = UIColor.coffeeBlueNav()
-        let cities = [City(name: "New York"), City(name: "Cape Town")]
-        let items = ["Near Me"] + cities.map{$0.name}
+        let items = ["Near Me"] + self.viewModel.cities.map{$0.name}
         let menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: "Near Me", items: items as [AnyObject])
         menuView.cellBackgroundColor = UIColor.coffeeBlue()
         menuView.cellTextLabelFont = UIFont(name: "ProximaNova-Bold", size: 18.0)
@@ -94,7 +93,7 @@ extension ShopsVC {
             if indexPath == 0 {
                 return self.viewModel.city.onNext(City(name: "Near Me"))
             }
-            self.viewModel.city.onNext(cities[indexPath-1])
+            self.viewModel.city.onNext(self.viewModel.cities[indexPath-1])
         }
     }
 }

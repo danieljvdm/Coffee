@@ -22,7 +22,7 @@ final class HomeCoordinator: CoordinatorType {
     func presentHomeScreen() {
         guard var vc = R.storyboard.main.homeScreen() else { return }
         vc.delegate = self
-        let vm = ShopsViewModel(getShops: api.getShops)
+        let vm = ShopsViewModel(cities: api.getCities(), getShops: api.getShops)
         vc.inject(viewModel: vm)
         navCtrl.pushViewController(vc, animated: false)
     }

@@ -21,6 +21,10 @@ class APIService {
         return realmService.getShops(for: city)
     }
     
+    func getCities() -> [City] {
+        return realmService.getCities()
+    }
+    
     func sync() {
         contentfulSerivce.sync()
     }

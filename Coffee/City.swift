@@ -15,6 +15,10 @@ struct City {
         self.name = name
     }
     
+    init(realmCity: RealmCity) {
+        self.name = realmCity.name
+    }
+    
     static func getFakeData() -> [City] {
         let cities = [
             City(name: "New York"),
