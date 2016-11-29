@@ -151,15 +151,20 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lam-nC-EIm">
                                 <rect key="frame" x="0.0" y="243" width="600" height="657"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-qn-hJl" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="403.5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-qn-hJl" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="226.5"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YE0-eI-Qba" userLabel="Top Stack View Overlay">
-                                                <rect key="frame" x="10" y="12" width="580" height="78"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YE0-eI-Qba" userLabel="Top Stack View Overlay">
+                                                <rect key="frame" x="10" y="12.5" width="580" height="66.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75124049831081086" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wtt-jw-12O" userLabel="Top Stack View">
-                                                <rect key="frame" x="20" y="20" width="560" height="58.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wtt-jw-12O" userLabel="Top Stack View">
+                                                <rect key="frame" x="20" y="20" width="560" height="51.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stumptown Coffee Ace Hotel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jc-Y5-Kay">
                                                         <rect key="frame" x="0.0" y="0.0" width="560" height="29"/>
@@ -168,7 +173,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27 W 4th Street, New York, NY" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uld-ns-LEx">
-                                                        <rect key="frame" x="0.0" y="39" width="560" height="19.5"/>
+                                                        <rect key="frame" x="0.0" y="32" width="560" height="19.5"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                         <color key="textColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -180,12 +185,17 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73990709459459458" colorSpace="custom" customColorSpace="sRGB"/>
                                             </stackView>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCI-4m-9Pb" userLabel="Bottom Stack View Overlay">
-                                                <rect key="frame" x="10" y="95.5" width="580" height="315.5"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCI-4m-9Pb" userLabel="Bottom Stack View Overlay">
+                                                <rect key="frame" x="10" y="84" width="580" height="150"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69927153716216217" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mb4-C6-DjM" userLabel="Bottom Stack View">
-                                                <rect key="frame" x="20" y="103" width="560" height="135"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mb4-C6-DjM" userLabel="Bottom Stack View">
+                                                <rect key="frame" x="20" y="91.5" width="560" height="135"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8r-4Z-TWb">
                                                         <rect key="frame" x="0.0" y="0.0" width="560" height="135"/>

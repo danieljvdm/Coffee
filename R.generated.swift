@@ -280,9 +280,7 @@ struct _R: Rswift.Validatable {
       try main.validate()
     }
     
-    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
-      
+    struct main: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let homeScreen = StoryboardViewControllerResource<ShopsVC>(identifier: "HomeScreen")
       let name = "Main"
