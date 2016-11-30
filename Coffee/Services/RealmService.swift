@@ -33,7 +33,6 @@ class RealmService {
                         entry.id = sysJson["id"].stringValue
                         entry.name = subJson["fields"]["name"]["en-US"].stringValue
                         cities.append(entry)
-                        break
                     case "shop":
                         let entry = RealmShop()
                         let fields = subJson["fields"]
@@ -67,8 +66,6 @@ class RealmService {
                         }
                         
                         shops.append(entry)
-                        break
-    
                     default: break
                     }
                     
@@ -83,15 +80,12 @@ class RealmService {
                                 realm.delete(entry)
                             }
                         }
-                        break
                     case "shop":
                         if let entry = realm.object(ofType: RealmShop.self, forPrimaryKey: sysJson["id"].stringValue) {
                             try! realm.write {
                                 realm.delete(entry)
                             }
                         }
-                        break
-                        
                     default: break
                     }
                 }

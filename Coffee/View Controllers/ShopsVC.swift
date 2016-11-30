@@ -28,7 +28,6 @@ class ShopsVC: UIViewController, Injectable {
     
     let animator = AnimationService()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +40,7 @@ class ShopsVC: UIViewController, Injectable {
         collectionView.contentInset = UIEdgeInsets.zero
         
         activityView.type = .ballBeat
-        activityView.startAnimating()
+//        activityView.startAnimating()
 
         setupNavBar()
     }
@@ -58,13 +57,10 @@ class ShopsVC: UIViewController, Injectable {
         viewModel.city.onNext(City(name: "Near Me"))
         
         collectionView.rx.itemSelected
-            .subscribe(onNext: { indexpath in
+            .subscribe(onNext: { [weak self] indexpath in
+                guard let `self` = self else { return }
                 self.delegate?.didSelectShop(try! self.collectionView.rx.model(at: indexpath))
-//                guard let vc = R.storyboard.main.shopDetail() else { return }
-//                vc.viewModel = ShopDetailViewModel(shop: try! self.collectionView.rx.model(at: indexpath))
-//                self.navigationController?.pushViewController(vc, animated: true)
             }).addDisposableTo(disposeBag)
-        
         
     }
     
@@ -82,7 +78,7 @@ extension ShopsVC {
     //To be replaced with real data
     func setupNavBar() {
         self.navigationController?.navigationBar.barTintColor = UIColor.coffeeBlueNav()
-        let items = ["Near Me"] + self.viewModel.cities.map{$0.name}
+        let items = self.viewModel.cities.map{$0.name}
         let menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: "Near Me", items: items as [AnyObject])
         menuView.cellBackgroundColor = UIColor.coffeeBlue()
         menuView.cellTextLabelFont = UIFont(name: "ProximaNova-Bold", size: 18.0)
@@ -90,10 +86,7 @@ extension ShopsVC {
         self.navigationItem.titleView = menuView
         
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
-            if indexPath == 0 {
-                return self.viewModel.city.onNext(City(name: "Near Me"))
-            }
-            self.viewModel.city.onNext(self.viewModel.cities[indexPath-1])
+            self.viewModel.city.onNext(self.viewModel.cities[indexPath])
         }
     }
 }

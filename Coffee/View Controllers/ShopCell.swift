@@ -31,19 +31,8 @@ class ShopCell: UICollectionViewCell {
         }
     }
     
-    func bindToViewModel() {
-        shopTitle.text = viewModel.shopTitle
-        if let url = viewModel.imageUrl {
-            backgroundImage.af_setImage(withURL: url)
-        }
-        //This will update the distance from label in real time
-        viewModel.distanceFromUser?.asDriver(onErrorJustReturn: "").drive(distanceLabel.rx.text)
-            .addDisposableTo(disposeBag)
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
-        print("resuing")
         disposeBag = nil
     }
 }

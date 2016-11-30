@@ -19,7 +19,7 @@ class ShopsViewModel {
     var isLoading = false
     
     init(cities: [City], getShops: @escaping (City) -> Observable<[Shop]>){
-        self.cities = cities
+        self.cities = [City(name: "Near Me")] + cities
         shops = self.city.flatMapLatest(getShops)
     }
 }

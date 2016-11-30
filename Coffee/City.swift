@@ -33,3 +33,9 @@ struct City {
         return cities
     }
 }
+
+extension City: Equatable {
+    static func == (lhs: City, rhs: City) -> Bool {
+        return lhs.name == rhs.name
+    }
+}
